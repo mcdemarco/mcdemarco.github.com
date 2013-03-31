@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[m. c. de marco]]></title>
+  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
+  <link href="http://mcdemarco.net/"/>
+  <updated>2013-03-31T18:21:31-04:00</updated>
+  <id>http://mcdemarco.net/</id>
+  <author>
+    <name><![CDATA[m. c. de marco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopressing]]></title>
+    <link href="http://mcdemarco.net/blog/2013/03/31/octopressing/"/>
+    <updated>2013-03-31T00:16:00-04:00</updated>
+    <id>http://mcdemarco.net/blog/2013/03/31/octopressing</id>
+    <content type="html"><![CDATA[<p>After several years of neglecting Drupal, I&#8217;m trying out something simpler that doesn&#8217;t require the database (which also happens to be down). Octopress is a front-end for jekyll, a ruby-based flat-file CMS. I have backups of my missing Drupal installation which I hope to import eventually.</p>
+]]></content>
+  </entry>
+  
+</feed>
