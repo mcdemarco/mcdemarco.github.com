@@ -1,25 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>m. c. de marco</title>
+ <link href="http://mcdemarco.net/atom.xml" rel="self"/>
+ <link href="http://mcdemarco.net/"/>
+ <updated>2013-04-03T14:47:14-04:00</updated>
+ <id>http://mcdemarco.net</id>
+ <author>
+   <name>m. c. de marco</name>
+ </author>
+ 
+ 
+ <entry>
+   <title>Jekyll and Left</title>
+   <link href="http://mcdemarco.net/blog/2013/04/03/jekyll-and-left"/>
+   <updated>2013-04-03T13:28:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2013/04/03/jekyll-and-left</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://octopress.org/&quot;&gt;Octopress&lt;/a&gt; was repressing me, so I switched to a pure &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;jekyll&lt;/a&gt; responsive theme called &lt;a href=&quot;http://zachholman.com/posts/left/&quot;&gt;Left&lt;/a&gt;.  I&amp;rsquo;ve hacked it up a bit with navigation submenus, header rearrangements, and a simpler mobile stylesheet.  The source code is in my &lt;a href=&quot;https://github.com/mcdemarco/left&quot;&gt;github fork&lt;/a&gt;.&lt;/p&gt;
 
-  <title><![CDATA[m. c. de marco]]></title>
-  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
-  <link href="http://mcdemarco.net/"/>
-  <updated>2013-03-31T18:21:31-04:00</updated>
-  <id>http://mcdemarco.net/</id>
-  <author>
-    <name><![CDATA[m. c. de marco]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+&lt;p&gt;I also managed to import my Drupal database, with some technical difficulties involving base64 and Drupal books that required semi-manual repair.  Most of the static website has also been converted to &amp;hellip; static website.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Octopressing</title>
+   <link href="http://mcdemarco.net/blog/2013/03/31/octopressing"/>
+   <updated>2013-03-31T17:10:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2013/03/31/octopressing</id>
+   <content type="html">&lt;p&gt;After several years of neglecting Drupal, I’m trying out something simpler that doesn’t require the database (which also happens to be down). Octopress is a front-end for jekyll, a ruby-based flat-file CMS. I have backups of my missing Drupal installation which I hope to import eventually.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Twee Two</title>
+   <link href="http://mcdemarco.net/blog/2012/03/16/twee-two"/>
+   <updated>2012-03-16T12:45:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2012/03/16/twee-two</id>
+   <content type="html">&lt;p&gt;I seem to have volunteered for the &lt;a href=&quot;http://gimcrackd.com/etc/src/&quot;&gt;Twine/Twee&lt;/a&gt; revival. (See the &lt;a href=&quot;http://groups.google.com/group/tweecode&quot;&gt;tweecode Google group&lt;/a&gt; for more details.) This means I may have some interactive fiction of my own up soon, so watch this space&amp;hellip;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Interview with the Writer</title>
+   <link href="http://mcdemarco.net/blog/2011/08/25/interview-with-the-writer"/>
+   <updated>2011-08-25T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2011/08/25/interview-with-the-writer</id>
+   <content type="html">&lt;p&gt;I was interviewed virtually by Lila Munro &lt;a href=&quot;http://lilamunro.weebly.com/1/post/2011/08/welcome-mc-demarco.html&quot;&gt;at Realmantic Moments yesterday&lt;/a&gt;.  I apologize for the late notice; I thought the interview was coming out today.  It includes an excerpt from my &lt;em&gt;Paramourtal&lt;/em&gt; story, &amp;ldquo;Sympathy From the Devil.&amp;rdquo;  Three or four other interviews with authors from the anthology are available under &lt;a href=&quot;http://lilamunro.weebly.com/lilas-musings.html&quot;&gt;Lila&amp;rsquo;s Musings&lt;/a&gt;.&lt;/p&gt;
 
-  
-  <entry>
-    <title type="html"><![CDATA[Octopressing]]></title>
-    <link href="http://mcdemarco.net/blog/2013/03/31/octopressing/"/>
-    <updated>2013-03-31T00:16:00-04:00</updated>
-    <id>http://mcdemarco.net/blog/2013/03/31/octopressing</id>
-    <content type="html"><![CDATA[<p>After several years of neglecting Drupal, I&#8217;m trying out something simpler that doesn&#8217;t require the database (which also happens to be down). Octopress is a front-end for jekyll, a ruby-based flat-file CMS. I have backups of my missing Drupal installation which I hope to import eventually.</p>
-]]></content>
-  </entry>
-  
+&lt;p&gt;My characters were interviewed meta-virtually by Sherry Gloag &lt;a href=&quot;http://sherrygloagtheheartofromance.blogspot.com/2011/08/mc-demarco-author-of-sympathy-from.html&quot;&gt;at The Heart of Romance blog last week&lt;/a&gt; while I was busy packing.  I apologize for the even later notice; I thought the interviews were coming out next month, but that turns out to be when the reviews will appear.&lt;!--break--&gt;  You can read more interviews of characters and their authors from the  anthology by clicking on &lt;a href=&quot;http://sherrygloagtheheartofromance.blogspot.com/search/label/Paramourtal&quot;&gt;Sherry&amp;rsquo;s &lt;em&gt;Paramourtal&lt;/em&gt; label&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>The First Million Words are the Hardest</title>
+   <link href="http://mcdemarco.net/blog/2011/07/03/the-first-million-words-are-the-hardest"/>
+   <updated>2011-07-03T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2011/07/03/the-first-million-words-are-the-hardest</id>
+   <content type="html">&lt;p&gt;As part of being back on the wagon, I wrote a new story this week and submitted it to &lt;a href=&quot;http://www.writersofthefuture.com/&quot;&gt;Writers of the Future&lt;/a&gt;&amp;mdash;-at 11:50pm Thursday night, thanks to their new online submissions policy.  Today I finally got around to logging it and my NaNoWriMo novel in my giant writing spreadsheet, and I noticed that I&amp;rsquo;d gone over the million word mark back on November 30th.  Since I started writing in the summer of 2001, I also managed to do the whole thing in just under 10 years.  (For the significance of these numbers, see my post on &lt;a href=&quot;/node/259&quot;&gt;10 Years or 1,000,000 Words&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;I wouldn&amp;rsquo;t say that this week&amp;rsquo;s story was my best work or that it subtly displayed every one of my million words of practice, but I did bang it out surprisingly quickly; it only took one evening (Wednesday) out of my active social schedule.  It&amp;rsquo;s also my third story in that particular universe, so I think once it&amp;rsquo;s been rejected a few times I might package it up with the other two for sale.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>The Self-Publishing Tipping Point</title>
+   <link href="http://mcdemarco.net/blog/2011/04/13/the-self-publishing-tipping-point"/>
+   <updated>2011-04-13T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2011/04/13/the-self-publishing-tipping-point</id>
+   <content type="html">&lt;p&gt;I found my way from &lt;a href=&quot;http://twitter.com/#!/DeanWesleySmith&quot;&gt;Dean Wesley Smith&amp;rsquo;s twitter feed&lt;/a&gt; to L. M. May&amp;rsquo;s posts on &lt;a href=&quot;http://lmmay.com/2011/04/03/fiction-writers-and-learned-helplessness/&quot;&gt;learned helplessness&lt;/a&gt; and &lt;a href=&quot;http://lmmay.com/2011/03/21/barry-eisler-turned-down-500000-deal-to-indie-publish/&quot;&gt;Barry Eisler going indie&lt;/a&gt;.  I read Barry Eisler&amp;rsquo;s long &lt;a href=&quot;http://barryeisler.blogspot.com/2011/03/ebooks-and-self-publishing-conversation.html&quot;&gt;two&lt;/a&gt; &lt;a href=&quot;http://barryeisler.blogspot.com/2011/04/ebooks-and-self-publishing-part-2.html&quot;&gt;part&lt;/a&gt; dialogue with Joe Konrath about self-publishing.  Dean has since posted some more self-publishing advice.&lt;/p&gt;
+
+&lt;p&gt;By chance I also found &lt;a href=&quot;http://daviddfriedman.blogspot.com/2011/03/how-to-eliminate-publishing-industry.html&quot;&gt;a very short post by David Friedman&lt;/a&gt; about how little need for the publishing industry remains after the advent of ebooks&amp;mdash;-a reprise of a three-year-old post whose time has now come.  Also by chance, I just got my first royalty payment for &lt;em&gt;Paramourtal&lt;/em&gt; last week, and my mother(!) got a Kindle at the same time.&lt;/p&gt;
+
+&lt;p&gt;It all added up for me to a tipping point for self-publishing.  It&amp;rsquo;s no longer the crazy aunt of publishing options; now it&amp;rsquo;s the best practice (to pick a painful phrase from the wealth of jargon I&amp;rsquo;ve been hearing at the &lt;a href=&quot;http://www.bio-itworldexpo.com/Bio-It_Expo_Content.aspx?id=102622&quot;&gt;BioIT World conference&lt;/a&gt; in Boston this week).  I no longer picture myself submitting short stories and (future) novels to sink in the slush swamps of traditional publishers on the side while I keep my day job; instead I see myself publishing my own books and (possibly) making decent money at it.  I find my new vision of the future much more inspiring&amp;mdash;-thus my resolve to get back on the wagon.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s a lot to read into one PayPal payment and a few blog posts, but it&amp;rsquo;s more a matter of intuition than of deduction.  Where else can the industry go at this point?&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;An update via &lt;a href=&quot;http://twitter.com/#!/DeanWesleySmith/status/58427999455940608&quot;&gt;Dean&lt;/a&gt;:  &lt;a href=&quot;http://tech.fortune.cnn.com/2011/04/13/why-barnes-noble-should-go-from-bookstore-to-nookstore/&quot;&gt;CNNMoney reports on the tipping point at B&amp;amp;N&lt;/a&gt;, including the words &amp;ldquo;tipping point&amp;rdquo; and the prediction that &amp;ldquo;ebooks will dominate sales within the next 24 months.&amp;rdquo;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Back on the Wagon</title>
+   <link href="http://mcdemarco.net/blog/2011/04/10/back-on-the-wagon"/>
+   <updated>2011-04-10T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2011/04/10/back-on-the-wagon</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.brandeis.edu/gps/programscourses/programs/listings/17.html&quot;&gt;School&amp;rsquo;s&lt;/a&gt; out, probably for summer, and I&amp;rsquo;ve been inspired to blog again by the recent flurry of &lt;a href=&quot;http://lmmay.com/2011/03/21/barry-eisler-turned-down-500000-deal-to-indie-publish/&quot;&gt;posts on self-publishing&lt;/a&gt;.  But when I logged in after all these months since NaNoWriMo, Drupal distracted me from my intended topic by telling me I&amp;rsquo;ve been a member of my website for over six years.  It&amp;rsquo;s been about that long since I sold &lt;a href=&quot;http://mcdemarco.net/node/76&quot;&gt;my first story&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So I had to go dig up my &lt;a href=&quot;/node/1&quot;&gt;first post&lt;/a&gt; about Bloxsom and &lt;a href=&quot;/node/81&quot;&gt;my other first post&lt;/a&gt; about converting my blog from Bloxsom to Drupal (and from a linkblog to a real blog).  That, of course, reminded me how I really need to upgrade Drupal, and what a nightmare that always is.  I also need to update &lt;a href=&quot;/sffms/&quot;&gt;SFFMS&lt;/a&gt; and, you know, &lt;em&gt;write&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Making a list is the first step&amp;hellip;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>The Finish Line</title>
+   <link href="http://mcdemarco.net/blog/2010/11/30/the-finish-line"/>
+   <updated>2010-11-30T00:00:00-05:00</updated>
+   <id>http://mcdemarco.net/blog/2010/11/30/the-finish-line</id>
+   <content type="html">&lt;p&gt;I hesitate to call it a novel, but I have limped over the finish line with about 50,100 words.  In NaNoWriMo terms I think I blew a knee this time.  I did not hit my all-time high daily word count (8,000 or so, I think) but I did do a couple of days of 6,666 words at the last minute.  Maybe next year I&amp;rsquo;ll pace myself better.&lt;!--break--&gt;&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the evidence:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/pictures/nano_10_winner_120x90-3.png&quot; alt=&quot;NaNoWriMo 2010 Winner&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Paramourtal Reviews</title>
+   <link href="http://mcdemarco.net/blog/2010/11/10/paramourtal-reviews"/>
+   <updated>2010-11-10T00:00:00-05:00</updated>
+   <id>http://mcdemarco.net/blog/2010/11/10/paramourtal-reviews</id>
+   <content type="html">&lt;p&gt;A few sites now have reviews of &lt;em&gt;Paramourtal&lt;/em&gt; up.  &lt;a href=&quot;http://www.paranormalromanceguild.com/booksonreview2010.htm#659830717&quot;&gt;The Paranormal Romance Guild&lt;/a&gt; gives my story (&amp;ldquo;Sympathy From the Devil&amp;rdquo;) 5 stars and calls it a &amp;ldquo;[f]un tale with a funny ending.&amp;rdquo;  &lt;a href=&quot;http://clarahanoux.blogspot.com/search/label/review&quot;&gt;Clara Hanoux&lt;/a&gt; summarizes it as &lt;a href=&quot;http://clarahanoux.blogspot.com/2010/11/review-sympathy-from-devil-by-m-c.html&quot;&gt;&amp;ldquo;cute&amp;rdquo;&lt;/a&gt; and says, &amp;ldquo;This might just be the best story of the anthology!&amp;rdquo;&lt;!--break--&gt;&lt;/p&gt;
+
+&lt;p&gt;Editor Kevin Hosey is collecting reviews at &lt;a href=&quot;http://www.cliffhangerbooks.com/reviews.html&quot;&gt;the Cliffhanger Books site&lt;/a&gt;, selling merchandise at &lt;a href=&quot;http://www.cafepress.com/CliffhangerBooks&quot;&gt;CafePress&lt;/a&gt;, and also planning a book signing in Dallas on January 22nd.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>The Annual Mapmaking Post</title>
+   <link href="http://mcdemarco.net/blog/2010/10/31/the-annual-mapmaking-post"/>
+   <updated>2010-10-31T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2010/10/31/the-annual-mapmaking-post</id>
+   <content type="html">&lt;p&gt;In preparation for the upcoming month of procrastination and cat-vacuuming, I skimmed through my favorite NaNoWriMo forum last night, &lt;a href=&quot;http://www.nanowrimo.org/eng/forum/188&quot;&gt;NaNo Technology&lt;/a&gt;, and found the usual topics&amp;mdash;including how to make a map for your fantasy novel on your Mac.  Eager to help young cat-vacuumers, I &lt;a href=&quot;http://www.nanowrimo.org/eng/node/3768944&quot;&gt;linked&lt;/a&gt; my &lt;a href=&quot;http://www.mcdemarco.net/node/503&quot;&gt;list from two years back&lt;/a&gt; and even dug up two new cross-platform map-making options:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.inkwellideas.com/roleplaying_tools/hexographer/free_hexographer.shtml&quot;&gt;Hexographer&lt;/a&gt;, a Java-based program online&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://evanjacover.com/grumblemapper&quot;&gt;GrumbleMapper&lt;/a&gt;, an AIR-based donationware download that lets you &lt;a href=&quot;http://code.google.com/p/grumblemapper/wiki/CreatingTiles&quot;&gt;add your own tiles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Just remember, the map does not count towards your word count!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>NaNoWriMo 2010</title>
+   <link href="http://mcdemarco.net/blog/2010/10/30/nanowrimo-2010"/>
+   <updated>2010-10-30T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2010/10/30/nanowrimo-2010</id>
+   <content type="html">&lt;p&gt;It&amp;rsquo;s that time of year again: &lt;a href=&quot;http://www.nanowrimo.org/&quot;&gt;National Novel Writing Month&lt;/a&gt;, better known to us hoary veterans as &lt;em&gt;NaNoWriMo&lt;/em&gt; or just &lt;em&gt;NaNo&lt;/em&gt;.  This will be my ninth year, and, Muse willing, my ninth victory&amp;mdash;450,000 words written in Novembers alone.  Perhaps by the time I hit 500,000 words I &lt;a href=&quot;http://powazek.com/posts/2454&quot;&gt;won&amp;rsquo;t suck&lt;/a&gt; at writing novels&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/pictures/nanowrimo_06_120x240-2010-participant.png&quot; alt=&quot;nano 2010 participant&quot; /&gt;  You can track my progress on &lt;a href=&quot;http://www.nanowrimo.org/eng/user/4573&quot;&gt;my NaNoWriMo profile page&lt;/a&gt;, on &lt;a href=&quot;http://twitter.com/mcdemarco&quot;&gt;twitter&lt;/a&gt;, or here, once I start procrastinating, whining about how far behind I am, and posting about all the fun things I find in the NaNo forums when I should be writing.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Paramourtal on Smashwords</title>
+   <link href="http://mcdemarco.net/blog/2010/10/25/paramourtal-on-smashwords"/>
+   <updated>2010-10-25T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2010/10/25/paramourtal-on-smashwords</id>
+   <content type="html">&lt;p&gt;&lt;em&gt;Paramourtal&lt;/em&gt; is up for sale in Kindle format and many more at &lt;a href=&quot;http://www.smashwords.com/books/view/27620&quot;&gt;Smashwords&lt;/a&gt;, thanks to the ceaseless efforts of editor Kevin Hosey.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Paramourtal in e-Print</title>
+   <link href="http://mcdemarco.net/blog/2010/10/21/paramourtal-in-e-print"/>
+   <updated>2010-10-21T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2010/10/21/paramourtal-in-e-print</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://amzn.to/9fdH7D&quot;&gt;The Kindle version of &lt;em&gt;Paramourtal&lt;/em&gt;&lt;/a&gt; is now up at Amazon, along with the trade paperback:&lt;/p&gt;
+
+
+
+
+&lt;div align=center&gt;
+&lt;iframe src=&quot;http://rcm.amazon.com/e/cm?lt1=_top&amp;bc1=FFFFFF&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=mcdema-20&amp;o=1&amp;p=8&amp;l=as1&amp;m=amazon&amp;f=ifr&amp;asins=1453824383&quot; style=&quot;width:120px;height:240px;&quot; scrolling=&quot;no&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+
+
+
+&lt;p&gt;You'll also find them in my &lt;a href=&quot;http://astore.amazon.com/mcdema-20&quot;&gt;Amazon store&lt;/a&gt;, &lt;del&gt;although I think we authors get the biggest cut when you buy the paperback directly from &lt;!-- a href=&quot;https://www.createspace.com/3484341&quot; --&gt;the CreateSpace link&lt;!-- /a --&gt; in my sidebar&lt;/del&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Paramourtal in Print</title>
+   <link href="http://mcdemarco.net/blog/2010/09/21/paramourtal-in-print"/>
+   <updated>2010-09-21T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2010/09/21/paramourtal-in-print</id>
+   <content type="html">&lt;p&gt;&lt;em&gt;Paramourtal&lt;/em&gt;, a paranormal romance anthology featuring my story, &amp;ldquo;Sympathy From the Devil,&amp;rdquo; is now available from &lt;a href=&quot;https://www.createspace.com/3484341&quot;&gt;CreateSpace&lt;/a&gt;.  The Amazon listing will be up sometime in the next couple of weeks.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>To Appear A Little Later</title>
+   <link href="http://mcdemarco.net/blog/2010/09/01/to-appear-a-little-later"/>
+   <updated>2010-09-01T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2010/09/01/to-appear-a-little-later</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.cliffhangerbooks.com/&quot;&gt;Paramourtal&lt;/a&gt; has been slightly delayed but should be out sometime this month, with my story still in it.  I have seen the proofs and it&amp;rsquo;s looking good.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ 
 </feed>

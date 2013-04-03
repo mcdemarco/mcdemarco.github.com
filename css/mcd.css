@@ -1,0 +1,274 @@
+/* css for www.mcdemarco.net
+   images copyright m c de marco 2004 */
+
+/* layout */
+
+html, body {height: 100%;} 
+
+div#content {min-height: 66%;
+	    margin: 0;
+	    padding: 100px;
+	    font-size: medium;}
+
+body {font-family: Georgia, Times, "Times New Roman", serif;
+     margin: 0;
+     padding: 0;}
+
+div.nav, div#ul, div#ur, div#ll, div#lr, div#bl, div#br {
+      font-size: x-large;
+      margin: 0;
+      padding: 0;}
+
+div#ul {position: absolute;
+      top: 15px;
+      left: 15px;
+      text-align: left;}
+div#ur {position: absolute;
+      top: 15px;
+      right: 15px;
+      text-align: right;}
+div#ll {position: absolute;
+      bottom: 15px;
+      left: 15px;
+      text-align: left;}
+div#lr {position: absolute;
+      bottom: 15px;
+      right: 15px;
+      text-align: right;}
+div#bl {position: absolute;
+      bottom: 15px;
+      left: 15px;
+      text-align: left;}
+div#br {position: absolute;
+      bottom: 15px;
+      right: 15px;
+      text-align: right;}
+
+div#bot {position: relative;
+	clear: both;}
+
+.hosting {color: #666666;
+      text-align: center;
+      font-size: x-small;
+      padding-top: 20px;}
+
+.hosting a,
+.hosting a:link,
+.hosting a:visited {text-decoration: none;}
+.hosting a:active,
+.hosting a:hover {text-decoration: underline;}
+
+
+div#ul .submen,
+div#ur .submen {font-size: medium;}
+div#ur .submen {text-align: right;}
+
+p.submen {margin: 0;
+	 padding: 0;}
+
+div.hide,
+h1 {display: none;}
+h2 {font-size: x-large;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 10px;}
+h3 {font-size: large;
+    padding-top: 15px;}
+
+p.timestamp {font-size: smaller;
+	    text-align: center;
+	    padding-top: 20px;}
+
+p.by {text-align: right;}
+
+
+/* colors */
+
+body {color: black;
+      background-color: white;
+      background-image: url(/css/ant-bedelev-ltgray.jpg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-attachment: fixed;}
+
+a:link, 
+a:visited,
+a:active,
+a:hover {text-decoration: underline;}
+
+a:link {color: #004477;}
+a:visited {color: #001133;}
+
+a:active,
+a:hover {color: #991100;}
+
+.alert {color: #991100;}
+
+div.nav a:link, 
+div.nav a:visited,
+div.nav a:active,
+div.nav a:hover {text-decoration: none;
+	  	  color: #222222;
+		  padding-left: 3px;
+		  padding-right: 3px;}
+
+div.nav a:active,
+div.nav a:hover {color: #dedede;
+	  	  background-color: #343434;}
+
+div.nav .submen a:link, 
+div.nav .submen a:visited {color:  #a6a6a6;}
+div.nav .submen a:active,
+div.nav .submen a:hover {color: #dedede;
+	  	  	  background-color: #868686;}
+
+
+/* splash page */
+
+body#main
+     {background-color: #001933;
+      background-image: url(/css/ant-bedelev.jpg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-attachment: fixed;
+      color: #DBCA55;}  /* #f1e4c3 #eeccaa #c8c800 */
+
+body#main a:link, 
+body#main a:visited,
+body#main a:active,
+body#main a:hover {text-decoration: none;
+	  	  color: #ddcc55;
+		  padding-left: 3px;
+		  padding-right: 3px;}
+
+body#main a:active,
+body#main a:hover {color: #001133;
+	  	  background-color: #ddcc55;}
+
+body#main h1 {display: none;}
+
+body#main .submen a:link, 
+body#main .submen a:visited {color:  #887733;}
+body#main .submen a:active,
+body#main .submen a:hover {color: #001133;
+	  	  	  background-color: #887733;}
+
+
+/* bio */
+
+body#bio dd {font-size: smaller;
+	    margin-bottom: 10px;}
+
+/* blosxom */
+
+body#blog div#blogfoot {text-align: center;}
+
+body#blog span.blostz {font-size: smaller;}
+
+body#blog h2 {font-size: large;
+	     font-weight: normal;
+	     text-align: center;
+	     margin: 20px 0px 20px 0px;
+	     padding: 0px;
+	     text-shadow: 0.2em 0.2em 0.2em #9999bb;}
+body#blog h3 {font-size: large;
+	     margin: 10px 0px 10px 0px;
+	     padding: 0px;}
+
+body#blog h3 a {color: black;
+	       text-decoration: none;}
+
+body#blog blockquote {border-left: 2px double #004477;
+	  	     margin-left: 15px;
+	  	     padding-left: 15px;}
+
+body#blog p.crumbs {font-size: larger;
+	  	   padding-top: 40px;
+	  	   padding-bottom: 50px;}
+
+body#blog p.blospostinfo {margin-bottom: 50px;
+	  		 text-align: right;
+			 font-size: smaller;}
+
+/* gkc */
+
+body#gkc img {text-align: center;}
+
+body#gkc p.quote {padding-left: 5em;
+	 	 padding-right: 5em;
+		 font-size: smaller;}
+
+/* err */
+
+body#err p.error {text-align: center;
+	    	 padding-top: 20px;}
+
+/* sffms */
+
+body#sffms {
+      background-color: #e0e0c0;
+      font-family: Georgia, Times, "Times New Roman", serif;
+      background-image: url(/css/ant-bedelev-green.jpg);
+      color: #220000;}
+
+body#sffms 	a 		{ color: #2F2F0E; text-decoration: underline; }
+body#sffms 	a:link		{ color: #2F2F0E; text-decoration: underline; }
+body#sffms 	a:visited	{ color: #5F5F3E; text-decoration: underline; }
+body#sffms 	a:active	{ color: #777755;  }
+body#sffms 	a:hover		{ color: #777755;  }
+
+body#sffms h2, body#sffms h3, body#sffms h4, 
+body#sffms h5, body#sffms h6 {
+	        font-family: Georgia, Times, "Times New Roman", serif;
+		color: #555533;}
+
+body#sffms h2 {text-transform: lowercase;}
+
+body#sffms div.nav a,
+body#sffms div.nav a:link, 
+body#sffms div.nav a:visited,
+body#sffms div.nav a:active,
+body#sffms div.nav a:hover {color: #444422;
+	   	   	   text-decoration: none;}
+
+body#sffms div.nav a:active,
+body#sffms div.nav a:hover {color: #ddddbb;
+	   	   	   background-color: #333311;
+	   	   	   text-decoration: none;}
+
+body#sffms div.nav p.submen a,
+body#sffms div.nav p.submen a:link, 
+body#sffms div.nav p.submen a:visited,
+body#sffms div.nav p.submen a:active,
+body#sffms div.nav p.submen a:hover, 
+body#sffms div#fikinav a,
+body#sffms div#fikinav a:link, 
+body#sffms div#fikinav a:visited,
+body#sffms div#fikinav a:active,
+body#sffms div#fikinav a:hover {text-decoration: none;
+	  	  color: #777755;
+		  padding-left: 3px;
+		  padding-right: 3px;
+		  margin-top: 0px;}
+
+body#sffms div.nav p.submen a:active,
+body#sffms div.nav p.submen a:hover,
+body#sffms div#fikinav a:active,
+body#sffms div#fikinav a:hover {color: #ddddbb;
+	  	  background-color: #555533;}
+
+
+body#sffms div#fikinav {float: right;
+	margin: 120px 15px 20px 25px;
+	padding-top: 20px;
+	font-size: medium;
+	text-align: right;}
+
+body#sffms #fikinav ul {list-style-type: none;        
+     	margin: 0;
+	padding: 0;}
+
+
+body#sffms p.timestamp {color: #664;}
+

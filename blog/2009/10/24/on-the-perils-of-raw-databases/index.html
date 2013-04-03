@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+      On the Perils of Raw Databases &ndash;
+    
+    m. c. de marco
+  </title>
+
+  <meta name="author" content="m. c. de marco" />
+  <meta name="description" content="To invent new life and new civilizations..." />
+  <meta name="viewport" content="width=device-width" />
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link id="mobileStyle" media="only screen and (max-device-width: 480px)" href="/css/iphone.css" type="text/css" rel="stylesheet" />
+  <!--link media="only screen and (device-width: 768px)" href="/css/iphone.css" type="text/css" rel="stylesheet" /-->
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+</head>
+
+<body>
+
+<section class="content">
+  <h1>m. c. de marco:
+      
+      <span class="description">To invent new life and new civilizations...</span>
+      
+  </h1>
+      
+    <h2>
+    <a href="/blog/2009/10/24/on-the-perils-of-raw-databases">On the Perils of Raw Databases</a>
+  </h2>
+
+  <section class="byline">
+    October 24, 2009
+  </section>
+
+  <p>This isn&rsquo;t really writing related; it&rsquo;s another adventure with my new Mac.  I use a very old genealogy program called <a href="http://lifelines.sourceforge.net/">LifeLines</a>, and last week I finally got around to updating it with <a href="http://www.macports.org/">MacPorts</a> for Snow Leopard.  But when I went to open my ancestor database, it complained: &ldquo;keyfile is wrong alignment.&rdquo;</p>
+
+<p>What you will get if you google that phrase is translations of it into all the languages LifeLines has been translated into, and nothing else.  Apparently no one has experienced the error before.<!--break-->  The keyfile itself is part of the raw binary disk-based database that LifeLines uses to store gedcom data, which I had copied onto my backup drive and new mac back when the old mac &ldquo;died.&rdquo;  (Death scare quotes will be explained later.)</p>
+
+<p>While it&rsquo;s a thing of beauty and a joy to behold for the average user, Snow Leopard is known to have many geek-level issues.  At first I thought my mysterious error message was one of them.  I rebuilt the ncurses port, tried the variant, downloaded some binaries, and even built a 64-bit LifeLines with fink instead of MacPorts (since I used to use fink).  I eventually booted my bootable Leopard backup (made with <a href="http://www.shirt-pocket.com/SuperDuper/SuperDuperDescription.html">SuperDuper!</a>) off my firewire drive to see if my old MacPorts build of LifeLines would open the database.  In all cases I got &ldquo;keyfile is wrong alignment&rdquo;.</p>
+
+<p>I was running out of options, so I unzipped the fink package to extract the source code and read it.  I won&rsquo;t torture you with the code (mainly because I deleted it as soon as my problem was solved), but cryptic comments therein led me to believe that I was having a <a href="http://developer.apple.com/legacy/mac/library/documentation/MacOSX/Conceptual/universal_binary/universal_binary_byte_swap/universal_binary_swap.html#//apple_ref/doc/uid/TP40002217-CH243-TPXREF101">byte-order issue</a>, and indeed the PowerPC PowerBook that &ldquo;died&rdquo; was big endian, while my sleek new MacBook Pro is little endian.</p>
+
+<p>So I booted up the &ldquo;dead&rdquo; mac.  I refer to it as dead, but it&rsquo;s actually only pretending to be dead.  The hard drive reported its own demise back in July, but it will still spin up and boot the mac, given enough time.  I booted it and ran LifeLines there.  Then I exported the database to gedcom format, saved it on my external drive, and imported it into my macports LifeLines on the new mac successfully.</p>
+
+<p>If my hard drive were really dead, I could have booted from another bootable backup I have on my external drive, or perhaps even installed Rosetta and run an old non-Universal LifeLines binary to do the export.  I would recommend the latter to anyone reading this blog post who actually has this problem.  The <a href="http://sourceforge.net/projects/lifelines/files/lifelines%20beta%20versions/3.0.28p1/LifeLinesOSX.dmg/download">OSX binary</a> that appeared on the main sourceforge page for me was a non-universal binary.</p>
+
+<p>Then export to gedcom.</p>
+
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <section class="copy">
+      <a href="https://twitter.com/mcdemarco" target="_blank">
+        <img src="http://www.gravatar.com/avatar/412cc45595f0437c7fe69ade81e21a4a.png?s=142" height="50" width="50" />
+      </a>
+
+      <p>
+	<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="mcdemarco">Tweet</a>
+        <a href="http://twitter.com/mcdemarco" class="twitter-follow-button" data-show-count="false">Follow @mcdemarco</a>
+      </p>
+
+      <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    </section>
+  </section>
+
+
+</section>
+
+  <section class="sidebar">
+    <a href="/">
+      <img src="/images/avatar.jpg" height="75" width="75" class="avatar" />
+    </a>
+
+    <section class="name">
+      <a href="/">
+        <span id="lname">m.c.d.</span>
+      </a>
+    </section>
+
+    <section class="sections">
+      <ul>
+	<li><a href="/bio/">bio</a>
+	
+	</li>
+	<li><a href="/blog/">blog</a>
+	
+	<ul>
+	  <li><a href="/blog/archive.html">archives</a></li>
+	</ul>
+	
+	</li>
+	<li><a href="/conlang/" title="The Accidental Conlanger">conlang</a>
+	
+	</li>
+	<li><a href="/gkc/" title="G. K. Chesterton">gkc</a>
+	
+	</li>
+      </ul>
+    </section>
+
+    <section class="meta">
+    </section>     
+    <section class="meta">
+      <a href="https://github.com/mcdemarco" title="GitHub"><img src="/images/github.png" /></a>
+      <a href="https://twitter.com/mcdemarco" title="Twitter"><img src="/images/twitter.png" /></a>
+      <a href="http://gplus.to/mcdemarco" title="Google+"><img src="/images/gplus.png" /></a>
+    </section>
+    <section class="meta">
+      <a href="http://springpad.com/#!/mcdemarco/" title="Pinterest"><img src="/images/pinterest.png" /></a>
+      <a href="https://mcdemarco.tent.is/" title="Tent"><img src="/images/tent.png" /></a>
+      <a href="http://plagueblog.blogspot.com/" title="Blogger"><img src="/images/blogger.png" /></a>
+    </section>     
+    <section class="meta">
+      <a href="http://pinterest.com/mcdemarco/" title="Springpad"><img src="/images/springpad.png" /></a>
+      <a href="http://quickagram.com/u/mcdemarco" title="Instagram"><img src="/images/instagram.png" /></a>
+      <a href="http://mcdemarco.livejournal.com" title="LiveJournal"><img src="/images/livejournal.png" /></a>
+    </section>     
+    <section class="meta">
+      <a href="/atom.xml" title="RSS"><img src="/images/rss.png" /></a>
+    </section>
+
+    <section class="switch">
+      <a onclick="document.getElementById('iPhoneStyle').disabled = true;">View full site</a>
+    </section>     
+
+
+  </section>
+
+</body>
+
+</html>
