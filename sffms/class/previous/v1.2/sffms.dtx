@@ -1,0 +1,836 @@
+% \iffalse meta-comment
+%
+% Copyright 2002 M. C. DeMarco
+% Also copyright any individual authors listed in this file.
+%
+% This file provides the latex class sffms.cls and supporting files.
+% ------------------------------------------------------------------
+% 
+% It may be distributed and/or modified under the conditions of the
+% LaTeX Project Public License, either version 1.2 of this license or
+% (at your option) any later version.
+% The latest version of this license is in
+%    http://www.latex-project.org/lppl.txt
+% and version 1.2 or later is part of all distributions of LaTeX 
+% version 1999/12/01 or later.
+%
+% *** To produce the package documentation, latex this file. ***
+%
+% \fi
+% 
+% \iffalse
+%<*driver>
+\documentclass{ltxdoc}
+ \OnlyDescription % Comment out to print the code as well
+\begin{document}
+ \title{The \textsf{sffms} package}
+ \author{M. C. DeMarco\\
+         \texttt{mcd@sdf.lonestar.org}}
+ \date{2002/03/17}
+ \maketitle
+ \DocInput{sffms.dtx}
+\end{document}
+%</driver>
+% \section{Identification}
+%    \begin{macrocode}
+%<sffms>\NeedsTeXFormat{LaTeX2e}
+%<sffms>\ProvidesClass{sffms}[2002/03/17 v1.2
+%<smart>\ProvidesPackage{sffsmart}[2001/09/10 v1.0
+%<dumb>\ProvidesPackage{sffdumb}[2001/09/23 v1.1
+%<sffms> The SF/F manuscript class]
+%<smart|dumb> Quotation mark utility for sffms.cls]
+%    \end{macrocode}
+% \fi
+%
+% \changes{v0.1}{2001/08/29}{Created sffms.cls from sfms.cls by Kevin
+%    Russell} 
+% \changes{v0.1}{2001/08/29}{Passed all options to report.cls, making
+%    the non-submission format mostly transparent.  The only additions
+%    were real typeset scene breaks (a blank line) and real book
+%    headers (author and title on facing pages) for the twoside option.}  
+% \changes{v0.1}{2001/08/29}{Changed the commands slightly, gave most
+%    of them default values, and added commands for user configuration
+%    of the scene separator and ``The End''.}  
+% \changes{v0.1}{2001/08/29}{Reredefined chapter so that chapter*
+%    works in submissions, changed fancyheader calls to non-deprecated
+%    versions.}  
+% \changes{v0.1}{2001/08/29}{Added rudimentary documentation to the
+%    class file.}  
+% \changes{v0.2}{2001/09/02}{Added the magic command from ulem.sty to
+%    change boldface (\bf) to squiggly lines in submission format}  
+% \changes{v0.2}{2001/09/02}{Added quote smartening option (using
+%    quote.sty), novel option and notitle option}  
+% \changes{v0.2}{2001/09/02}{Fixed the a4paper option, I hope} 
+% \changes{v0.2}{2001/09/02}{Added the ifsubmission command to mask
+%    fancy markup (and text)}  
+% \changes{v0.2}{2001/09/02}{Added the synopsis environment for book
+%    synopses}  
+% \changes{v0.2}{2001/09/02}{Changed spacing to 1.83 and neatened the
+%    code} 
+% \changes{v0.3}{2001/09/04}{Added quote dumbing option} 
+% \changes{v0.3}{2001/09/04}{Ported sffms.cls and support files to
+%    dtx file, added more documentation}  
+% \changes{v0.3}{2001/09/04}{Switched from doublespace package to
+%    setspace}  
+% \changes{v1.0}{2001/09/10}{Improved documentation}  
+% \changes{v1.0}{2001/09/10}{Reworked submission title page spacing and
+%    added the disposable command}  
+% \changes{v1.1}{2001/09/23}{Cut back on non-submission formatting}  
+% \changes{v1.1}{2001/09/23}{Fixed spacing for ``The End''}  
+% \changes{v1.1}{2001/09/23}{Quote spacing fixed and code for sffdumb
+%    improved, thanks to Donald Arsenault and Martin Vaeth}   
+% \changes{v1.2}{2002/03/17}{Added documentation}
+% \changes{v1.2}{2002/03/17}{Code cleanup, thanks to Daniel Richard G.}
+% \changes{v1.2}{2002/03/17}{Added submit, nosubmit and msheading
+%    commands}
+%
+%
+% \newcommand{\DescribeOption}[1]{\DescribeEnv{[#1]}}
+%
+% \begin{abstract}\noindent
+% Documentation for |sffms|, a \LaTeX\ class for typesetting
+% manuscripts in the standard format used in science-fiction/fantasy
+% publishing. 
+% \end{abstract}
+%
+% \noindent
+% This \LaTeX\ class was modified from |sfms.cls|, copyright Kevin Russell,
+% 2000, under the terms of the \LaTeX\ Project Public License.
+% The file |sffms.dtx| may be redistributed and/or modified under the
+% terms of the \LaTeX\ Project Public License, distributed from CTAN 
+% archives in the directory macros/latex/base/lppl.txt---either
+% version 1.2 of the License, or any later version.
+%
+% \section{About {\tt sffms}}
+%
+%  The |sffms| package produces a double-spaced manuscript in a 12-pt 
+%  monospaced font with 1-inch margins and running headers of the form 
+%  |Author/TITLE/n|, where |n| is the current page number.  
+%  On the title page, the author's name and address appear in the upper 
+%  left corner, the word count and an optional note that the manuscript 
+%  is disposable in the upper right, and the title and author in the 
+%  center of the page. For a short story, the text begins four lines 
+%  below, and for a novel, on the next page.  
+%
+%  Other features of |sffms| include an optional single-spaced synopsis,
+%  automatic conversion of italics to underlined text, and boldface to 
+%  wavy-underlined text.  Simply by omitting the |submission| option,
+%  the same document may be typeset in a more appealing, professional 
+%  way which can be easily customized without affecting the appearance 
+%  of the version for |submission|.
+% 
+%  The \LaTeX\ document preparation system is free and available for 
+%  all operating systems. This package and all supporting packages 
+%  are available from \textsc{ctan}.  For the most recent version of 
+%  |sffms|, copies of the required packages, sample input and output 
+%  files, known issues, and more information about manuscript format,
+%  see |http://mcd.freeshell.org/|.
+%  If, after reading through the documentation,  you have questions or 
+%  suggestions, feel free to email the author at |mcd@sdf.lonestar.org|.
+%
+% \section{Getting Started}
+%
+%  If you are familiar with \LaTeX, you may wish to skip this section.
+%
+% \subsection{Installing {\tt sffms}}
+%
+%    To install the |sffms| document class, run \LaTeX\ on |sffms.ins|.  
+%    If your version of \LaTeX\ is not drag-and-drop, type
+%\begin{verbatim}
+%latex sffms.ins
+%\end{verbatim}
+%    at the command line.  \LaTeX\ will then create the style files
+%    |sffms.cls|, |sffsmart.sty| and |sffdumb.sty|.   At this point, 
+%    you may either put the new files in the appropriate directory 
+%    of your \LaTeX\ distribution, or leave them in the directory
+%    where your source files (stories) will be.
+%
+%    The |sffms| class requires several style files for submission format.
+%    Try running a submission through \LaTeX\ (see below).  If \LaTeX\
+%    asks for any of the following files, you will need to download
+%    them and place them in the directory where you put |sffms.cls|.  
+%    The files are:
+%\begin{verbatim}
+%fancyhdr.sty
+%geometry.sty
+%setspace.sty
+%ulem.sty 
+%\end{verbatim}
+%    The |geometry| package is obtained from |geometry.dtx| and
+%    |geometry.ins| by the same steps used to produce |sffms.cls|.  
+%    All of the files above are available through {\sc ctan}.
+%
+%
+% \subsection{Using {\tt sffms}}
+%
+%  All you need to use |sffms| is a plain text file with the following
+%  contents:
+%\begin{verbatim}
+%\documentclass[submission]{sffms}
+%\author{Lois McMaster Bujold}
+%\title{Komarr}
+%\begin{document}
+%Your story goes here.
+%\end{document}
+%\end{verbatim}
+%
+%    Call this source file |filename.tex| and latex it by typing
+%\begin{verbatim}
+%latex filename.tex
+%\end{verbatim}
+%    Depending on your \LaTeX\ installation, this command may produce
+%    an output file in |dvi|, |ps|, or |pdf| format.  If you prefer |pdf|
+%    output, you may find it more convenient to use |pdflatex|.
+%
+% 
+% \subsection{\LaTeX\ Basics}
+%
+%    A \LaTeX\ file is essentially a text file.  If you take a plain
+%    text version of your story and insert the lines mentioned in the
+%    previous section (|\documentclass|, {\em etc.}), it will be almost
+%    ready for \LaTeX.  Just keep the following requirements in mind:
+%
+%    Paragraphs should be separated by a blank line.
+%
+%    Use |-| for a hyphen, |--| for an en-dash (for ranges, like
+%    18--65), and |---| for an em-dash---the one used in sentence
+%    punctuation. 
+%
+%    Normal \LaTeX\ ``smart
+%    quotes'' are produced using a pair of accents (usually found 
+%    under the $\sim$ key) and a pair of
+%    apostrophes, like so:  |``smart quotes''|.  A good \LaTeX\ editor
+%    ({\it e.g.}, emacs) will insert smart quotes automatically when
+%    you strike the dumb quote (|"|) key.  You may also use dumb
+%    quotes with |sffms|---see the section on handling quotation
+%    marks, below. 
+%
+%    Certain characters are reserved by \LaTeX\ for special purposes.
+%    They are: 
+%\begin{verbatim}
+%# $ % & ~ _ ^ \ { }
+%\end{verbatim}
+%    If you want to use them, you must put a backslash in front of
+%    them (|\$|, |\%|, {\em etc.}), except for |\\|, |\~|, and |\^|,
+%    which have their own special meanings.  (The first is used to 
+%    force a line break and the latter two create accent marks.)  
+%    The command |$\backslash$| produces the backslash itself and 
+%    |$\sim$| the tilde alone.
+%
+%\subsection{\LaTeX\ Tricks}
+%
+%    Depending on your \LaTeX\ installation, you may be able to produce some 
+%    common accent marks thus:
+%\begin{center}
+% \'{a}~~|\'{a}| \hfill \`{e}~~|\`{e}| \hfill  \"{\i}~~|\"{\i}| \hfill
+%    \~{o}~~|\~{o}| \hfill \^{u}~~|\^{u}| \hfill \c{c}~~|\c{c}|
+%\end{center}
+%If you want something a little more alien, try some of the following:
+%\begin{verbatim}
+%\.{h}  \^{m}  \u{n}  \v{q}  \H{r}  \d{v}  \b{x}  
+%\i  \j  \ae  \OE  \l  \o  \ss  \S  ?`  !`  \pounds
+%\end{verbatim}
+%    Many more symbols are available in \LaTeX\ math mode, but keep in 
+%    mind that such things are likely to annoy your editor.
+%
+%    If you want finer control of your text, you can use the
+%    |\noindent| command before a paragraph to keep it from
+%    being indented.  You can use the |\\| symbol to make a line 
+%    break without starting a new paragraph.  (These two will have the 
+%    effect in |submission| mode, but not in normal \LaTeX.)
+%
+%    Two basic \LaTeX\ environments that may be of use are the
+%    |verse| and |quotation| environments:
+%\begin{verbatim}
+%\begin{verse}
+%First line of your verse,\\
+%Second line\\
+%Third line
+%
+%Beginning of a new stanza\\
+%Etc.
+%\end{verse}
+%\end{verbatim}
+%
+%\begin{verbatim}
+%\begin{quotation}
+%Put normal paragraphs of text here, separated by blank lines.
+%They will be indented from the margins, and each paragraph will
+%be indented.
+%\end{quotation}
+%\end{verbatim}
+%    You may want to single-space long quotes or verse.  See the section
+%    on environments for details.  Underlining and boldface are also 
+%    discussed in a later section.
+%
+%
+% \section{Declaration of Options}
+%
+%    The |sffms| class has several options which change the appearance
+%    of the output.  To use an option, enclose it in brackets in the
+%    documentclass declaration in the first line of your source
+%    file, {\it e.g.}, 
+%\begin{verbatim}
+%\documentclass[submission,novel]{sffms}
+%\end{verbatim}
+%
+% \subsection{The Submission Option}
+%
+%\DescribeOption{submission}
+%    Use the |submission| option to typeset the document in manuscript
+%    format.  Any other |sffms| options may be used with the submission
+%    option, though |submission| plus |notitle| will make the output
+%    format nonstandard.  (Editors want titles.)
+%
+%    If the |submission| option is {\em not\/} used, \LaTeX\ will
+%    typeset the manuscript in its usual, professional way.
+%
+% \subsection{The Novel Option}
+%
+%\DescribeOption{novel}
+%    There isn't much difference between a novel and a short story in
+%    sf/f manuscripts.  The short story begins on the title page,
+%    while the novel begins on a fresh page.  A novel may also have a
+%    synopsis. 
+%
+%    Use the |novel| option for a novel.  If the |novel| option is
+%    {\em not\/} used, the text will be typeset as a short story.
+%
+% \subsection{Options for Handling Quotation Marks}
+%
+%    The |sffms| class provides two options for handling ``legacy'' 
+%    quotes, be they dumb quotes in a plain text file you want 
+%    smartened up for a good copy of your latest novel, or \LaTeX\ 
+%    quotes you want to dumb down to give your manuscript that genuine
+%    Courier 12-point typewriter feel. 
+%
+%    Please note that neither of these options will handle
+%    non-{\sc ascii} ``smart'' quotation marks in your source file.
+%    (Save the file as plain text to eliminate them.)  Also, the 
+%    changes appear in the output only---the source file is never
+%    altered. 
+%
+%\DescribeOption{smart}
+%    The |smart| option turns pairs of normal {\sc ascii}
+%    quotation marks (|"|dumb quotes|"|) into \LaTeX\ curly quotation 
+%    marks (``smart quotes''), so that the output file
+%    will show smart quotes.  This option also handles quotations
+%    continued between paragraphs correctly.
+%
+%\DescribeOption{dumb}
+%    The |dumb| option surpresses \LaTeX\ smart quotes, 
+%    producing dumb, typewriter-style quotes in the output file.
+%    The |dumb| option is useful only within the |submission|
+%    format---proper fonts do not include the Courier dumb quotation mark
+%    (|"|) at all, so they substitute a curly close-quote ('') instead.
+%    (That looks ''dumber than dumb.'')
+%   
+%    These options are not particularly robust, so they may cause more
+%    problems than they solve.  {\em Caveat emptor}.
+%    They can handle mixed quotation mark styles (\LaTeX\ smart with
+%    {\sc ascii} dumb) if the two sorts of marks are balanced---for
+%    example, if some chapters use {\sc ascii} quotes and others
+%    \LaTeX\ ones, or even if some sentences are smart and others
+%    dumb.
+%
+%    If these options do not work for you, you can always
+%    change the quotation marks in your source file with a good text
+%    editor.  (Did I mention emacs?) 
+%
+%
+% \subsection{Other Options}
+%
+%\DescribeOption{notitle}
+%    When the |submission| option is {\em not\/} chosen, the |sffms|
+%    class uses a default the title page.  The |notitle| option will
+%    remove it, allowing the user to specify his own \LaTeX\ layout; 
+%    |notitle| is also useful for saving paper.
+%
+%    Because |sffms| is based on the standard \LaTeX\ report class, any
+%    \LaTeX\ report class options may be used for non-submissions,
+%    including font size
+%    options (|10pt|, |12pt|, {\em etc.}), paper size and other useful
+%    typesetting options (|twoside|, |twocolumn|, {\em etc.}).  Using
+%    report-class options together with the |submission| option  may
+%    generate unexpected results.  
+%
+%    If you experience problems with page sizes, try declaring the
+%    page size options (|letterpaper|, |a4paper|, {\em etc.}) explicitly.
+%
+%
+%  \section{Environments}
+%
+%\DescribeEnv{synopsis}
+%    The only new environment in |sffms| is |synopsis|, intended for use
+%    with novels.  In |submission| mode, the synopsis is typeset
+%    single-spaced with roman numerals for page numbers to distinguish
+%    it from the rest of the novel.  The synopsis environment can
+%    also be used without the |novel| option.
+%\begin{verbatim}
+%\begin{synopsis}
+%Summarize your novel here.
+%\end{synopsis}
+%\end{verbatim}
+%    The synopsis can be placed anywhere after the |\begin{document}|
+%    command.
+%
+%\DescribeEnv{singlespace}
+%    The |singlespace| and |doublespace| environments are inherited
+%    from the |setspace| package.  To single-space a poem, for example,
+%    you could do the following:
+%\begin{verbatim}
+%\begin{singlespace}
+%\begin{verse}
+%Oh, what a bore,\\
+%To be a Vor.
+%\end{verse}
+%\end{singlespace}
+%\end{verbatim}
+%    You should not need the |doublespace| environment, but it works the 
+%    same way.  
+%
+%
+%  \section{Commands}
+%
+%  \subsection{Title}
+%
+%
+%\DescribeMacro\title
+%    Every story should have a title.  You must specify a title, using
+%    the \LaTeX\ |title| command thus:
+%\begin{verbatim}
+%\title{Barrayar}
+%\end{verbatim}
+%
+%\DescribeMacro\runningtitle
+%    In |submission| format, a short form of
+%    the title is put in a page header at the top corner of each page.
+%    If your title is long, you can specify the short form thus:
+%\begin{verbatim}
+%\runningtitle{Barr}
+%\end{verbatim}
+%    If you fail to provide a |runningtitle|, your |title| will be
+%    used instead, no matter how long it is.
+%    
+%   \subsection{Author}
+%
+%\DescribeMacro\author
+%	Every story must also have an author.  The name you put in the
+%       \LaTeX\ |author| command is used in the bylines on the title
+%       page and synopsis page.  
+%       If you use a pseudonym, you may want to put it here.
+%\begin{verbatim}
+%\author{Lois McMaster Bujold}
+%\end{verbatim}
+%
+%\DescribeMacro\authorname
+%	A separate command, |authorname|, is provided for use with
+%       your mailing address.  It would be wise to put your real name
+%       here.  If you omit the |authorname| command, the value of
+%       |author| will be used with your mailing address.
+%\begin{verbatim}
+%\authorname{Lois Bujold}
+%\end{verbatim}
+%
+%\DescribeMacro\surname
+%	Like |runningtitle|, |surname| is used in page headers.  Whose
+%	surname goes in |surname| is up to you.  
+%\begin{verbatim}
+%\surname{Bujold}
+%\end{verbatim}
+%       If you omit |surname|, the value of |author| will be used.
+%
+%    \subsection{Other Information}
+%
+%\DescribeMacro\address
+%	Your mailing address for the title page is specified with
+%	|address|.  Separate lines with the \LaTeX\ linebreak symbol
+%	|\\|. 
+%\begin{verbatim}
+%\address{One Vor Way\\
+%         Vor. Surleau\\
+%         VKD 28945}
+%\end{verbatim}
+%
+%\DescribeMacro\wordcount
+%	Your word count should also be included on the title page.
+%       No actual errors will result if you omit it, but the default
+%       is just a placeholder.
+%\begin{verbatim}
+%\wordcount{85,000}
+%\end{verbatim}
+%	One easy way to count words is to run the file through \LaTeX\
+%	using |submission| format and |letterpaper| (if you're not
+%	already using {\sc U.S.} paper) and count the pages.  There
+%	will be approximately 290 words per page (by sf/f 
+%       standards---see the website for details).  Multiply.
+%
+%\DescribeMacro\disposable
+%       The |disposable| command causes the words ``Disposable Copy''
+%       to be printed under the word count on the title page of
+%       submissions. 
+%
+%  \subsection{Sectioning Commands}
+%
+%\DescribeMacro\newscene
+%	For short stories, the only breaks should be scene breaks.
+%	Place the |newscene| command wherever you want a scene break.
+%\begin{verbatim}
+%...the last few words of the previous scene.
+%
+%\newscene
+%
+%Time to start a new scene...
+%\end{verbatim}
+%	This command inserts the proper scene break character, a
+%	centered hash mark (|#|), in
+%	submissions, and a blank line in non-submissions.
+%
+%\DescribeMacro\sceneseparator
+%	If you would prefer to use a different scene separator, such
+%       as |*****|, the |sceneseparator| command will change it.
+%\begin{verbatim}
+%\sceneseparator{$\star\star\star\star\star$}
+%\end{verbatim}
+%       Beware of \LaTeX\ special characters when using this command. 
+%
+%\DescribeMacro\chapter
+%	For a novel, you can use both chapters and scenebreaks.  The
+%	\LaTeX\ chapter commands have been redefined in |sffms| to 
+%	fit the |submission| format.  Begin a new chapter thus: 
+%\begin{verbatim}
+%\chapter{Miles High}
+%\end{verbatim}
+%\DescribeMacro{\chapter*}
+%	The \LaTeX\ |\chapter*| command also works in submissions.
+%	It creates an unnumbered chapter, such as a preface or
+%	appendix. 
+%\begin{verbatim}
+%\chapter*{Preface}
+%\end{verbatim}
+%
+%\DescribeMacro\thirty
+%	Last, but not least, comes the end.  To change the default
+%	end-of-story symbol, five hash marks (|# # # # #|), use the
+%	|thirty| command. 
+%\begin{verbatim}
+%\thirty{The End}
+%\end{verbatim}
+%
+% \subsection{Underlining and Boldface}
+%
+%\DescribeMacro\bfseries
+%       The |\bfseries| font specification will produce boldface in
+%       non-submissions and wavy underlines in |submission| mode.  You
+%       must use curly braces to delimit the boldfaced text,
+%       thus: 
+%\begin{verbatim}
+%I can't believe that {\bfseries you}, of all people...
+%\end{verbatim}
+%
+%\DescribeMacro\em
+%       The |\em| command, for emphasis, is used the same way.
+%\begin{verbatim}
+%I can't believe that {\em you}, of all people...
+%\end{verbatim}
+%       It produces underlining in |submission| mode and italics 
+%       otherwise.  Use |\em| for single words only.
+%\DescribeMacro\emph
+%       To underline (italicize) anything from a word to a paragraph,
+%       use the |\emph| command.  With |\emph|, the curly braces come
+%       after the command.  
+%\begin{verbatim}
+%\emph{I can't believe that they, of all people...}
+%\end{verbatim}
+%\DescribeMacro\thought
+%       The |\thought| command works exactly like |\emph|, but may
+%       be useful for distinguishing between normal italics and
+%       italicized thoughts within the source file. To italicize more than
+%       one paragraph, use one |\emph| or |\thought| per paragraph.
+%
+%
+%
+% \subsection{Other Commands}
+%
+%
+%\DescribeMacro\ifsubmission
+%	The |ifsubmission| command is used to hide latex code or text.
+%	The first argument is evaluated for submissions, and ignored
+%	otherwise, and vice versa for the second.  It can be used in
+%	various ways.
+%\begin{verbatim}
+%\ifsubmission{}{Some comments to myself...}
+%\end{verbatim}
+%\begin{verbatim}
+%\ifsubmission{\thirty{-30-}}{
+%  \setlength{\textheight}{8.5in}
+%  \setlength{\topmargin}{0in}
+%}
+%\end{verbatim}
+%
+%\DescribeMacro\submit
+%        Two commands are provided as a convenient shorthand for the 
+%        |\ifsubmission| command.  They take one argument each.  
+%        Text or commands inside a |\submit| command will be used
+%        only for submissions, 
+%\DescribeMacro\nosubmit
+%        and that in a |\nosubmit| will be used only for
+%        non-submissions.  For example, the following command is 
+%        equivalent to the first |\ifsubmission| command above.
+%\begin{verbatim}
+%\submit{Some comments to myself...}
+%\end{verbatim}
+%
+%\DescribeMacro\msheading
+%       If for some reason you wish to deviate from the standard running
+%       page headings, you can use the |\msheading| command to change
+%	them.  To remove headings entirely, use the command:
+%\begin{verbatim}
+%\msheadings{}
+%\end{verbatim}
+%       To keep just the page number, use: 
+%\begin{verbatim}
+%\msheadings{\thepage}
+%\end{verbatim}
+%       To add more space between the default heading parts, use:
+%\begin{verbatim}
+%\msheadings{\getsurname\ /\ \getrunningtitle\ /\ \thepage}
+%\end{verbatim}
+%       Reckless use of the |\msheading| command may cause \LaTeX\ 
+%       errors.
+%
+%	Any other \LaTeX\ commands may be used for non-submissions.
+%	  Using them for submissions may generate unexpected results.
+%
+%
+%  \section{Credits}
+%
+%       Many thanks to Kevin Russell for writing |sfms.cls|, which
+%       was itself inspired by code posted by Michael Grant
+%       to {\tt rec.arts.sf.composition} in July 2000.
+%
+%	The code for |sffsmart.sty| was adapted from |quote.sty| by
+%       Hunter Goatley, available from {\sc ctan}.
+%
+%	The code for |sffdumb.sty| was adapted from code posted to
+%       |comp.text.tex| by Donald Arseneau and improved by advice from
+%       the same source.
+%
+%	Manuscript-style underlining is provided by |ulem.sty| by
+%       Donald Arseneau.  Double-spacing is provided by |setspace.sty|
+%       by (at least) Geoffrey Tobin and Erica Harris.  Running
+%       headers are provided by |fancyhdr.sty| by Piet van Oostrum, and
+%       other layout by |geometry.sty| by Hideo Umeki.
+%
+%	Posts to |comp.text.tex| and |rec.arts.sf.composition|,
+%       and email from users aided in the development of |sffms|.  
+%       Any remaining errors are my own.
+%
+% \StopEventually
+%
+%    \begin{macrocode}
+%<*sffms>
+\RequirePackage{ifthen}
+
+\newboolean{forsubmission}
+\newboolean{fornovel}
+\newboolean{smarten}
+\newboolean{dumbdown}
+\newboolean{fornotitle}
+\setboolean{forsubmission}{false}
+\setboolean{fornovel}{false}
+\setboolean{smarten}{false}
+\setboolean{dumbdown}{false}
+\setboolean{fornotitle}{false}
+
+\sfcode`\" = 0
+
+\def\authornamestring{\@author}
+\def\authoraddressstring{}
+\def\surnamestring{}
+\def\runningtitlestring{}
+\def\wordcountstring{\emph{n}}
+\def\scenesepstring{\#}
+\def\thirtystring{\# \# \# \# \#}
+\def\disposablestring{}
+\def\msheadstring{\getsurname\hspace{.5ex}/\hspace{.5ex}\getrunningtitle\hspace{.5ex}/\hspace{.5ex}\thepage}
+
+\DeclareOption{submission}{%
+   \setboolean{forsubmission}{true}
+  \AtBeginDocument{
+   \ttfamily
+   \useunder{\uwave}{\bfseries}{\textbf}%ulem command for boldface
+   \renewcommand\chapter{\if@openright\clearpage\else\cleardoublepage\fi
+                        \secdef\@chapter\@schapter}
+    \def\@makechapterhead#1{\vspace*{4\baselineskip} 
+        \begin{center}\@chapapp\space\thechapter\\ #1 \end{center}
+        \vspace*{1\baselineskip}} 
+    \def\@schapter#1{%
+        \if@twocolumn\@topnewpage[\@makeschapterhead{#1}]%
+        \else\@makeschapterhead{#1}\@afterheading\fi}
+    \def\@makeschapterhead#1{\vspace*{4\baselineskip} 
+        \begin{center} #1 \end{center} \vspace*{1\baselineskip}}}}
+
+\DeclareOption{novel}{\setboolean{fornovel}{true}}
+
+\DeclareOption{smart}{%  
+   \setboolean{smarten}{true}
+   \AtBeginDocument{\begindoublequotes}
+   \AtEndDocument{\enddoublequotes}
+}                         
+
+\DeclareOption{dumb}{\setboolean{dumbdown}{true}}
+
+\DeclareOption{notitle}{\setboolean{fornotitle}{true}}
+
+\DeclareOption{a4paper,letterpaper}{
+  \PassOptionsToClass{\CurrentOption}{geometry}
+  \PassOptionsToClass{\CurrentOption}{report}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+\ProcessOptions
+
+\ifthenelse{\boolean{forsubmission}}
+{\LoadClass[12pt]{report}
+ \RequirePackage[T1]{fontenc}
+ \RequirePackage{fancyhdr}
+ \RequirePackage{ulem}
+ \RequirePackage{setspace}\setstretch{1.83}
+ \RequirePackage[hmargin=1in,bmargin=1in,tmargin=.50in,headheight=.40in,headsep=.10in,nofoot]{geometry}}
+{\LoadClass{report}
+ \RequirePackage{setspace}}
+
+\ifthenelse{\boolean{smarten}}{\RequirePackage{sffsmart}}{}
+\ifthenelse{\boolean{dumbdown}}{\RequirePackage{sffdumb}}{}
+
+
+\newcommand{\authorname}[1]{\def\authornamestring{#1}}
+\newcommand{\address}[1]{\def\authoraddressstring{#1}}
+\newcommand{\wordcount}[1]{\def\wordcountstring{#1}}
+\newcommand{\surname}[1]{\def\surnamestring{#1}}
+\newcommand{\runningtitle}[1]{\def\runningtitlestring{#1}}
+\newcommand{\sceneseparator}[1]{\def\scenesepstring{#1}}
+\newcommand{\thirty}[1]{\def\thirtystring{#1}}
+\newcommand{\disposable}{\def\disposablestring{Disposable~Copy}}
+\newcommand{\msheading}[1]{\def\msheadstring{#1}}
+
+\newcommand{\penname}[1]{}		% obsolete
+\newcommand{\getpenname}{\@author}	% obsolete
+
+\newcommand{\getrunningtitle}{%
+\ifthenelse{\equal{\runningtitlestring}{}}%
+{\MakeUppercase{\@title}}%
+{\MakeUppercase{\runningtitlestring}}}
+
+\newcommand{\getsurname}{%
+\ifthenelse{\equal{\surnamestring}{}}%
+{\@author}%
+{\surnamestring}}
+
+\ifthenelse{\boolean{forsubmission}}
+{\newcommand{\newscene}{\centerline {\scenesepstring}}
+ \newcommand{\ifsubmission}[2]{#1}}
+{\newcommand{\newscene}{\vspace{1\baselineskip}}
+ \newcommand{\ifsubmission}[2]{#2}}
+
+\newcommand{\submit}[1]{\ifsubmission{#1}{}}
+\newcommand{\nosubmit}[1]{\ifsubmission{}{#1}}
+
+\newcommand{\scenebreak}{\newscene}
+
+\newcommand{\thought}[1]{\emph{#1}}
+
+\ifthenelse{\boolean{fornovel}}
+{\newcounter{tempcounter}
+ \newenvironment{synopsis}
+  {\setcounter{tempcounter}{\value{page}}
+   \pagenumbering{roman}
+   \singlespace 
+   \chapter*{Synopsis of \MakeUppercase{\@title}}}
+  {\clearpage \setcounter{page}{\value{tempcounter}}
+   \pagenumbering{arabic} \pagestyle{fancy}}}
+{\newenvironment{synopsis}{SYNOPSIS:  }{\scenebreak}}
+
+\newcommand{\sffms@commonsubsetup}%
+{\pagestyle{fancy}
+ \fancyhead[r]{{\ttfamily \msheadstring}}
+ \fancyfoot{}
+ \renewcommand{\headrulewidth}{0pt}
+ \renewcommand{\footrulewidth}{0pt}
+ \raggedright
+ \settowidth{\parindent}{\texttt{~~~~~}}
+}
+
+
+\AtBeginDocument{
+\ifthenelse{\boolean{fornotitle}}%
+{\ifthenelse{\boolean{forsubmission}}%notitle
+ {\sffms@commonsubsetup}
+ {}
+}
+{\ifthenelse{\boolean{forsubmission}}%
+ {\sffms@commonsubsetup
+  \thispagestyle{empty}
+  \newsavebox{\sffms@fronttopsavebox}
+  \begin{lrbox}{\sffms@fronttopsavebox}
+  \begin{minipage}[t]{\textwidth}
+  \begin{singlespace}
+  \parbox[t]{.65\textwidth}{\authornamestring\\\authoraddressstring}\hfill
+  \parbox[t]{.25\textwidth}{\raggedleft\wordcountstring\ words\\[\baselineskip]
+  \disposablestring}
+  \end{singlespace}
+  \end{minipage}
+  \end{lrbox}
+  \noindent\raisebox{0pt}[0pt][0pt]{\usebox{\sffms@fronttopsavebox}}
+  \vspace{0.39\textheight}
+  \begin{center}\MakeUppercase{\@title}\\by \@author\end{center}
+  \vspace{1\baselineskip}
+ }
+ {\maketitle\setcounter{page}{2} 
+ }
+ \ifthenelse{\boolean{fornovel}}{\clearpage}{}
+}
+}
+
+\AtEndDocument{\vspace{12pt}
+		\centerline{\thirtystring}}
+%</sffms>
+%    \end{macrocode}
+%    \begin{macrocode}
+%<*smart>
+{%
+\catcode`\"=\active	
+\catcode`\@=11			
+\gdef\begindoublequotes{%
+    \global\catcode`\"=\active
+    \global\chardef\dq=`\"
+    \global\let\dblqu@te=L
+    }	
+\gdef"{\ifinner\else\ifvmode\let\dblqu@te=L\fi\fi
+	\if L\dblqu@te``\global\let\dblqu@te=R%
+	\else
+	   \let\xxx=\spacefactor	
+	   ''\global\let\dblqu@te=L%
+	   \spacefactor\xxx	
+	\fi		
+	}		
+}			
+
+\gdef\enddoublequotes{\catcode`\"=12}
+%</smart>
+%<*dumb>
+\def\dumbquote{\afterassignment"\let\next= }
+\sfcode`\" = 0
+\def\rquote{'}
+\def\lquote{`}
+\catcode`'=\active \def'{\actrq}
+\catcode``=\active \def`{\actlq}
+\def\rqtest{\ifx\next'\let\next=\dumbquote\else\let\next=\rquote\fi\next}
+\def\lqtest{\ifx\next`\let\next=\dumbquote\else\let\next=\lquote\fi\next}
+\def\actrq{\futurelet\next\rqtest}
+\def\actlq{\futurelet\next\lqtest}
+%</dumb>
+%    \end{macrocode}
+%
+% \Finale
+\endinput
+

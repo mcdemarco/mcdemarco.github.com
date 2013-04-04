@@ -242,3 +242,23 @@ a {
     font-weight: bold; }
   .content .talk-design .color .white {
     color: #fff; }
+
+div.smallbook {
+    display: inline-block;
+    padding: 10px;
+    font-size: smaller;
+    text-align: center; }
+p.noteboardlink {
+    margin-top:0;
+    margin-bottom:0; }
+p.noteboardlink + p {
+    margin-top:1.2em }
+p.noteboardlink + p.noteboardlink {
+    margin-top:0;
+    margin-bottom:0; }
+p.timestamp {
+    color: #666;
+    font-size: smaller;
+    padding-top: 20px; }
+
+.alert {color: #991100;}

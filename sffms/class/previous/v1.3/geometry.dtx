@@ -1,0 +1,1973 @@
+% \iffalse meta-comment
+%% File: geometry.dtx Copyright (C) 1996-2000 Hideo Umeki
+%%                              (hideo.umeki@toshiba.co.jp)
+%%
+%% This package may be distributed under the terms of the LaTeX
+%% Project Public License, as described in lppl.txt in the base
+%% LaTeX distribution, either version 1.2 or (at your option)
+%% any later version.
+%%
+%
+%<package>\NeedsTeXFormat{LaTeX2e}
+%<package>\ProvidesPackage{geometry}[2000/06/28 v2.3 Page Geometry]
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage[hdivide={1.7in,*,2cm}, vmargin=.5in, nohead]{geometry}
+\begin{document}
+ \GetFileInfo{geometry.sty}
+ \title{The \textsf{geometry} package}
+ \author{Hideo Umeki\\
+         \texttt{hideo.umeki@toshiba.co.jp}}
+ \date{\filedate ~(\fileversion)}
+ \maketitle
+ %\OnlyDescription% Comment out to print Section "The Code" as well.
+ \DocInput{geometry.dtx}
+\end{document}
+%</driver>
+% \fi
+% \CheckSum{1319}
+%
+% \changes{v1.00}{1996/05/31}{major changes by the `keyval' interface}
+% \changes{v1.01}{1996/06/03}{bugs fixed for paper setting and option %
+%                             processing}
+% \changes{v1.01}{1996/06/03}{geometry.cfg file inclusion}
+% \changes{v1.01}{1996/06/03}{dvips option added}
+% \changes{v1.02}{1996/06/07}{definition for reset option changed}
+% \changes{v1.02}{1996/06/07}{instructions for reset and dvips options
+%                             revised}
+% \changes{v1.03}{1996/06/25}{document refined}
+% \changes{v1.03}{1996/07/17}{compatible with calc package}
+% \changes{v1.04}{1996/08/05}{bug fixed that papersize= had no effect %
+%       when papertype was given in geometry.cfg or as a package option}
+% \changes{v1.05}{1997/02/17}{definition for dvips option changed}
+% \changes{v1.06}{1997/04/16}{reversemarginpar supported}
+% \changes{v1.07}{1997/07/05}{dvips modified, pdftex supported, %
+%    \texttt{a0paper} and \texttt{b0paper} added, and document refined}
+% \changes{v1.07}{1997/07/08}{the code refined}
+% \changes{v1.08}{1997/07/18}{geometry.cfg included in dtx}
+% \changes{v1.08}{1997/09/08}{The catcode of exclamation mark changed}
+% \changes{v2.0}{1998/04/06}{package options with keyval scheme, 
+%       exclamation removed, extra control sequences for paperwidth and
+%       paperheight removed, and the code and document totally revised}
+% \changes{v2.0a}{1998/04/07}{document revised.}
+% \changes{v2.1}{1999/09/01}{bug fixed that twosideshift with %
+%                            reversemarginpar made wrong margins.}
+% \changes{v2.1}{1999/09/25}{mag option, and paper sizes A6 and B6 added.}
+% \changes{v2.1}{1999/09/27}{license declaration changed to LPPL.}
+% \changes{v2.2}{1999/10/07}{bug fixed: explicit twoside was needed %
+%                            for book.cls.}
+% \changes{v2.3}{1999/06/23}{truedimen, columnsep and footnotesep options
+%                            added.}
+% \changes{v2.3}{1999/06/23}{vtex support}
+% \changes{v2.3}{1999/06/28}{internal setting for twosideshift and mag
+%                            modified.}
+%
+% \newenvironment{key}[2]{\expandafter\macro\expandafter{`#2'}}%
+%   {\endmacro}
+% \newcommand\argii[2]{%
+%   {\ttfamily\char`\{}\meta{#1}{\ttfamily\char`,{}}\meta{#2}{\ttfamily%
+%   \char`\}}}
+% \newcommand\vargii[2]{%
+%   {\ttfamily\char`\{}#1{\ttfamily\char`,{}}#2{\ttfamily\char`\}}}
+% \newcommand\argiii[3]{%
+%   {\ttfamily\char`\{}\meta{#1}{\ttfamily\char`,{}}\meta{#2}{\ttfamily%
+%   \char`,{}}\meta{#3}{\ttfamily\char`\}}}
+% \newcommand\vargiii[3]{%
+%   {\ttfamily\char`\{}#1{\ttfamily\char`,{}}#2{\ttfamily%
+%   \char`,{}}#3{\ttfamily\char`\}}}
+% \newcommand\OR{\ \strut\vrule width .4pt\ }
+% \newcommand\gmlen[1]{\textsf{#1}}
+% \newenvironment{Options}%
+%  {\begin{list}{}{%
+%     \renewcommand{\makelabel}[1]{\texttt{##1}\hfil}%
+%     \setlength{\itemsep}{-.5\parsep}
+%     \settowidth{\labelwidth}{\texttt{xxxxxxxxxx\space}}%
+%     \setlength{\leftmargin}{\labelwidth}%
+%     \addtolength{\leftmargin}{\labelsep}}%
+%     \raggedright}
+%  {\end{list}}
+%
+% \begin{abstract}
+%   This package provides an easy and flexible user interface to
+%   customize page layout. It implements auto-centering and auto-balancing
+%   mechanisms so that the users have only to give the least description
+%   for the page layout. 
+% \end{abstract}
+%
+% \newif\ifmulticols
+% \IfFileExists{multicol.sty}{\multicolstrue}{}
+% \ifmulticols
+% \addtocontents{toc}{%
+% \protect\setlength{\columnsep}{3pc}%
+% \protect\begin{multicols}{2}}
+% \fi
+% {\parskip 0pt
+% \tableofcontents
+% }
+%
+% \section{Preface to Version 2}
+%
+% This new release contains three major changes:
+% \begin{itemize}
+%  \item The geometry options using the \textsl{keyval} scheme can be set
+%  in the optional argument to the \cs{usepackage} command as well as in
+%  the (mandatory) argument of the \cs{geometry} macro. Therefore, you can
+%  go
+%  \begin{quote}
+%    |\usepackage[scale={0.7,0.8},nohead]{geometry}|
+%  \end{quote}
+%  instead of
+%  \begin{quote}
+%    |\usepackage{geometry}|\\
+%    |\geometry{scale={0.7,0.8}, nohead}|.
+%  \end{quote}
+%  \item Multiple use of \cs{geometry} macro is allowed.
+%  In the previous version \cs{geometry} command initialized layout
+%  dimensions before reading its options. In this release, however,
+%  \cs{geometry} just appends its options to the previously specified
+%  ones. Therefore,
+%  \begin{quote}
+%    |\usepackage[width=10cm, left=3cm]{geometry}|\\
+%    |\geometry{left=5cm}|\\
+%    |\geometry{vscale=0.8,nohead}|
+%  \end{quote}
+%  is equivalent to
+%  \begin{quote}
+%    |\usepackage[width=10cm, left=5cm, vscale=0.8, nohead]{geometry}|.
+%  \end{quote}
+%  If you want to reset layout dimensions and modes, you can use
+%  `\texttt{reset}' option.
+%  \item The shortened control sequences for \cs{paperwidth} and
+%  \cs{paperheight}, \cs{w} and \cs{h} respectively, were removed.
+% \end{itemize}
+%
+% \section{Preface to Version 2.3}
+%
+% This release contains the following changes:
+% \begin{itemize}
+%  \item \texttt{columnsep} and \texttt{footnotesep} options are added.
+%        \texttt{footnotesep} controls \cs{skip}\cs{footins}, the
+%        separation between the bottom of text body and the top of
+%        footnote text.
+%  \item \texttt{vtex} option is added to support V\TeX. 
+%  \item Magnification setting is sophisticated. \texttt{mag} option 
+%        becomes order-independent. In addition, \texttt{truedimen} option
+%        is introduced to add `true' before all internal explicit
+%        dimension values.  Then one can use, for example,
+%  \begin{quote}
+%  |\usepackage[a4paper,mag=1440,truedimen]{geometry}|\\
+%  or |\usepackage[a4paper,mag=\magstep2,truedimen]{geometry}|.
+%  \end{quote}
+%   They will have an effect that the paper size will be really A4,
+%   while all the fonts in the document will be magnified by 1.440.
+% \end{itemize}
+%
+% \section{Introduction}
+%
+% To set dimensions for page layout in \LaTeX\ is not straightforward. 
+% You need to adjust several \LaTeX{} dimensions to place a text area
+% where you want.
+% If you want to center the text area in the paper you use, for example, 
+% you have to specify \LaTeX{} dimensions as follows:
+% \begin{quote}
+% |\usepackage{calc}|\\
+% |\setlength\textwidth{8in}|\\
+% |\setlength\textheight{11in}|\\
+% |\setlength\oddsidemargin{(\paperwidth-\textwidth)/2 - 1in}|\\
+% |\setlength\topmargin{(\paperheight-\textheight|\\
+% |                       -\headheight-\headsep-\footskip)/2 - 1in}|.
+% \end{quote}
+% Without \textsf{calc} package, the above example would need
+% more tedious settings. The \textsf{geometry} package provides an easy
+% way to set page layout parameters. In this case, what you have to do
+% is just
+% \begin{quote}
+%  |\usepackage[body={8in,11in}]{geometry}|. 
+% \end{quote}
+% In addition to this centering problem, setting margins from each edge of
+% the paper is also troublesome. However, with \textsf{geometry} package,
+% you can go 
+% \begin{quote}
+% |\usepackage[margin=1.5in]{geometry}| 
+% \end{quote}
+% if you want to set each margin 1.5in from each edge of the paper.
+% In both cases, the remnant dimensions to be specified will be
+% automatically determined.
+% The package will be also useful when you have to set page layout
+% obeying the following strict instructions: for example,
+% \begin{quote}\slshape
+% The total allowable width of the text area is 6.5 inches wide by 8.75
+% inches high. The first line on each page should begin 1.2 inches from
+% the top edge of the page. The left margin should be 0.4 inch from 
+% the left edge. 
+% \end{quote}
+% In this case, using \textsf{geometry} package you can go 
+% \begin{quote}
+% |\usepackage[body={6.5in,8.75in},|\\
+% |            top=1.2in, left=0.4in, nohead]{geometry}|.
+% \end{quote}
+%
+% Setting a text area on the paper in document
+% preparation system has some analogy to placing a window on the
+% background in the window system. 
+% The name `geometry' comes from the \texttt{-geometry} option
+% used for specifying a size and location of a window in X Window System.
+%
+% \section{Page Geometry}
+% \subsection{Layout Dimensions}
+% To realize a straightforward setting for page layout, the following page
+% structure is introduced: A paper contains a total body (printable area)
+% and margins.
+% The total body consists of a body (text area), a header, a footer and a
+% marginal note which is optional. There are four margins: left-, right-,
+% top- and bottom-margin. 
+% \begin{quote}
+%   \begin{tabular}{rcl}
+%    \gmlen{paper}&:&\gmlen{total-body} (printable area) and
+%    \gmlen{margins}\\
+%    \gmlen{total-body}&:&\gmlen{head}, \gmlen{body}(text area),
+%    \gmlen{foot} and \gmlen{marginal notes} (option)\\
+%    \gmlen{margins}&:&\gmlen{left-}, \gmlen{right-}, \gmlen{top-}
+%    and \gmlen{bottom-margin}
+%   \end{tabular}
+% \end{quote}
+% Each margin is measured from the corresponding edge of a paper. 
+% For example, left-margin means a horizontal distance between 
+% the left edge of the paper and that of the total body.
+% Therefore the left-margin and top-margin defined in the
+% \textsf{geometry} package are different from the ordinary \LaTeX{}
+% dimensions \cs{leftmargin} and \cs{topmargin}.
+% The size of a body (text area) can be modified by \cs{textwidth} and
+% \cs{textheight}. 
+%
+% The layout parts and the corresponding dimension names used in this
+% package are listed in Table~\ref{tab:dimensions} and showed
+% schematically in Figure~\ref{fig:layout}.
+% \begin{table}[btp]
+%  \centering
+%  \begin{tabular}{r@{\hspace{2.5em}}ll}
+%          & \multicolumn{2}{c}{Dimension names used in this package}\\
+%  Parts\hfil\null & \hfil Horizontal & \hfil Vertical \\\hline
+%  \noalign{\vskip.2em}
+%  \gmlen{paper}       &\texttt{paperwidth} &\texttt{paperheight}\\
+%  \gmlen{total-body}  &\texttt{width} or \texttt{totalwidth} 
+%                      &\texttt{height} or \texttt{totalheight}\\
+%  \gmlen{body}        &\texttt{textwidth}  & \texttt{textheight}\\[.2em]
+%  \hline\noalign{\vskip.2em}
+%  \gmlen{left margin}   &\texttt{left} or \texttt{lmargin}   &\hfil---\\
+%  \gmlen{right margin}  &\texttt{right} or  \texttt{rmargin} &\hfil---\\
+%  \gmlen{top margin}    &\hfil--- &\texttt{top} or \texttt{tmargin}\\
+%  \gmlen{bottom margin} &\hfil--- &\texttt{bottom} or \texttt{bmargin}\\
+%  [.2em]\hline\noalign{\vskip.2em}
+%            \gmlen{head} &\hfil---&\vtop{\hbox{\texttt{headheight} and}
+%                                 \hbox{\texttt{headsep}}}\\[.4em]
+%            \gmlen{foot} &\hfil---&\texttt{footskip}\\
+%  \gmlen{marginal notes}&\vtop{\hbox{\texttt{marginparwidth} and}%
+%                        \hbox{\texttt{marginparsep}}} & \hfil---\\[.3em] 
+%   \noalign{\vskip.2em}\hline
+% \end{tabular}
+% \caption[Page geometry]{\small Page geometry parts and dimension names
+% used in this package.}
+% \label{tab:dimensions}
+% \end{table}
+% \begin{figure}[btp]
+% \centering\small
+% {\unitlength=.65pt
+% \begin{picture}(450,250)(0,-10)
+% \put(20,0){\framebox(170,230){}}
+% \put(20,235){\makebox(170,230)[br]{\textsl{paper}}}
+% \put(50,30){\framebox(120,170){}}
+% \put(50,30){\makebox(120,160)[tc]{\textsl{total body}}}
+% \put(55,30){\makebox(0,170)[l]{\texttt{height}}}
+% \put(50,35){\makebox(120,0)[bc]{\texttt{width}}}
+% \put(50,-20){\makebox(120,0)[bc]{\texttt{paperwidth}}}
+% \put(10,30){\makebox(0,170)[r]{\texttt{paperheight}}}
+% \put(90,200){\makebox(0,30)[lc]{\texttt{top}}}
+% \put(90,0){\makebox(0,30)[lc]{\texttt{bottom}}}
+% \put(10,50){\makebox(0,0)[r]{\texttt{left}}}
+% \put(200,50){\makebox(0,0)[l]{\texttt{right}}}
+% \put(80,230){\vector(0,-1){30}}\put(80,30){\vector(0,-1){30}}
+% \put(80,200){\vector(0,1){30}}\put(80,0){\vector(0,1){30}}
+% \put(20,50){\vector(1,0){30}}\put(50,50){\vector(-1,0){30}}
+% \put(170,50){\vector(1,0){20}}\put(190,50){\vector(-1,0){20}}
+% \multiput(170,30)(5,0){22}{\line(1,0){2}}
+% \multiput(170,200)(5,0){22}{\line(1,0){2}}
+% \put(280,30){\framebox(120,170){}}
+% \put(280,180){\line(1,0){120}}\put(280,170){\line(1,0){120}}
+% \put(280,50){\line(1,0){120}}
+% \put(280,205){\makebox(120,0)[br]{\textsl{total body}}}
+% \put(280,55){\makebox(120,0)[bc]{\texttt{textwidth}}}
+% \put(410,190){\makebox(0,0)[l]{\texttt{headheight}}}
+% \put(410,170){\makebox(0,0)[l]{\texttt{headsep}}}
+% \put(410,110){\makebox(0,0)[l]{\texttt{textheight}}}
+% \put(410,40){\makebox(0,0)[l]{\texttt{footskip}}}
+% \put(280,180){\makebox(120,20)[bc]{\textsl{head}}}
+% \put(280,40){\makebox(120,140)[c]{\textsl{body}}}
+% \put(280,30){\makebox(120,10)[c]{\textsl{foot}}}
+% \end{picture}}
+% \caption[Dimension names for page geometry]{%
+% \begin{minipage}[t]{.7\textwidth}\raggedright\small
+%   Dimension names for page geometry. 
+%   If \texttt{includemp} is \texttt{false} (default),
+%   \texttt{width}=\texttt{textwidth}.
+% \end{minipage}}
+% \label{fig:layout}
+% \end{figure}
+% \begin{table}[btp]
+% \centering
+% \begin{tabular}{l@{\hspace{2em}}p{27em}}
+%  \hfil Modes  &   \hfil Effects \\\hline
+%  \texttt{nohead}    & sets \texttt{headheight=0pt, headsep=0pt}.\\
+%  \texttt{nofoot}    & sets \texttt{footskip=0pt}.\\
+%  \texttt{noheadfoot}& equals \texttt{nohead} and \texttt{nofoot}\\
+%  \texttt{includemp} & takes account of the dimensions for 
+%                       marginal notes\newline
+%                       when determining \texttt{width}:\newline
+%                       \texttt{width} := \texttt{textwidth} + 
+%                      \texttt{marginparsep} + \texttt{marginparwidth}\\
+%  \texttt{reversemp} & makes the marginal notes appear in the left
+%                       margin\newline and sets \texttt{includemp}
+%                       unless \texttt{includemp=false} exists.\newline
+%               \texttt{reversemarginpar} results in the same effect.\\
+% \hline
+% \end{tabular}
+% \caption{\small Layout modes defined in this package and their effects.}
+% \label{tab:modes}
+% \end{table}
+% The dimensions for paper, total body and margins have the following
+% relations.
+% \begin{eqnarray}
+%  \label{eq:paperwidth}
+%  \texttt{paperwidth} &=&\texttt{left}+\texttt{width}+\texttt{right}\\
+%  \texttt{paperheight}&=&\texttt{top}+\texttt{height}+\texttt{bottom}
+%  \label{eq:paperheight}
+% \end{eqnarray}
+% The dimensions of the total body, \texttt{width} and \texttt{height},
+% are defined as follows:
+% \begin{eqnarray}
+%  \label{eq:width}
+%  \texttt{width} &:=&\texttt{textwidth}\quad ( + \texttt{marginparsep} +
+%                     \texttt{marginparwidth} )\\
+%  \texttt{height}&:=&\texttt{textheight} + \texttt{headheight} +
+%                     \texttt{headsep} + \texttt{footskip}
+%  \label{eq:height}
+% \end{eqnarray}
+% Each of the seven dimensions in the right-hand side of Equations
+% (\ref{eq:width}) and (\ref{eq:height}) corresponds to the ordinary
+% \LaTeX\ control sequence with the same name.
+%
+% Table~\ref{tab:modes} shows layout modes defined in the
+% \textsf{geometry} package, which are used to control layout dimensions
+% and change relations between them. Figure~\ref{fig:modes} illustrates
+% various layouts of total body with different layout modes. For example,
+% when \texttt{includemp} mode is on, \texttt{width} takes account of
+% lengths for marginal notes (\texttt{marginparsep} and
+% \texttt{marginparwidth}) in the Equation~(\ref{eq:width}) (See
+% Figure~\ref{fig:modes}(b)). 
+% The dimensions for a header and a footer can
+% be controlled by \texttt{nohead} or \texttt{nofoot} mode, as well as
+% direct specification.
+% The \textsf{geometry} package can also deal with standard layout modes
+% (options), i.e., \texttt{landscape}, \texttt{portrait},
+% \texttt{twoside} and paper size.
+% \begin{figure}[btp]
+% \centering\small
+% {\unitlength=.65pt
+% \begin{picture}(460,530)(0,0)
+% \put( 20,310){\framebox(120,170){}}
+% \put( 20,507){\makebox(120,0)[bl]%
+% {\textbf{(a)}~\textit{default}}}
+% \put( 20,460){\line(1,0){120}}\put( 20,450){\line(1,0){120}}
+% \put( 20,330){\line(1,0){120}}
+% \put( 20,485){\makebox(120,0)[br]{\textsl{total body}}}
+% \put( 20,335){\makebox(120,0)[bc]{\texttt{textwidth}}}
+% \put(150,470){\makebox(0,0)[l]{\texttt{headheight}}}
+% \put(150,450){\makebox(0,0)[l]{\texttt{headsep}}}
+% \put(150,390){\makebox(0,0)[l]{\texttt{textheight}}}
+% \put(150,320){\makebox(0,0)[l]{\texttt{footskip}}}
+% \put( 10,460){\makebox(120,20)[bc]{\textsl{head}}}
+% \put( 10,320){\makebox(120,140)[c]{\textsl{body}}}
+% \put( 10,310){\makebox(120,10)[c]{\textsl{foot}}}
+% \put(250,310){\framebox(120,170){}}
+% \put(250,507){\makebox(120,0)[bl]%
+% {\textbf{(b)}~\texttt{includemp}}}
+% \put(250,460){\line(1,0){95}}\put(250,450){\line(1,0){95}}
+% \put(250,330){\line(1,0){95}}\put(345,330){\line(0,1){120}}
+% \put(350,330){\line(0,1){120}}\put(350,450){\line(1,0){20}}
+% \put(350,330){\line(1,0){20}}
+% \put(250,485){\makebox(120,0)[br]{\textsl{total body}}}
+% \put(250,460){\makebox(95,20)[bc]{\textsl{head}}}
+% \put(250,320){\makebox(95,140)[c]{\textsl{body}}}
+% \put(385,390){\makebox(95,0)[cl]%
+% {\textsl{\shortstack[l]{marginal\\note}}}}
+% \put(250,310){\makebox(95,10)[c]{\textsl{foot}}}
+% \put(250,335){\makebox(95,0)[bc]{\texttt{textwidth}}}
+% \multiput(360, 390)(4,0){6}{\line(1,0){2}}
+% \multiput(348,333)(0,-4){12}{\line(0,1){2}}
+% \multiput(360,333)(0,-4){8}{\line(0,1){2}}
+% \put(355,292){\makebox(0,0)[bl]{\texttt{marginparwidth}}}
+% \put(345,275){\makebox(0,0)[bl]{\texttt{marginparsep}}}
+% \put( 20, 40){\framebox(120,170){}}
+% \put( 20,237){\makebox(120,0)[bl]%
+% {\textbf{(c)}~\texttt{nohead}}}
+% \put( 20, 60){\line(1,0){120}}
+% \put( 20,215){\makebox(120,0)[br]{\textsl{total body}}}
+% \put(150,130){\makebox(0,0)[l]{\texttt{textheight}}}
+% \put(150, 50){\makebox(0,0)[l]{\texttt{footskip}}}
+% \put( 20, 50){\makebox(120,160)[c]{\textsl{body}}}
+% \put( 20, 40){\makebox(120,10)[c]{\textsl{foot}}}
+% \put( 20, 65){\makebox(120,10)[c]{\texttt{textwidth}}}
+% \put(250, 40){\framebox(120,170){}}
+% \put(250,237){\makebox(120,0)[bl]%
+% {\textbf{(d)}~\texttt{nohead,includemp}}}
+% \put(250, 60){\line(1,0){95}}\put(350, 60){\line(1,0){20}}
+% \put(250,215){\makebox(120,0)[br]{\textsl{total body}}}
+% \put(250, 50){\makebox(95,160)[c]{\textsl{body}}}
+% \put(385,130){\makebox(95,0)[cl]%
+% {\textsl{\shortstack[l]{marginal\\note}}}}
+% \put(250, 40){\makebox(95,10)[c]{\textsl{foot}}}
+% \put(250, 65){\makebox(95,0)[bc]{\texttt{textwidth}}}
+% \put(345, 60){\line(0,1){150}}\put(350, 60){\line(0,1){150}}
+% \multiput(360, 130)(4,0){6}{\line(1,0){2}}
+% \multiput(348, 63)(0,-4){12}{\line(0,1){2}}
+% \multiput(360, 63)(0,-4){8}{\line(0,1){2}}
+% \put(355,22){\makebox(0,0)[bl]{\texttt{marginparwidth}}}
+% \put(345, 5){\makebox(0,0)[bl]{\texttt{marginparsep}}}
+% \end{picture}}
+% \caption[Sample layouts of total body with different layout modes]{%
+% \begin{minipage}[t]{.8\textwidth}\small
+%   Sample layouts of total body with different layout modes. (a) default,
+%   (b) \texttt{includemp}, (c) \texttt{nohead}, and (d) \texttt{nohead}
+%   and \texttt{includemp}. Marginal note can be changed its placement
+%   from the right-hand to the left-hand side of the total body by
+%   \texttt{reversemp}. If both \texttt{twoside} and
+%   \texttt{includemp} are effective, marginal note will appear on the
+%   left (odd pages) and the right (even pages) by turns. Note that
+%   marginal notes can be printed even by default or |includemp=false|,
+%   but then the width of total body will not include that of marginal
+%   notes.
+% \end{minipage}}
+% \label{fig:modes}
+% \end{figure}
+%
+% \subsection{Completion Algorithm}
+%
+% The automatic completion of layout dimension is a distinguishing feature
+% of this package. Suppose that the paper size is pre-defined in
+% Equation~(\ref{eq:paperwidth}) or (\ref{eq:paperheight}),
+% if two dimensions out of three in the right-hand side of each equation
+% are given, the remnant dimension will be determined automatically. 
+% In addition, even when only one of three is given, the rest of
+% dimensions will be determined using auto-balancing or auto-centering
+% scheme. The completion rules are shown in Table~\ref{tab:completion} and 
+% Equation~(\ref{eq:completion}).
+% \begin{table}[btp]
+% \def\AST{\texttt{*}}\centering
+% \begin{tabular}{cccccccl}
+% \multicolumn{3}{c}{Settings}& &\multicolumn{3}{c}{Results}\\
+% \noalign{\vspace{.1em}}
+% \cline{1-3}\cline{5-7}
+% \parbox{3em}{\hfil\gmlen{left}}&\parbox{3em}{\hfil\gmlen{width}}&
+% \parbox{3em}{\hfil\gmlen{right}}&&%
+% \parbox{3em}{\hfil\gmlen{left}}&\parbox{3em}{\hfil\gmlen{width}}&
+% \parbox{3em}{\hfil\gmlen{right}}&\\
+% \cline{1-3}\cline{5-7}
+% \gmlen{top}&\gmlen{height}&\gmlen{bottom}&&%
+% \gmlen{top}&\gmlen{height}&\gmlen{bottom}&\\
+% \noalign{\vspace{.1em}}
+% \cline{1-3}\cline{5-7}
+% \AST  & \AST & \AST  && $m$   & $\ell$ & $m$   & Default\\
+% $A$   & \AST & \AST  && $A$   & $R_1$  & $A$   & Balancing\\
+% \AST  & \AST & $A$   && $A$   & $R_1$  & $A$   & Balancing\\
+% \AST  & $A$  & \AST  &$\Longrightarrow$%
+%                       & $R_2$ & $A$    & $R_2$ & Centering\\
+% $A$   & $B$  & \AST  && $A$   & $B$    & $R_3$ &\\
+% $A$   & \AST & $B$   && $A$   & $R_3$  & $B$   &\\
+% \AST  & $A$  & $B$   && $R_3$ & $A$    & $B$   &\\
+% $A$   & $C$  & $B$   && $A$   & $R_3$  & $B$   & Margins win.\\
+% \cline{1-3}\cline{5-7}
+% \end{tabular}
+% \caption[Dimension completion rules]{%
+% \begin{minipage}[t]{.7\textwidth}\small
+% Dimension completion rules. The mark `\texttt{*}' denotes the dimensions
+% not specified. Each unspecified dimension will be given a proper value
+% according the completion rule. See text for explanation of other
+% symbols.
+% \end{minipage}}
+% \label{tab:completion}
+% \end{table}
+% In Table~\ref{tab:completion}, 
+% $R_{n}$ ($n$=$1,2,3$) are the remnant lengths which can be determined by
+% $A$, $B$ and $L$ (\texttt{paperwidth} or \texttt{paperheight})
+% according the following relations.
+% \begin{equation}
+%  \begin{array}{rcll}
+%    R_1 &=& L-2A      &\:\cdots\:\textrm{auto-balancing}\\
+%    R_2 &=& (L-A)/2   &\:\cdots\:\textrm{auto-centering}\\
+%    R_3 &=& L-A-B &\:\cdots\:\textrm{obvious completion}
+%  \end{array}
+%  \label{eq:completion}
+% \end{equation}
+% If none of three dimensions is specified in each direction, the default
+% setting is used: $\ell$ and $m$ in horizontal direction are 80\% and
+% 10\% of \texttt{paperwidth} respectively, 90\% and 5\% of
+% \texttt{paperheight} vertically. 
+%
+% \section{User Interface}
+% \subsection{General Features}
+%
+% The geometry options using the \textsl{keyval} interface
+% `\meta{key}=\meta{value}' can be set either in the optional argument to
+% the \cs{usepackage} command, or in the argument of the
+% \cs{geometry} macro. This macro, if necessary, should be placed in the
+% preamble, i.e., before |\begin{document}|.
+% In either case, the argument consists of a list of
+% comma-separated \textsl{keyval} options.
+% The main features of setting options are listed below.
+% \begin{itemize}\itemsep=0pt
+% \item Multiple lines are allowed. (But blank lines are not allowed.)
+% \item Any spaces between words are ignored.
+% \item Options are basically order-independent.\\
+% (There are some exceptions. See Section~\ref{sec:order-depend}
+%  for details.)
+% \end{itemize}
+%  For example,
+% \begin{quote}
+% |\usepackage[ a5paper ,  hmargin = { 3cm,|\\
+% |                .8in } , height|\\
+% |         =  10in ]{geometry}|
+% \end{quote}
+% is equivalent to 
+% \begin{quote}
+%   |\usepackage[height=10in,a5paper,hmargin={3cm,0.8in}]{geometry}|
+% \end{quote}
+% Note that the order of values in the sub-list (e.g.,
+% |hmargin={3cm,0.8in}|) is significant.
+% The above setting is equivalent to the followings:
+% \begin{quote}
+%   |\usepackage{geometry}|\\
+%   |\geometry{height=10in,a5paper,hmargin={3cm,0.8in}}|
+% \end{quote}
+% or 
+% \begin{quote}
+%   |\usepackage[a5paper]{geometry}|\\
+%   |\geometry{hmargin={3cm,0.8in},height=8in}|\\
+%   |\geometry{height=10in}|.
+% \end{quote}
+% Thus, multiple use of \cs{geometry} just appends options.
+%
+% The \textsf{geometry} package supports the \textsf{calc} 
+% package\footnote{CTAN:\texttt{macros/latex/contrib/support/calc}}.
+% For example,
+% \begin{quote}
+%   |\usepackage{calc}|\\
+%   |\usepackage[textheight=20\baselineskip+10pt]{geometry}|
+% \end{quote}
+%
+% \subsection{Option Types}
+% There are five types of options:
+% \begin{enumerate}\itemsep=0pt
+%
+% \item \textbf{Boolean type}
+%
+%    takes a boolean value (\texttt{true} or \texttt{false}). If no value,
+%    \texttt{true} is set for default.
+%    \begin{quote}
+%       \meta{key}\texttt{=}\texttt{true}\OR\texttt{false}.\\
+%       \meta{key} with no value is equivalent to 
+%       \meta{key}\texttt{=}\texttt{true}.
+%    \end{quote}
+%    \textit{Examples:}~ \texttt{verbose=true}, \texttt{nohead}, 
+%    \texttt{twoside=false}.\\
+%    Paper name is the exception. The preferred paper name should be set
+%    with no values. Whatever value is given, it is ignored. For
+%    instance, \texttt{a4paper=XXX} is equivalent to \texttt{a4paper}.
+%
+% \item \textbf{Single-valued type}
+%
+%    takes a mandatory value.
+%    \begin{quote}
+%    \meta{key}\texttt{=}\meta{value}.
+%    \end{quote}
+%    \textit{Examples:}~ \texttt{width=8in}, \texttt{left=1.25in},
+%    \texttt{footskip=1cm}, |height=.86\paperheight|.
+%
+% \item \textbf{Two-valued type}
+%
+%    takes a pair of comma-separated values in braces. The two values can
+%    be shortened to one value if they are identical.
+%    \begin{quote}
+%    \meta{key}\texttt{=}\argii{value1}{value2}.\\
+%    \meta{key}\texttt{=}\meta{value} is equivalent to 
+%              \meta{key}\texttt{=}\argii{value}{value}.
+%    \end{quote}
+%    \textit{Examples:}~ |hmargin={1.5in,1in}|, \texttt{scale=0.8},
+%    |body={7in,10in}|.
+%
+% \item \textbf{Three-valued type}
+%
+%    takes three mandatory, comma-separated values in braces.
+%    \begin{quote}
+%    \meta{key}\texttt{=}\argiii{value1}{value2}{value3}
+%    \end{quote}
+%    Each value must be a dimension or null. When you give an empty value
+%    or `\texttt{*}', it means null and leaves the appropriate value 
+%    to the auto-calculation mechanism. One needs to specify at least one
+%    dimension, typically two dimensions. You can set nulls for all the 
+%    values, but it makes no sense.
+%    \textit{Examples:}\\
+%    \hspace*{2em} |hdivide={2cm,*,1cm}|, |vdivide={3cm,19cm, }|,
+%                   |divide={1in,*,1in}|.
+% \end{enumerate}
+%
+% \section{Option List}
+%
+% \subsection{Boolean Options}
+% 
+% Boolean options are also called `modes'. One can change various
+% modes for page geometry. 
+%
+% The boolean options are listed below.
+% \begin{Options}
+% \item[verbose]   typeouts warnings and a list of resulted page
+%                  parameters.
+% \item[landscape] switches the paper orientation to landscape mode.
+% \item[portrait]  switches the paper orientation to portrait mode.
+%                  This is equivalent to \texttt{landscape=false}.
+% \item[twoside]   switches on two-sided printing. In this mode,
+%                  specified left and right margins are switched over
+%                  in each odd-numbered page.
+% \item[includemp] takes account of spaces for margin notes
+%                  (\cs{marginparwidth} and \cs{marginparsep})
+%                  when adjusting horizontal partition.
+% \item[reversemp\OR reversemarginpar]~\\
+%                 makes the marginal notes appear in the left margin and
+%                 sets \texttt{includemp=true} unless
+%                 \texttt{includemp=false} has been set explicitly.
+% \item[nohead]   eliminates spaces for the head of page, which is
+%                 equivalent to \cs{headheight}\texttt{=0pt} 
+%                 and \cs{headsep}\texttt{=0pt}.
+% \item[nofoot]   eliminates spaces for the foot of page, which is
+%                 equivalent to \cs{footskip}\texttt{=0pt}.
+% \item[noheadfoot] eliminates spaces for the head and foot of page, which
+%                   is equivalent to \texttt{nohead} and \texttt{nofoot}, 
+%                   i.e., \cs{headheight}\texttt{=0pt}, 
+%                   \cs{headsep}\texttt{=0pt} and \cs{footskip}\texttt{=0pt}.
+% \item[dvips]    writes the paper size in the PostScript output with
+%                 the \cs{special} macro. If you use \textsl{dvips} as a 
+%                 DVI-to-PS driver, this option is very useful. 
+%                 For example, to print a document with 
+%                 |\geometry{a3paper,landscape}| on A3 paper in landscape
+%                 mode, you don't need options
+%                 ``\texttt{-t a3 -t landscape}'' to \textsl{dvips}.
+%                 This option is ineffective and forced \texttt{false} if
+%                 \texttt{pdftex} is \texttt{true}.
+% \item[pdftex] sets \cs{pdfoutput}\texttt{=1} and sets
+%        \cs{pdfpagewidth} and \cs{pdfpageheight} properly in the 
+%        |\begin{document}| if \textsl{pdflatex} command is used for typeset. 
+%        When you use \textsl{latex} command with \texttt{pdftex=true},
+%        this option is ineffective and forced to be \texttt{false}.
+%        If |\pdfoutput=1| is already specified, this option is
+%        initialized to be \texttt{true}.
+%        You can set \texttt{pdftex=false} explicitly to output DVI,
+%        not PDF, when \textsl{pdflatex} is used.
+%        This option has priority over \texttt{dvips}.
+% \item[vtex] sets \texttt{vtex} modes.
+% \item[truedimen] adds `\texttt{true}' before all internal explicit
+%        dimension values (e.g., \texttt{cm} and \texttt{in}). Typically this
+%        option will be used with \texttt{mag} option. Note that this is
+%        ineffective against externally specified dimensions. For example,
+%        when you set ``\texttt{mag=1440, margin=10pt, truedimen}'',
+%        margins are not `true' but magnified. If you want to set exact
+%        margins, you should set like ``\texttt{mag=1440, margin=10truept,
+%        truedimen}'' instead.
+% \item[\vtop{\hbox{a0paper, a1paper, a2paper, a3paper, a4paper, a5paper,
+%                   a6paper}
+%             \hbox{b0paper, b1paper, b2paper, b3paper, b4paper, b5paper,
+%                   b6paper}
+%             \hbox{letterpaper, executivepaper, legalpaper}}]~\\[1ex] 
+%       specifies paper name. They must be used with no values. Note that
+%       whatever value (even \texttt{false}) is given to this option, the
+%       value will be ignored and the paper name is used. For example, the
+%       followings have the same effect: \texttt{a5paper},
+%       \texttt{a5paper=true}, \texttt{a5paper=false} and
+%       \texttt{a5paper=XXXX}.
+% \item[reset] initializes modes and layout dimensions to their defaults.
+% Note that this is ineffective against paper size (e.g.,
+% \texttt{a4paper}) and lengths for header, footer and marginal notes
+% (e.g., \texttt{head}, \texttt{footskip}, \texttt{marginparwidth}).
+% \texttt{reset=false} has no effect and cannot cancel the previous
+% \texttt{reset}(\texttt{=true}) if any.
+% \end{Options}
+% Some of the above options may be given as document class options. 
+% For example, you can set |\documentclass[a4paper,landscape]{article}|, 
+% then \texttt{a4paper} and \texttt{landscape} are processed in 
+% the \textsf{geometry} package as well. Some options may be implicitly
+% given by \cs{ExecuteOptions} in a document class. The standard book
+% document class has \texttt{twoside}. So when you have
+% |\documentclass{book}|, then \textsf{geometry} can find \texttt{twoside}
+% without any explicit setting for \texttt{twoside}.
+%
+% \subsection{Single-Valued Options}\label{sec:singvalued-opts}
+%
+% The single-valued options with a mandatory value are listed below.
+% \begin{Options}
+% \item[paper\OR papername] ~\\ 
+%      specifies a paper name. The available paper names are defined in
+%      the \textsf{geometry} package.
+%      \texttt{paper=}\meta{paper name}. For example
+%      \texttt{paper=a4paper}, which is equivalent to just
+%      \texttt{a4paper} (see above).
+% \item[paperwidth] width of the paper.
+%      \texttt{paperwidth=}\meta{paper width}.
+% \item[paperheight]  height of the paper. 
+%      \texttt{paperheight=}\meta{paper height}.
+% \item[width\OR totalwidth] ~\\
+%      width of the total body. \texttt{width=}\meta{width} or
+%      \texttt{totalwidth=}\meta{width}. This dimension should not be 
+%      confused with \texttt{textwidth}. Generally, \texttt{width} $\ge$ 
+%      \texttt{textwidth} because \texttt{width} includes the width of
+%      marginal notes when \texttt{includemp} or dimensions for marginal
+%      notes is set. If \texttt{textwidth} and \texttt{width} are specified
+%      at the same time, \texttt{width} is ignored.
+% \item[height\OR totalheight] ~\\
+%      height of the total body (including header and footer).
+%      \texttt{height=}\meta{height} or \texttt{totalheight=}\meta{height}.
+%      If both \texttt{textheight} and \texttt{height} are specified,
+%      \texttt{height} will be ignored.
+% \item[left\OR lmargin]~\\
+%      left margin of the total body. In other words,
+%      the distance between the left edge of the paper
+%      and that of the total body. \texttt{left=}\meta{left margin}.
+% \item[right\OR rmargin]~\\ 
+%      right margin of the total body. \texttt{right=}\meta{right margin}.
+% \item[top\OR tmargin]~\\ top margin of the total body.
+%      \texttt{top=}\meta{top margin}.
+% \item[bottom\OR bmargin]~\\ 
+%      bottom margin of the total body. \texttt{bottom=}\meta{bottom margin}.
+% \item[hscale] ratio of width of the total body to \cs{paperwidth}. 
+%      \texttt{hscale=}\meta{h-ratio}. \texttt{hscale=0.8} is equivalent to
+%      \texttt{width=0.8\cs{paperwidth}}.
+% \item[vscale] ratio of height of the total body to \cs{paperheight}.
+%      \texttt{vscale=}\meta{v-ratio}.
+%      \texttt{vscale=0.9} is equivalent to \texttt{height=0.9\cs{paperheight}}.
+% \item[textwidth] modifies \cs{textwidth}, width of text (body).
+%      \texttt{textwidth=}\meta{width}.
+% \item[textheight] modifies \cs{textheight}, height of text (body).
+%      \texttt{textheight=}\meta{height}.
+% \item[marginparwidth\OR marginpar]~\\ 
+%      modifies \cs{marginparwidth}, width of the marginal notes.
+%      When this option is set, \texttt{includemp} is also set \texttt{true}
+%      automatically. \texttt{marginparwidth=}\meta{length}.
+% \item[marginparsep]~\\ modifies \cs{marginparsep}, separation between body
+%      and marginal notes. \texttt{includemp} is also set \texttt{true}
+%      automatically.  \texttt{marginparsep=}\meta{length}.
+% \item[headheight\OR head]~\\
+%      modifies \cs{headheight}, height of header.
+%      \texttt{headheight=}\meta{length} or \texttt{head=}\meta{length}.
+% \item[headsep] modifies \cs{headsep}, separation between header
+%      and text (body).  \texttt{headsep=}\meta{length}.
+% \item[footskip\OR foot]~\\ modifies \cs{footskip}, distance separation
+%      between baseline of last line of text and baseline of footer.
+%      \texttt{footskip=}\meta{length} or \texttt{foot=}\meta{length}.
+% \item[hoffset]  modifies \cs{hoffset}. \texttt{hoffset=}\meta{length}.
+% \item[voffset]  modifies \cs{voffset}. \texttt{voffset=}\meta{length}.
+% \item[twosideshift]~\\ specifies extra space which is added to
+%   left-margin of odd-numbered pages and subtracted from that of
+%   even-numbered pages. \texttt{twoside} mode is also
+%   set. \texttt{twosideshift=}\meta{length}. The default is 20pt.
+%   See Figure~\ref{fig:twosideshift}.
+% \item[mag] sets magnification value (\cs{mag}) and automatically modifies 
+%   \cs{hoffset} and \cs{voffset} according to the magnification.
+%   \texttt{mag=}\meta{magnification}. Note that \meta{magnification} should
+%   be an integer value with 1000 as a normal size. For example,
+%   \texttt{mag=1414} with \texttt{a4paper} provides an enlarged print 
+%   fitting in \texttt{a3paper}, which is $1.414$(=$\sqrt{2}$) times larger
+%   than \texttt{a4paper}. Font enlargement needs extra disk space.
+%   See also \texttt{truedimen} option.
+% \item[columnsep] modifies \cs{columnsep}, the separation between two
+%   columns in \texttt{twocolumn} mode.
+% \item[footnotesep] changes the dimension \cs{skip}\cs{footins}, 
+%   separation between the bottom of text body and the top of footnote text.
+% \end{Options}
+% \begin{figure}[!bt]
+% \centering\small
+% {\unitlength=.65pt
+% \begin{picture}(210,290)(0,-50)
+% \put(20,0){\framebox(170,230)[tr]{\textsl{paper}}}
+% \put(50,30){\framebox(120,170)[tc]{\textsl{total body}}}
+% \put(50,30){\framebox(120,170)[tr]{}}
+% \multiput(38,30)(5,0){3}{\line(1,0){3}}
+% \multiput(38,200)(5,0){3}{\line(1,0){3}}
+% \multiput(170,30)(5,0){3}{\line(1,0){1}}
+% \multiput(170,200)(5,0){3}{\line(1,0){1}}
+% \multiput(38,30)(0,5){34}{\line(0,1){3}}
+% \multiput(62,30)(0,5){34}{\line(0,1){1}}
+% \multiput(158,30)(0,5){34}{\line(0,1){3}}
+% \multiput(182,30)(0,5){34}{\line(0,1){1}}
+% \put(50,70){\vector(-1,0){12}}
+% \put(63,65){\makebox(80,10)[bl]{\texttt{-twosideshift}}}
+% \put(50,50){\vector(1,0){12}}
+% \put(67,45){\makebox(80,10)[bl]{\texttt{twosideshift}}}
+% \put(38,-25){\vector(0,1){50}}
+% \put(38,-40){\makebox(50,10)[bl]{\textsl{even pages}}}
+% \put(62,-10){\vector(0,1){35}}
+% \put(62,-25){\makebox(50,10)[bl]{\textsl{odd pages}}}
+% \end{picture}}
+% \caption[\texttt{twosideshift} option]{%
+%   \small\texttt{twosideshift} option.}
+% \label{fig:twosideshift}
+% \end{figure}
+%
+% \subsection{Two-Valued Options}
+%
+% The following list shows keys taking two values in braces or one value
+% for short.
+% \begin{Options}
+% \item[papersize] width and height of the paper.\\
+%      \texttt{papersize=}\argii{width}{height} or 
+%      \texttt{papersize=}\meta{length}.
+% \item[total] width and height of the total body.\\
+%      \texttt{total=}\argii{width}{height} or \texttt{total=}\meta{length}.
+% \item[body\OR text] textwidth and textheight of the body of page.\\
+%      \texttt{body=}\argii{width}{height} or \texttt{body=}\meta{length}.
+% \item[scale] ratio of the total body length to the paper's.\\
+%      \texttt{scale=}\argii{h-ratio}{v-ratio} or \texttt{scale=}\meta{ratio}.
+% \item[hmargin] left and right margin.\\
+%      \texttt{hmargin=}\argii{left margin}{right margin} or
+%      \texttt{hmargin=}\meta{length}.
+% \item[vmargin] top and bottom margin.\\
+%      \texttt{vmargin=}\argii{top margin}{bottom margin} or
+%      \texttt{vmargin=}\meta{length}.
+% \item[margin] \texttt{margin=}\vargii{$A$}{$B$} is 
+%      equivalent to \texttt{hmargin=}\vargii{$A$}{$B$} and 
+%      \texttt{vmargin=}\vargii{$A$}{$B$}.
+%      \texttt{margin=}$A$ is automatically expanded to
+%      \texttt{hmargin=}$A$ and \texttt{vmargin=}$A$.
+% \item[offset] horizontal and vertical offset.\\
+%      \texttt{offset=}\argii{hoffset}{voffset} or 
+%      \texttt{offset=}\meta{length}.
+% \end{Options}
+%
+% \subsection{Three-Valued Options}
+%
+% The keys taking three comma-separated values in braces are listed below.
+% \begin{Options}
+% \item[hdivide] horizontal partitions (left,width,right).\\
+%      \texttt{hdivide=}\argiii{left margin}{width}{right margin}. \\
+%      Note that you should not specify all of
+%      the three parameters. The best way of using this option is to
+%      specify two of three and leave the rest with null(nothing) or
+%      `\texttt{*}'. For example, when you set
+%      |hdivide={2cm,15cm, }|, the margin from the rightside edge of page
+%      will be determined calculating \texttt{paperwidth-2cm-15cm}.
+% \item[vdivide] vertical partitions (top,height,bottom).\\
+%      \texttt{vdivide=}\argiii{top margin}{height}{bottom margin}.
+% \item[divide]  \texttt{divide=}\vargiii{$A$}{$B$}{$C$}
+%                is interpreted  as 
+%              \texttt{hdivide=}\vargiii{$A$}{$B$}{$C$}
+%              and \texttt{vdivide=}\vargiii{$A$}{$B$}{$C$}.
+% \end{Options}
+%
+% \section{Relations Between Options}
+%
+% \subsection{Option Priority}
+%
+% \[\begin{array}{l}
+% \multicolumn{1}{c}{\textrm{low}\quad\longrightarrow\quad\textrm{high}
+% \quad(\textrm{priority}) }\\[1em]
+% \bullet\quad
+% \left\{\begin{array}{l}\texttt{hscale}\\\texttt{vscale}
+%        \end{array}\right\} <
+% \left\{\begin{array}{l}\texttt{width}\\\texttt{height}
+%        \end{array}\right\} <
+% \left\{\begin{array}{l}\texttt{textwidth}\\\texttt{textheight}
+%        \end{array}\right\},\\[1.5em]
+% \bullet\quad
+% \left\{\begin{array}{l}\texttt{head(height)}\\\texttt{headsep}\\
+%        \texttt{foot(skip)}\end{array}\right\} <
+% \left\{\begin{array}{l}\texttt{nohead}\\\texttt{nofoot}\\
+%        \texttt{noheadfoot}\end{array}\right\},\\[2em]
+% \bullet\quad
+% \texttt{dvips} < \texttt{pdftex}.\\
+% \end{array}\]
+% For example, 
+% \begin{quote}
+%  |\usepackage[hscale=0.8, textwidth=7in, width=18cm]{geometry}|
+% \end{quote}
+% is the same as
+% \begin{quote}
+%  |\usepackage[textwidth=7in]{geometry}|.
+% \end{quote}
+%
+% \subsection{Order Dependence}\label{sec:order-depend}
+%
+% The options defined in the \textsf{geometry} package are basically
+% order-independent, but there are some exceptions.
+% When redundant, overlap specification is given, the last setting is 
+% adopted. For example,
+% \begin{quote}
+% |verbose=true, verbose=false|
+% \end{quote}
+% obviously results in \texttt{verbose=false}.
+% If you set
+% \begin{quote}
+% |hmargin={3cm,2cm}, left=1cm|
+% \end{quote}
+% the left-margin is overwritten by |left=1cm|.
+% As a result, it is equivalent to |hmargin={1cm,2cm}|.
+% The \texttt{reset} option initializes all the modes and settings for
+% page layout. If you set
+% \begin{quote}
+% |\documentclass[a4paper,landscape]{article}|\\
+% |\usepackage[margins=1cm,nohead]{geometry}|\\
+% |\geometry{reset, head=20pt}|
+% \end{quote}
+% then |landscape|, |margins=1cm| and |nohead| are ignored and 
+% |head=20pt| is set. Note that \texttt{reset} can't initialize
+% paper size (\texttt{a4paper} in this case).
+%
+% \subsection{\textsf{dvips} and \textsf{pdftex}}
+%  
+% The options \texttt{dvips} and \texttt{pdftex} are provided for driver
+% support. They may be used for other packages that support them. In the
+% \textsf{geometry} package, the \texttt{pdftex} option has priority over
+% \texttt{dvips}. The table below shows relations between the typeset
+% command, \cs{pdfoutput} and effective values for each driver option.
+% \begin{center}
+%  \begin{tabular}{l@{\hspace{2em}}cc}
+%   command  & \texttt{pdftex} & \texttt{dvips}\\
+%   \hline\hline
+%   \textsl{latex}    & \texttt{false} & \textit{any}\\
+%   \hline
+%   \textsl{pdflatex} & \texttt{true}  & \texttt{false}\\
+%                     & \texttt{false} & \textit{any}  \\
+%   \hline
+%  \end{tabular}
+% \end{center}
+% where `\textit{any}' means that one can choose \texttt{true} or
+% \texttt{false}.
+% When \textsl{pdflatex} command is used for typeset, the default value of 
+% the \texttt{pdftex} option is dependent upon the value of
+% \cs{pdfoutput}: \texttt{true} if \cs{pdfoutput=1}, and \texttt{false}
+% otherwise.
+%
+% \section{Default Settings}
+%
+% \subsection{Default Option}
+%
+% The default option is
+% \begin{quote}
+% |scale={0.8,0.9}|.
+% \end{quote}
+% Other layout parameters, such as paper size, orientation and
+% lengths for header and footer, are set as defined in the documentclass
+% you use. If you just go |\usepackage{geometry}| in the preamble, the
+% package will set the default layout. Additional options will overwrite
+% the layout dimensions. For example,
+% \begin{quote}
+% |\usepackage[ hmargin=2cm ]{geometry}|
+% \end{quote}
+% will overwrite horizontal dimensions, but use the default for vertical
+% layout.
+%
+% \subsection{Configuration File}
+%
+% You can set up a configuration file to make default options.
+% To do this, produce a file \texttt{geometry.cfg} containing 
+% an \cs{ExecuteOptions} macro, for example, 
+% \begin{quote}
+% |\ExecuteOptions{a4paper,dvips}|
+% \end{quote}
+% and install it somewhere \TeX{} can find it.
+%
+% \section{Examples}
+%
+% \begin{itemize}
+% \item Set the width of the total body to be 70\% that of the paper. 
+% The total body is then centered horizontally. The following settings
+% (each line) result in the same effect.
+% \begin{quote}
+%  --~|hscale=0.7|,\\--~|width=0.7\paperwidth|,\\ 
+%  --~|hdivide={*,0.7\paperwidth,*}|,\\
+%  --~|hmargin=0.15\paperwidth|,\\--~|left=0.15\paperwidth|,\\
+%  --~|left = .15\paperwidth, right= 0.15\paperwidth|,\\
+%  --~|rmargin= .15\paperwidth|.
+% \end{quote}
+% For vertical layout, in this case, the default is used: |vscale=0.9|.
+% \item Set the height of the total body to be |10in|, the bottom-margin
+% |3cm|, and the width default. Then the top-margin will be calculated in
+% the package.
+% \begin{quote}
+%  --~|height=10in,bottom=2cm|,\\
+%  --~|bmargin = 2cm ,totalheight= 10in|,\\ 
+%  --~|vdivide  = { *, 10in ,2cm }|,\\
+%  and so on.
+% \end{quote}
+% \item Set the left-, right-, and top-margin |3cm|, |2cm| and |2.5in|
+% respectively. The page header is not used. The body is 40 lines of text
+% in height.
+% \begin{quote}
+%  --~|left=3cm,right=2cm, nohead,|\\
+%  |               top=2.5in, textheight=40\baselineskip|,\\
+%  --~|hmargin={3cm, 2cm}, head=0pt, headsep=0pt|\\
+%  |           tmargin=2.5in, textheight=40\baselineskip|,\\
+%  and so on.
+% \end{quote}
+% \item Modify the width of marginal notes to \texttt{3cm} and include
+% marginal notes when adjusting horizontal partition
+% \begin{quote}
+%  --~|marginpar=3cm|,\\
+%  --~|marginparwidth=3cm|.\\
+%  In this case, |includemp| is not necessary because it is set
+%  automatically when dimension(s) for marginal note are specified.\\[1ex]
+%  --~|marginpar=3cm, reversemp|\\
+%   makes the marginal notes appear in the left margin.
+% \end{quote}
+% \item Use A5 paper in landscape mode and a full scale of the
+% paper as the body.
+% \begin{quote}
+%  --~|a5paper, landscape, scale=1.0 , noheadfoot|,\\
+%  --~|landscape = TRUE, paper=a5paper, noheadfoot,|\\
+%  |             total={\paperwidth,\paperheight}|,\\
+% and so on.
+% \end{quote}
+% \item Get PDF output using \textsl{pdflatex} command for typeset.
+% \begin{quote}
+%  |% pdflatex foo|\\
+%  with\\
+%  |\documentclass[pdftex]{article}|\\
+%  |\usepackage{geometry}|\\
+%  or\\
+%  |\documentclass{article}|\\
+%  |\usepackage[pdftex]{geometry}|\\[2ex]
+%  is equivalent to\\[2ex]
+%  |% pdflatex '\pdfoutput=1 \input{foo}'|\\
+%  with\\
+%  |\documentclass{article}|\\
+%  |\usepackage{geometry}|.
+% \end{quote}
+% \item Enlarge A4 to A3 with fonts and spaces also enlarged.
+% \begin{quote}
+%  --~|a4paper, mag=1414|.
+% \end{quote}
+% To enlarge all the fonts in the document by 2.0 without changing paper
+% size, you can go 
+% \begin{quote}
+%  --~|letterpaper, mag=2000, truedimen|.
+% \end{quote}
+% \end{itemize}
+%
+% \section{Acknowledgements}
+%  I would like to thank the following people for their 
+%  pointing out bugs and suggesting, and for many helpful comments:~
+%  Friedrich Flender, Piet van Oostrum, Keith
+%  Reckdahl, Peter Riocreux, James Kilfiger, Jean-Marc Lasgouttes
+%  Frank Bennett, Vladimir Volovich, Wlodzimierz Macewicz,
+%  Jean-Bernard Addor, and Michael Vulis (MicroPress).
+%
+% \StopEventually{%
+%  \ifmulticols
+%  \addtocontents{toc}{\protect\end{multicols}}
+%  \fi
+% }
+%
+% \section{The Code}
+%    \begin{macrocode}
+%<*package>
+%    \end{macrocode}
+% This package requires David Carlisle's \textsf{keyval} package.
+%    \begin{macrocode}
+\RequirePackage{keyval}%
+%    \end{macrocode}
+% 
+% Internal switches are declared here.
+%    \begin{macrocode}
+\newif\ifGeom@verbose
+\newif\ifGeom@landscape
+\newif\ifGeom@nohead
+\newif\ifGeom@nofoot
+\newif\ifGeom@includemp
+\newif\ifGeom@passincmp
+\newif\ifGeom@hbody
+\newif\ifGeom@vbody
+\newif\ifGeom@dvips
+\newif\ifGeom@pdftex
+\newif\ifGeom@vtex
+%    \end{macrocode}
+% \begin{macro}{\Geom@cnth}
+% \begin{macro}{\Geom@cntv}
+% Counters for horizontal and vertical partitioning patterns.
+%    \begin{macrocode}
+\newcount\Geom@cnth
+\newcount\Geom@cntv
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+%
+% \begin{macro}{\geom@warning}
+% Macor for printing warning messages.
+%    \begin{macrocode}
+\def\geom@warning#1{%
+  \ifGeom@verbose\PackageWarningNoLine{geometry}{#1}\fi}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\Geom@Dhscale}
+% \begin{macro}{\Geom@Dvscale}
+% \begin{macro}{\Geom@Dtwosideshift}
+% The default values for the horizontal and vertical \textsl{scale},
+% and \textsl{twosideshift} are defined.
+%    \begin{macrocode}
+\def\Geom@Dhscale{0.8}%
+\def\Geom@Dvscale{0.9}%
+\def\Geom@Dtwosideshift{20\Geom@truedimen pt}%
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+%
+% \begin{macro}{\geom@init}
+% The macro for initializing modes and flags is defined here. This macro
+% is called when \textsf{geometry} package is loaded and when
+% \texttt{reset} option is specified.
+%    \begin{macrocode}
+\def\geom@init{%
+  \Geom@hbodyfalse
+  \Geom@vbodyfalse
+  \let\Geom@truedimen\@empty
+  \let\Geom@width\@undefined
+  \let\Geom@height\@undefined
+  \let\Geom@textwidth\@undefined
+  \let\Geom@textheight\@undefined
+  \let\Geom@hscale\@undefined
+  \let\Geom@vscale\@undefined
+  \let\Geom@lmargin\@undefined
+  \let\Geom@rmargin\@undefined
+  \let\Geom@tmargin\@undefined
+  \let\Geom@bmargin\@undefined
+  \let\Geom@twosideshift\@undefined
+  \Geom@verbosefalse
+  \Geom@landscapefalse
+  \Geom@noheadfalse
+  \Geom@nofootfalse
+  \Geom@includempfalse
+  \Geom@passincmpfalse
+  \Geom@dvipsfalse
+  \geom@initpdftex
+  \geom@initvtex}%
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\geom@initpdftex}
+% This macro initializes \texttt{Geom@pdftex} switch, which appears in
+% \cs{geom@init} macro.
+%    \begin{macrocode}
+\def\geom@initpdftex{%
+  \ifx\pdfpagewidth\@undefined
+    \Geom@pdftexfalse
+  \else
+    \ifnum\pdfoutput=1\relax\Geom@pdftextrue\else\Geom@pdftexfalse\fi
+  \fi}%
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\geom@initvtex}
+% This macro initializes vtex mode, which appears in \cs{geom@init}
+% macro.
+%    \begin{macrocode}
+\def\geom@initvtex{%
+  \ifx\VTeXversion\@undefined
+    \Geom@vtexfalse
+  \else
+    \ifnum\OpMode=\@ne
+      \Geom@vtextrue
+    \else
+      \ifnum\OpMode=\tw@
+        \Geom@vtextrue
+      \else
+        \Geom@vtexfalse
+      \fi
+    \fi
+  \fi}%
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\geom@setbool}
+% Macro for setting boolean options.
+%    \begin{macrocode}
+\def\geom@setbool#1#2{%
+  \csname #2\ifx\relax#1\relax true\else#1\fi\endcsname}%
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\geom@checkbool}
+% Macro used in \cs{geom@showparams} to print `true' or nothing.
+%    \begin{macrocode}
+\def\geom@checkbool#1{%
+  \csname ifGeom@#1\endcsname #1\space\else\fi}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\geom@detiv}
+% This macro determines the fourth length(|#4|) from |#1|(\gmlen{paperwidth}
+% or \gmlen{paperheight}), |#2| and |#3|. It is used in \cs{geom@detall} macro.
+%    \begin{macrocode}
+\def\geom@detiv#1#2#3#4{% determine #4.
+  \setlength\@tempdima{\@nameuse{paper#1}}%
+  \setlength\@tempdimb{\@nameuse{Geom@#2}}%
+  \addtolength\@tempdima{-\@tempdimb}%
+  \setlength\@tempdimb{\@nameuse{Geom@#3}}%
+  \addtolength\@tempdima{-\@tempdimb}%
+  \ifdim\@tempdima<\z@
+    \geom@warning{`#4' results in NEGATIVE (\the\@tempdima).%
+    ^^J\@spaces Parameters of `#2' and `#3' should be shortened}%
+  \fi
+  \expandafter\edef\csname Geom@#4\endcsname{\the\@tempdima}}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\geom@detiiandiii}
+% This macro determines |#2| and |#3| from |#1|.
+% The first argument can be \texttt{width} or \texttt{height}, which is
+% expanded into dimensions of paper and total body. It is used in
+% \cs{geom@detall} macro.
+%    \begin{macrocode}
+\def\geom@detiiandiii#1#2#3{% determine #2 and #3.
+  \setlength\@tempdima{\@nameuse{paper#1}}%
+  \setlength\@tempdimb{\@nameuse{Geom@#1}}%
+  \addtolength\@tempdima{-\@tempdimb}%
+  \divide\@tempdima\tw@
+  \ifdim\@tempdima<\z@
+    \geom@warning{`#2' and `#3' result in NEGATIVE (\the\@tempdima).%
+                  ^^J\@spaces Parameter for `#1' should be shortened}%
+  \fi
+  \expandafter\edef\csname Geom@#2\endcsname{\the\@tempdima}%
+  \expandafter\edef\csname Geom@#3\endcsname{\the\@tempdima}}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\geom@detall}
+% This macro determines partition of each direction. The first argument is
+% \texttt{h} or \texttt{v}.
+%    \begin{macrocode}
+\def\geom@detall#1#2#3#4{%
+  \@tempcnta\z@
+  \if#1h
+    \ifx\Geom@lmargin\@undefined\else\advance\@tempcnta4\relax\fi
+    \ifGeom@hbody\advance\@tempcnta2\relax\fi
+    \ifx\Geom@rmargin\@undefined\else\advance\@tempcnta1\relax\fi
+    \Geom@cnth\@tempcnta
+  \else
+    \ifx\Geom@tmargin\@undefined\else\advance\@tempcnta4\relax\fi
+    \ifGeom@vbody\advance\@tempcnta2\relax\fi
+    \ifx\Geom@bmargin\@undefined\else\advance\@tempcnta1\relax\fi
+    \Geom@cntv\@tempcnta
+  \fi
+  \ifcase\@tempcnta               % 0:(*,*,*)
+    \if#1h
+      \edef\Geom@width{\Geom@Dhscale\paperwidth}%
+    \else
+      \edef\Geom@height{\Geom@Dvscale\paperheight}%
+    \fi
+    \geom@detiiandiii{#2}{#3}{#4}%
+  \or                             % 1:(*,*,S) goto (5)
+    \geom@warning{`#3' was forced to equal `#4'}%
+    \expandafter\edef\csname Geom@#3\endcsname{\@nameuse{Geom@#4}}%
+    \geom@detiv{#2}{#3}{#4}{#2}%
+  \or\geom@detiiandiii{#2}{#3}{#4}% 2:(*,S,*)
+  \or\geom@detiv{#2}{#2}{#4}{#3}  % 3:(*,S,S)
+  \or                             % 4:(S,*,*) goto (5)
+    \geom@warning{`#4' was forced to equal `#3'}%
+    \expandafter\edef\csname Geom@#4\endcsname{\@nameuse{Geom@#3}}%
+    \geom@detiv{#2}{#3}{#4}{#2}%
+  \or\geom@detiv{#2}{#3}{#4}{#2}  % 5:(S,*,S)
+  \or\geom@detiv{#2}{#2}{#3}{#4}  % 6:(S,S,*)
+  \or                             % 7:(S,S,S) goto (5)
+    \geom@warning{Redundant specification in `#1'-direction.%
+                  ^^J\@spaces `#2' (\@nameuse{Geom@#2}) is ignored}%
+    \geom@detiv{#2}{#3}{#4}{#2}%
+  \else\fi}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\geom@clean}
+% Macro for setting unspecified dimensions to be \cs{@undefined}.
+% This is used by \cs{geometry} macros.
+%    \begin{macrocode}
+\def\geom@clean{%
+  \ifnum\Geom@cnth<4\let\Geom@lmargin\@undefined\fi
+  \ifodd\Geom@cnth\else\let\Geom@rmargin\@undefined\fi
+  \ifnum\Geom@cntv<4\let\Geom@tmargin\@undefined\fi
+  \ifodd\Geom@cntv\else\let\Geom@bmargin\@undefined\fi
+  \ifGeom@hbody\else
+    \let\Geom@hscale\@undefined
+    \let\Geom@width\@undefined
+    \let\Geom@textwidth\@undefined
+  \fi
+  \ifGeom@vbody\else
+    \let\Geom@vscale\@undefined
+    \let\Geom@height\@undefined
+    \let\Geom@textheight\@undefined
+  \fi}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\geom@parse@divide}
+% Macro for parsing (\texttt{h},\texttt{v})\texttt{divide} options.
+%    \begin{macrocode}
+\def\geom@parse@divide#1#2#3#4{%
+  \def\Geom@star{*}%
+  \@tempcnta\z@
+  \@for\Geom@tmp:=#1\do{%
+    \expandafter\KV@@sp@def\expandafter\Geom@frag\expandafter{\Geom@tmp}%
+    \edef\Geom@value{\Geom@frag}%
+    \ifcase\@tempcnta\relax% cnta == 0
+            \edef\Geom@key{#2}%
+    \or    \edef\Geom@key{#3}%
+    \else  \edef\Geom@key{#4}%
+    \fi
+    \@nameuse{Geom@set\Geom@key false}%
+    \ifx\empty\Geom@value\else
+    \ifx\Geom@star\Geom@value\else
+      \setkeys{Geom}{\Geom@key=\Geom@value}%
+    \fi\fi
+    \advance\@tempcnta\@ne}%
+  \let\Geom@star\relax}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\geom@branch}
+% Macro for branching an option's value into the same two values.
+%    \begin{macrocode}
+\def\geom@branch#1#2#3{%
+  \@tempcnta\z@
+  \@for\Geom@tmp:=#1\do{%
+    \KV@@sp@def\Geom@frag{\Geom@tmp}%
+    \edef\Geom@value{\Geom@frag}%
+    \ifcase\@tempcnta\relax% cnta == 0
+      \setkeys{Geom}{#2=\Geom@value}%
+    \or% cnta == 1
+      \setkeys{Geom}{#3=\Geom@value}%
+    \else\fi
+    \advance\@tempcnta\@ne}%
+  \ifnum\@tempcnta=\@ne
+    \setkeys{Geom}{#2=\Geom@value}%
+    \setkeys{Geom}{#3=\Geom@value}%
+  \fi}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\geom@magtooffset}
+% This macro is used to adjust offsets by \cs{mag}.
+%    \begin{macrocode}
+\def\geom@magtooffset{%
+  \@tempdima=\mag\Geom@truedimen sp%
+  \@tempdimb=1\Geom@truedimen in%
+  \divide\@tempdimb\@tempdima
+  \multiply\@tempdimb\@m
+  \addtolength{\hoffset}{1\Geom@truedimen in}%
+  \addtolength{\voffset}{1\Geom@truedimen in}%
+  \addtolength{\hoffset}{-\@tempdimb}%
+  \addtolength{\voffset}{-\@tempdimb}}%
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\geom@setpaper}
+%    \begin{macrocode}
+\def\geom@setpaper(#1,#2){%
+  \setlength\paperwidth{#1}%
+  \setlength\paperheight{#2}}%
+%    \end{macrocode}
+% \end{macro}
+% Various paper size are defined here.
+%    \begin{macrocode}
+\@namedef{Geom@a0paper}{%
+\geom@setpaper(841\Geom@truedimen mm,1189\Geom@truedimen mm)}%
+\@namedef{Geom@a1paper}{%
+\geom@setpaper(595\Geom@truedimen mm,841\Geom@truedimen mm)}%
+\@namedef{Geom@a2paper}{%
+\geom@setpaper(420\Geom@truedimen mm,595\Geom@truedimen mm)}%
+\@namedef{Geom@a3paper}{%
+\geom@setpaper(297\Geom@truedimen mm,420\Geom@truedimen mm)}%
+\@namedef{Geom@a4paper}{%
+\geom@setpaper(210\Geom@truedimen mm,297\Geom@truedimen mm)}%
+\@namedef{Geom@a5paper}{%
+\geom@setpaper(149\Geom@truedimen mm,210\Geom@truedimen mm)}%
+\@namedef{Geom@a6paper}{%
+\geom@setpaper(105\Geom@truedimen mm,149\Geom@truedimen mm)}%
+\@namedef{Geom@b0paper}{%
+\geom@setpaper(1000\Geom@truedimen mm,1414\Geom@truedimen mm)}%
+\@namedef{Geom@b1paper}{%
+\geom@setpaper(707\Geom@truedimen mm,1000\Geom@truedimen mm)}%
+\@namedef{Geom@b2paper}{%
+\geom@setpaper(500\Geom@truedimen mm,707\Geom@truedimen mm)}%
+\@namedef{Geom@b3paper}{%
+\geom@setpaper(353\Geom@truedimen mm,500\Geom@truedimen mm)}%
+\@namedef{Geom@b4paper}{%
+\geom@setpaper(250\Geom@truedimen mm,353\Geom@truedimen mm)}%
+\@namedef{Geom@b5paper}{%
+\geom@setpaper(176\Geom@truedimen mm,250\Geom@truedimen mm)}%
+\@namedef{Geom@b6paper}{%
+\geom@setpaper(125\Geom@truedimen mm,176\Geom@truedimen mm)}%
+\@namedef{Geom@letterpaper}{%
+\geom@setpaper(8.5\Geom@truedimen in,11\Geom@truedimen in)}%
+\@namedef{Geom@legalpaper}{%
+\geom@setpaper(8.5\Geom@truedimen in,14\Geom@truedimen in)}%
+\@namedef{Geom@executivepaper}{%
+\geom@setpaper(7.25\Geom@truedimen in,10.5\Geom@truedimen in)}%
+%    \end{macrocode}
+%
+% The option keys are defined below.
+% \begin{key}{Geom}{paper}
+% \texttt{paper} takes paper name as its value.
+% Available paper names are listed below.
+%    \begin{macrocode}
+\define@key{Geom}{paper}{\setkeys{Geom}{#1}}%
+%    \end{macrocode}
+% \end{key}
+% \begin{key}{Geom}{a[0-6]paper}
+% \begin{key}{Geom}{b[0-6]paper}
+% \begin{key}{Geom}{letterpaper}
+% \begin{key}{Geom}{legalpaper}
+% \begin{key}{Geom}{executivepaper}
+% Thirteen standard paper names are available.
+%    \begin{macrocode}
+\define@key{Geom}{a0paper}[true]{\def\Geom@paper{a0paper}}%
+\define@key{Geom}{a1paper}[true]{\def\Geom@paper{a1paper}}%
+\define@key{Geom}{a2paper}[true]{\def\Geom@paper{a2paper}}%
+\define@key{Geom}{a3paper}[true]{\def\Geom@paper{a3paper}}%
+\define@key{Geom}{a4paper}[true]{\def\Geom@paper{a4paper}}%
+\define@key{Geom}{a5paper}[true]{\def\Geom@paper{a5paper}}%
+\define@key{Geom}{a6paper}[true]{\def\Geom@paper{a6paper}}%
+\define@key{Geom}{b0paper}[true]{\def\Geom@paper{b0paper}}%
+\define@key{Geom}{b1paper}[true]{\def\Geom@paper{b1paper}}%
+\define@key{Geom}{b2paper}[true]{\def\Geom@paper{b2paper}}%
+\define@key{Geom}{b3paper}[true]{\def\Geom@paper{b3paper}}%
+\define@key{Geom}{b4paper}[true]{\def\Geom@paper{b4paper}}%
+\define@key{Geom}{b5paper}[true]{\def\Geom@paper{b5paper}}%
+\define@key{Geom}{b6paper}[true]{\def\Geom@paper{b6paper}}%
+\define@key{Geom}{letterpaper}[true]{\def\Geom@paper{letterpaper}}%
+\define@key{Geom}{legalpaper}[true]{\def\Geom@paper{legalpaper}}%
+\define@key{Geom}{executivepaper}[true]{\def\Geom@paper{executivepaper}}%
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \end{key}\end{key}
+% \begin{key}{Geom}{papersize}
+% \begin{key}{Geom}{paperwidth}
+% \begin{key}{Geom}{paperheight}
+%    \begin{macrocode}
+\define@key{Geom}{papersize}{\geom@branch{#1}{paperwidth}{paperheight}}%
+\define@key{Geom}{paperwidth}{\setlength\paperwidth{#1}%
+                              \let\Geom@paper\@undefined}%
+\define@key{Geom}{paperheight}{\setlength\paperheight{#1}%
+                              \let\Geom@paper\@undefined}%
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \begin{key}{Geom}{total}
+% \begin{key}{Geom}{width}
+% \begin{key}{Geom}{height}
+%    \begin{macrocode}
+\define@key{Geom}{total}{\geom@branch{#1}{width}{height}}%
+\define@key{Geom}{width}{\Geom@hbodytrue\edef\Geom@width{#1}}%
+\define@key{Geom}{height}{\Geom@vbodytrue\edef\Geom@height{#1}}%
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \begin{key}{Geom}{body}
+% \begin{key}{Geom}{textwidth}
+% \begin{key}{Geom}{textheight}
+%    \begin{macrocode}
+\define@key{Geom}{body}{\geom@branch{#1}{textwidth}{textheight}}%
+\define@key{Geom}{textwidth}{\Geom@hbodytrue\edef\Geom@textwidth{#1}}%
+\define@key{Geom}{textheight}{\Geom@vbodytrue\edef\Geom@textheight{#1}}%
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \begin{key}{Geom}{scale}
+% \begin{key}{Geom}{hscale}
+% \begin{key}{Geom}{vscale}
+%    \begin{macrocode}
+\define@key{Geom}{scale}{\geom@branch{#1}{hscale}{vscale}}%
+\define@key{Geom}{hscale}{\Geom@hbodytrue\edef\Geom@hscale{#1}}%
+\define@key{Geom}{vscale}{\Geom@vbodytrue\edef\Geom@vscale{#1}}%
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \begin{key}{Geom}{margin}
+% \begin{key}{Geom}{hmargin}
+% \begin{key}{Geom}{vmargin}
+% \begin{key}{Geom}{lmargin}
+% \begin{key}{Geom}{rmargin}
+% \begin{key}{Geom}{tmargin}
+% \begin{key}{Geom}{bmargin}
+%    \begin{macrocode}
+\define@key{Geom}{margin}{\geom@branch{#1}{lmargin}{tmargin}%
+                          \geom@branch{#1}{rmargin}{bmargin}}%
+\define@key{Geom}{hmargin}{\geom@branch{#1}{lmargin}{rmargin}}%
+\define@key{Geom}{vmargin}{\geom@branch{#1}{tmargin}{bmargin}}%
+\define@key{Geom}{lmargin}{\edef\Geom@lmargin{#1}}%
+\define@key{Geom}{rmargin}{\edef\Geom@rmargin{#1}}%
+\define@key{Geom}{tmargin}{\edef\Geom@tmargin{#1}}%
+\define@key{Geom}{bmargin}{\edef\Geom@bmargin{#1}}%
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \end{key}\end{key}\end{key}
+% \end{key}
+% \begin{key}{Geom}{divide}
+% \begin{key}{Geom}{hdivide}
+% \begin{key}{Geom}{vdivide}
+% Provide useful ways to partition each direction of paper.
+%    \begin{macrocode}
+\define@key{Geom}{divide}{\geom@parse@divide{#1}{lmargin}{width}{rmargin}%
+                         \geom@parse@divide{#1}{tmargin}{height}{bmargin}}%
+\define@key{Geom}{hdivide}{\geom@parse@divide{#1}{lmargin}{width}{rmargin}}%
+\define@key{Geom}{vdivide}{\geom@parse@divide{#1}{tmargin}{height}{bmargin}}%
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \begin{key}{Geom}{offset}
+% \begin{key}{Geom}{hoffset}
+% \begin{key}{Geom}{voffset}
+%    \begin{macrocode}
+\define@key{Geom}{offset}{\geom@branch{#1}{hoffset}{voffset}}%
+\define@key{Geom}{hoffset}{\setlength\hoffset{#1}}%
+\define@key{Geom}{voffset}{\setlength\voffset{#1}}%
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \begin{key}{Geom}{headheight}
+% \begin{key}{Geom}{headsep}
+% \begin{key}{Geom}{footskip}
+%    \begin{macrocode}
+\define@key{Geom}{headheight}{\Geom@noheadfalse\setlength\headheight{#1}}%
+\define@key{Geom}{headsep}{\Geom@noheadfalse\setlength\headsep{#1}}%
+\define@key{Geom}{footskip}{\Geom@nofootfalse\setlength\footskip{#1}}%
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \begin{key}{Geom}{marginparwidth}
+% \begin{key}{Geom}{marginparsep}
+%    \begin{macrocode}
+\define@key{Geom}{marginparwidth}%
+           {\ifGeom@passincmp\else\Geom@includemptrue\fi%
+            \setlength\marginparwidth{#1}}%
+\define@key{Geom}{marginparsep}%
+           {\ifGeom@passincmp\else\Geom@includemptrue\fi%
+            \setlength\marginparsep{#1}}%
+%    \end{macrocode}
+% \end{key}\end{key}
+% \begin{key}{Geom}{columnsep}
+% \begin{key}{Geom}{footnotesep}
+%    \begin{macrocode}
+\define@key{Geom}{columnsep}{\setlength\columnsep{#1}}%
+\define@key{Geom}{footnotesep}{\setlength{\skip\footins}{#1}}%
+%    \end{macrocode}
+% \end{key}\end{key}
+% \begin{key}{Geom}{verbose}
+% \begin{key}{Geom}{reset}
+% Note that \texttt{reset} executes \cs{geom@init} and sets
+% \texttt{oneside}.
+%    \begin{macrocode}
+\define@key{Geom}{verbose}[true]{%
+            \lowercase{\geom@setbool{#1}}{Geom@verbose}}%
+\define@key{Geom}{reset}[true]{%
+            \lowercase{\expandafter\csname if#1\endcsname\geom@init
+            \@twosidefalse\@mparswitchfalse\fi}}%
+%    \end{macrocode}
+% \end{key}\end{key}
+% \begin{key}{Geom}{includemp}
+% \begin{key}{Geom}{reversemp}
+% \begin{key}{Geom}{reversemarginpar}
+%    \begin{macrocode}
+\define@key{Geom}{includemp}[true]{%
+            \Geom@passincmptrue
+            \lowercase{\geom@setbool{#1}}{Geom@includemp}}%
+\define@key{Geom}{reversemp}[true]{%
+            \ifGeom@passincmp\else\Geom@includemptrue\fi%
+            \lowercase{\geom@setbool{#1}}{@reversemargin}}%
+\define@key{Geom}{reversemarginpar}[true]{%
+            \ifGeom@passincmp\else\Geom@includemptrue\fi%
+            \lowercase{\geom@setbool{#1}}{@reversemargin}}%
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \begin{key}{Geom}{twoside}
+% \begin{key}{Geom}{twosideshift}
+%    \begin{macrocode}
+\define@key{Geom}{twoside}[true]{%
+            \lowercase{\geom@setbool{#1}}{@twoside}%
+            \lowercase{\geom@setbool{#1}}{@mparswitch}}%
+\define@key{Geom}{twosideshift}{\@twosidetrue\@mparswitchtrue
+            \def\Geom@twosideshift{#1}}%
+%    \end{macrocode}
+% \end{key}\end{key}
+% \begin{key}{Geom}{nohead}
+% \begin{key}{Geom}{nofoot}
+% \begin{key}{Geom}{noheadfoot}
+%    \begin{macrocode}
+\define@key{Geom}{nohead}[true]{%
+            \lowercase{\geom@setbool{#1}}{Geom@nohead}}%
+\define@key{Geom}{nofoot}[true]{%
+            \lowercase{\geom@setbool{#1}}{Geom@nofoot}}%
+\define@key{Geom}{noheadfoot}[true]{%
+            \lowercase{\geom@setbool{#1}}{Geom@nohead}%
+            \lowercase{\geom@setbool{#1}}{Geom@nofoot}}%
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \begin{key}{Geom}{landscape}
+% \begin{key}{Geom}{portrait}
+%    \begin{macrocode}
+\define@key{Geom}{landscape}[true]{%
+            \lowercase{\geom@setbool{#1}}{Geom@landscape}}%
+\define@key{Geom}{portrait}[true]{%
+            \lowercase{\expandafter\csname if#1\endcsname
+            \Geom@landscapefalse\else\Geom@landscapetrue\fi}}%
+%    \end{macrocode}
+% \end{key}\end{key}
+% \begin{key}{Geom}{dvips}
+% \begin{key}{Geom}{pdftex}
+% \begin{key}{Geom}{vtex}
+%    \begin{macrocode}
+\define@key{Geom}{dvips}[true]{%
+            \lowercase{\geom@setbool{#1}}{Geom@dvips}}%
+\define@key{Geom}{pdftex}[true]{%
+            \lowercase{\geom@setbool{#1}}{Geom@pdftex}}%
+\define@key{Geom}{vtex}[true]{%
+            \lowercase{\geom@setbool{#1}}{Geom@vtex}}%
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \begin{key}{Geom}{mag}
+% \begin{key}{Geom}{truedimen}
+% Provides an interface to |\mag| with offset auto-justification.
+%    \begin{macrocode}
+\define@key{Geom}{truedimen}[true]{%
+            \lowercase{\expandafter\csname if#1\endcsname
+            \def\Geom@truedimen{true}\else
+            \let\Geom@truedimen\@empty\fi}}%
+\define@key{Geom}{mag}{\mag#1}%
+%    \end{macrocode}
+% \end{key}\end{key}
+% \begin{key}{Geom}{papername}
+% \begin{key}{Geom}{totalwidth}
+% \begin{key}{Geom}{totalheight}
+% \begin{key}{Geom}{text}
+% \begin{key}{Geom}{left}
+% \begin{key}{Geom}{right}
+% \begin{key}{Geom}{top}
+% \begin{key}{Geom}{bottom}
+% \begin{key}{Geom}{head}
+% \begin{key}{Geom}{foot}
+% \begin{key}{Geom}{marginpar}
+% The key aliases are defined.
+%    \begin{macrocode}
+\let\KV@Geom@papername\KV@Geom@paper
+\let\KV@Geom@totalwidth\KV@Geom@width
+\let\KV@Geom@totalheight\KV@Geom@height
+\let\KV@Geom@text\KV@Geom@body
+\let\KV@Geom@left\KV@Geom@lmargin
+\let\KV@Geom@right\KV@Geom@rmargin
+\let\KV@Geom@top\KV@Geom@tmargin
+\let\KV@Geom@bottom\KV@Geom@bmargin
+\let\KV@Geom@head\KV@Geom@headheight
+\let\KV@Geom@foot\KV@Geom@footskip
+\let\KV@Geom@marginpar\KV@Geom@marginparwidth
+%    \end{macrocode}
+% \end{key}\end{key}\end{key}
+% \end{key}\end{key}\end{key}
+% \end{key}\end{key}\end{key}
+% \end{key}\end{key}
+%
+% \begin{macro}{\geom@process}
+% The main macro processing specified layout dimensions is defined.
+%    \begin{macrocode}
+\def\geom@process{%
+  \ifx\Geom@paper\@undefined\else\@nameuse{Geom@\Geom@paper}\fi
+  \ifdim\paperwidth<\p@
+    \PackageError{geometry}{%
+    You must set \string\paperwidth\space properly}{%
+    Set your paper type (e.g., `a4paper' for A4) as a class option^^J%
+    or as a geometry package option.}%
+  \fi
+  \ifdim\paperheight<\p@
+    \PackageError{geometry}{%
+    You must set \string\paperheight\space properly}{%
+    Set your paper type (e.g., `a4paper' for A4) as a class option^^J%
+    or as a geometry package option.}%
+  \fi
+  \ifnum\@m=\mag\else\geom@magtooffset\fi
+  \ifGeom@landscape
+    \setlength\@tempdima{\paperwidth}%
+    \setlength\paperwidth{\paperheight}%
+    \setlength\paperheight{\@tempdima}%
+  \fi
+  \ifGeom@nohead
+    \setlength\headheight{0pt}%
+    \setlength\headsep{0pt}%
+  \fi
+  \ifGeom@nofoot
+    \setlength\footskip{0pt}%
+  \fi
+  \ifGeom@hbody
+    \ifx\Geom@width\@undefined
+      \ifx\Geom@hscale\@undefined
+        \edef\Geom@width{\Geom@Dhscale\paperwidth}%
+      \else
+        \edef\Geom@width{\Geom@hscale\paperwidth}%
+      \fi
+    \fi
+    \ifx\Geom@textwidth\@undefined\else
+      \setlength\@tempdima{\Geom@textwidth}%
+      \ifGeom@includemp
+        \addtolength\@tempdima{\marginparwidth}%
+        \addtolength\@tempdima{\marginparsep}%
+      \fi
+      \edef\Geom@width{\the\@tempdima}%
+    \fi
+  \fi
+  \ifGeom@vbody
+    \ifx\Geom@height\@undefined
+      \ifx\Geom@vscale\@undefined
+        \edef\Geom@height{\Geom@Dvscale\paperheight}%
+      \else
+        \edef\Geom@height{\Geom@vscale\paperheight}%
+      \fi
+    \fi
+    \ifx\Geom@textheight\@undefined\else
+      \setlength\@tempdima{\Geom@textheight}%
+      \addtolength\@tempdima{\headheight}%
+      \addtolength\@tempdima{\headsep}%
+      \addtolength\@tempdima{\footskip}%
+      \edef\Geom@height{\the\@tempdima}%
+    \fi
+  \fi
+  \geom@detall{h}{width}{lmargin}{rmargin}%
+  \geom@detall{v}{height}{tmargin}{bmargin}%
+  \setlength\textwidth{\Geom@width}%
+  \setlength\textheight{\Geom@height}%
+  \setlength\topmargin{\Geom@tmargin}%
+  \setlength\oddsidemargin{\Geom@lmargin}%
+  \ifGeom@includemp
+    \addtolength\textwidth{-\marginparwidth}%
+    \addtolength\textwidth{-\marginparsep}%
+    \if@reversemargin
+       \addtolength\oddsidemargin{\marginparwidth}%
+       \addtolength\oddsidemargin{\marginparsep}%
+    \fi
+  \fi
+  \addtolength\textheight{-\headheight}%
+  \addtolength\textheight{-\headsep}%
+  \addtolength\textheight{-\footskip}%
+  \addtolength\topmargin{-1\Geom@truedimen in}%
+  \addtolength\oddsidemargin{-1\Geom@truedimen in}%
+  \if@twoside
+    \ifx\Geom@twosideshift\@undefined
+      \def\Geom@twosideshift{\Geom@Dtwosideshift}%
+    \fi
+    \setlength\evensidemargin{\Geom@rmargin}%
+    \addtolength\evensidemargin{-1\Geom@truedimen in}%
+    \setlength\@tempdima{\Geom@twosideshift}%
+    \addtolength\oddsidemargin{\@tempdima}%
+    \addtolength\evensidemargin{-\@tempdima}%
+    \ifGeom@includemp
+      \if@mparswitch
+        \setlength\@tempdima{\marginparwidth}%
+        \addtolength\@tempdima{\marginparsep}%
+        \addtolength\evensidemargin{\@tempdima}%
+        \if@reversemargin
+          \addtolength\evensidemargin{-\marginparwidth}%
+          \addtolength\evensidemargin{-\marginparsep}%
+        \fi
+      \fi
+    \fi
+  \else
+    \setlength\evensidemargin{\oddsidemargin}%
+  \fi}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\geom@showparam}
+% The macro for typeout of geometry status and \LaTeX\ layout 
+% dimensions.
+%    \begin{macrocode}
+\def\geom@showparams{%
+  \typeout{----------------------- Geometry parameters^^J%
+  mode: %
+  \ifx\Geom@paper\@undefined
+     (default papersize)\space
+  \else
+     \Geom@paper\space
+  \fi
+  \geom@checkbool{landscape}%
+  \geom@checkbool{nohead}%
+  \geom@checkbool{nofoot}%
+  \geom@checkbool{includemp}%
+  \if@reversemargin reversemp\space\fi%
+  \if@twoside twoside\space\fi%
+  \geom@checkbool{dvips}%
+  \geom@checkbool{pdftex}%
+  \geom@checkbool{vtex}%
+  \ifx\Geom@truedimen\@empty\else
+     truedimen
+  \fi^^J%
+  h-parts: \Geom@lmargin, \Geom@width, \Geom@rmargin%
+  \ifnum\Geom@cnth=\z@\space(default)\fi^^J%
+  v-parts: \Geom@tmargin, \Geom@height, \Geom@bmargin%
+  \ifnum\Geom@cntv=\z@\space(default)\fi^^J%
+  \if@twoside
+    twosideshift: \Geom@twosideshift^^J%
+  \fi
+  ----------------------- Page layout dimensions^^J%
+  \string\paperwidth\space\space\the\paperwidth^^J%
+  \string\paperheight\space\the\paperheight^^J%
+  \string\textwidth\space\space\the\textwidth^^J%
+  \string\textheight\space\the\textheight^^J%
+  \string\oddsidemargin\space\space\the\oddsidemargin^^J%
+  \string\evensidemargin\space\the\evensidemargin^^J%
+  \string\topmargin\space\space\the\topmargin^^J%
+  \string\headheight\space\the\headheight^^J%
+  \string\headsep\@spaces\the\headsep^^J%
+  \string\footskip\space\space\space\the\footskip^^J%
+  \if@twocolumn
+    \string\columnsep\space\space\the\columnsep^^J%
+  \fi
+  \ifGeom@includemp
+    \string\marginparwidth\space\the\marginparwidth^^J%
+    \string\marginparsep\space\space\space\the\marginparsep^^J%
+  \fi
+  \string\hoffset\space\the\hoffset^^J%
+  \string\voffset\space\the\voffset^^J%
+  \string\mag\space\the\mag^^J%
+  (1in=72.27pt, 1cm=28.45pt)^^J%
+  -----------------------}}%
+%    \end{macrocode}
+% \end{macro}
+%
+% Paper size is initialized only once here.
+%    \begin{macrocode}
+\let\Geom@paper\@undefined
+%    \end{macrocode}
+% \begin{macro}{\geom@setkey}
+% \cs{ExecuteOptions} is replaced with \cs{geom@setkey} to make it
+% possible to deal with `key=value' as its argument.
+%    \begin{macrocode}
+\def\geom@setkey{\setkeys{Geom}}%
+\let\geom@origExecuteOptions\ExecuteOptions
+\let\ExecuteOptions\geom@setkey
+%    \end{macrocode}
+% \end{macro}
+% |\geom@init| is executed. Note that \cs{@twoside}, \cs{@mparswitch}
+% and \cs{mag} are not changed.
+%    \begin{macrocode}
+\geom@init
+%    \end{macrocode}
+% A local configuration file may define more options. 
+% To set A4 paper as default, \texttt{geometry.cfg} needs to contain
+% |\ExecuteOptions{a4paper}|.
+%    \begin{macrocode}
+\InputIfFileExists{geometry.cfg}{}{}%
+%    \end{macrocode}
+% The original definition for \cs{ExecuteOptions} macro is restored.
+%    \begin{macrocode}
+\let\ExecuteOptions\geom@origExecuteOptions
+%    \end{macrocode}
+%
+% \begin{macro}{\ProcessOptionsWithKV}
+% This macros can process package options using `key=value' scheme.
+% The code was borrowed from the \textsf{hyperref} package written by
+% Sebastian Rahtz.
+%    \begin{macrocode}
+\def\ProcessOptionsWithKV#1{%
+  \let\@tempa\@empty
+  \@for\CurrentOption:=\@classoptionslist\do{%
+    \@ifundefined{KV@#1@\CurrentOption}%
+    {}{\edef\@tempa{\@tempa,\CurrentOption,}}}%
+  \edef\@tempa{%
+    \noexpand\setkeys{#1}{\@tempa\@ptionlist{\@currname.\@currext}}}%
+  \@tempa
+  \AtEndOfPackage{\let\@unprocessedoptions\relax}}%
+%    \end{macrocode}
+% \end{macro}
+% The optional arguments to \cs{usepackage} and \cs{documentclass} macros
+% are processed here.
+%    \begin{macrocode}
+\ProcessOptionsWithKV{Geom}%
+%    \end{macrocode}
+% Actual setting and calculation of layout dimensions are here.
+%    \begin{macrocode}
+\geom@process
+%    \end{macrocode}
+%
+% The \texttt{verbose}, \texttt{pdftex} and \texttt{dvips} options are
+% checked in \cs{AtBeginDocument}.
+%    \begin{macrocode}
+\AtBeginDocument{%
+  \ifx\pdfpagewidth\@undefined % latex command is used.
+    \Geom@pdftexfalse
+    \ifx\VTeXversion\@undefined % not VTeX 
+      \Geom@vtexfalse
+    \fi
+  \else                       % pdflatex command is used
+    \ifGeom@pdftex\Geom@dvipsfalse\fi
+  \fi
+%    \end{macrocode}
+% Paper size is temporally adjusted according to \cs{mag} for
+% printing devices.
+%    \begin{macrocode}
+  \edef\org@pw{\the\paperwidth}
+  \edef\org@ph{\the\paperheight}
+  \divide\paperwidth\@m
+  \multiply\paperwidth\the\mag
+  \divide\paperheight\@m
+  \multiply\paperheight\the\mag
+%    \end{macrocode}
+% For \texttt{dvips},
+%    \begin{macrocode}
+  \ifGeom@dvips
+    \AtBeginDvi{\special{%
+    papersize=\the\paperwidth,\the\paperheight}}%
+  \fi
+%    \end{macrocode}
+% For \texttt{pdftex},
+%    \begin{macrocode}
+  \ifGeom@pdftex
+    \pdfoutput=1\relax
+    \pdfpagewidth=\the\paperwidth
+    \pdfpageheight=\the\paperheight
+  \fi
+%    \end{macrocode}
+% For \texttt{vtex},
+%    \begin{macrocode}
+  \ifGeom@vtex % vtex environment
+    \mediawidth=\the\paperwidth
+    \mediaheight=\the\paperheight
+  \fi
+%    \end{macrocode}
+% To put back the paper size to the original one,
+%    \begin{macrocode}
+  \setlength\paperwidth{\org@pw}
+  \setlength\paperheight{\org@ph}
+  \let\org@pw\relax
+  \let\org@ph\relax
+%    \end{macrocode}
+% If \texttt{verbose} is set, the page geometry parameters and options
+% are displayed.
+%    \begin{macrocode}
+  \ifGeom@verbose
+    \geom@showparams
+  \fi}%
+%    \end{macrocode}
+%
+% \begin{macro}{\geometry}
+% The user-interface macro \cs{geometry} is defined,
+% which sets unspecified dimensions to be \cs{@undefined} by
+% \cs{geom@clean}, appends specified options to themselves,
+% and determines layout dimensions by \cs{geom@process}.
+%    \begin{macrocode}
+\def\geometry#1{%
+  \geom@clean
+  \setkeys{Geom}{#1}%
+  \geom@process}%
+%    \end{macrocode}
+% \end{macro}
+%    \begin{macrocode}
+%</package>
+%<*config>
+
+%% Uncomment and edit the line below to set default options.
+%%\ExecuteOptions{a4paper,dvips}
+
+%</config>
+%    \end{macrocode}
+%
+% \Finale
+%
