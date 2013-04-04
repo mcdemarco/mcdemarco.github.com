@@ -4,7 +4,7 @@
  <title>m. c. de marco</title>
  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
  <link href="http://mcdemarco.net/"/>
- <updated>2013-04-04T15:31:30-04:00</updated>
+ <updated>2013-04-04T15:34:52-04:00</updated>
  <id>http://mcdemarco.net</id>
  <author>
    <name>m. c. de marco</name>
@@ -16,7 +16,7 @@
    <link href="http://mcdemarco.net/blog/2013/04/04/social-archiving"/>
    <updated>2013-04-04T15:28:00-04:00</updated>
    <id>http://mcdemarco.net/blog/2013/04/04/social-archiving</id>
-   <content type="html">&lt;p&gt;The rest of the static website has now been converted to static website, and I tossed in one social media archive, &lt;a href=&quot;/social/tweets/&quot;&gt;twitter&lt;/a&gt;, along with a primitive proto-twitter &lt;a href=&quot;/social/notes/&quot;&gt;noteboard&lt;/a&gt; that I used back in the day.  I&amp;rsquo;m not quite ready to upload it all to my official host, so for now the new website is still hanging out at &lt;a href=&quot;mcdemarco.github.com&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
+   <content type="html">&lt;p&gt;The rest of the static website has now been converted to static website, and I tossed in one social media archive, &lt;a href=&quot;/social/tweets/&quot;&gt;twitter&lt;/a&gt;, along with a primitive proto-twitter &lt;a href=&quot;/social/notes/&quot;&gt;noteboard&lt;/a&gt; that I used back in the day.  I&amp;rsquo;m not quite ready to upload it all to my official host, so for now the new website is still hanging out at &lt;a href=&quot;http://mcdemarco.github.com&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
 </content>
  </entry>
  
