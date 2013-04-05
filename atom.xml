@@ -4,12 +4,25 @@
  <title>m. c. de marco</title>
  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
  <link href="http://mcdemarco.net/"/>
- <updated>2013-04-04T15:34:52-04:00</updated>
+ <updated>2013-04-05T14:17:38-04:00</updated>
  <id>http://mcdemarco.net</id>
  <author>
    <name>m. c. de marco</name>
  </author>
  
+ 
+ <entry>
+   <title>Antisocial Media</title>
+   <link href="http://mcdemarco.net/blog/2013/04/05/antisocial-media"/>
+   <updated>2013-04-05T14:06:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2013/04/05/antisocial-media</id>
+   <content type="html">&lt;p&gt;Somewhere on the intertubes I read an article about the demise of Google Reader and the fragmentation of social media.  It was not quite &lt;a href=&quot;http://io9.com/magazines-have-finally-killed-blogs-but-in-a-way-you-461996928&quot;&gt;this io9 article&lt;/a&gt; that I read via a fellow Odyssey graduate, but it was similar in its concern about the siloization of content.  It was also not &lt;a href=&quot;https://medium.com/future-tech-future-market/7b1a7ddb6ffe&quot;&gt;this Medium article&lt;/a&gt;, though they share the same pessimism about the future of the net.&lt;/p&gt;
+
+&lt;p&gt;For one thing, it was geekier, in that the author shared my desire to retrieve my own contributions to the vast proliferation of social networking sites and store them somewhere both more central and more secure.  Though I&amp;rsquo;d been thinking about these issues for a while, the mystery article helped to push me over the edge into doing &lt;em&gt;something&lt;/em&gt;, however small, about my fragmented web presence.  I&amp;rsquo;d like to give the author credit but, typically, I cannot find the article again.  I didn&amp;rsquo;t star it on Google Reader, I didn&amp;rsquo;t retweet it, I didn&amp;rsquo;t repost it to Tent, I didn&amp;rsquo;t like it on Facebook.  I may have seen it in one of those places, but they&amp;rsquo;re not very searchable even individually, never mind en masse.&lt;/p&gt;
+
+&lt;p&gt;I had high hopes for &lt;a href=&quot;https://tent.io/&quot;&gt;Tent&lt;/a&gt; as a replacement for the anti-social proliferation of social silos, but I think for the moment I may have to settle for &lt;a href=&quot;https://join.app.net/&quot;&gt;App.net&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Social Archiving</title>
@@ -182,15 +195,6 @@
 
 &lt;p&gt;You'll also find them in my &lt;a href=&quot;http://astore.amazon.com/mcdema-20&quot;&gt;Amazon store&lt;/a&gt;, &lt;del&gt;although I think we authors get the biggest cut when you buy the paperback directly from &lt;!-- a href=&quot;https://www.createspace.com/3484341&quot; --&gt;the CreateSpace link&lt;!-- /a --&gt; in my sidebar&lt;/del&gt;.&lt;/p&gt;
 
-</content>
- </entry>
- 
- <entry>
-   <title>Paramourtal in Print</title>
-   <link href="http://mcdemarco.net/blog/2010/09/21/paramourtal-in-print"/>
-   <updated>2010-09-21T00:00:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2010/09/21/paramourtal-in-print</id>
-   <content type="html">&lt;p&gt;&lt;em&gt;Paramourtal&lt;/em&gt;, a paranormal romance anthology featuring my story, &amp;ldquo;Sympathy From the Devil,&amp;rdquo; is now available from &lt;a href=&quot;https://www.createspace.com/3484341&quot;&gt;CreateSpace&lt;/a&gt;.  The Amazon listing will be up sometime in the next couple of weeks.&lt;/p&gt;
 </content>
  </entry>
  

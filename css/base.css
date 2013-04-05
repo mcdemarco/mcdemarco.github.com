@@ -177,6 +177,15 @@ a {
     margin: 10px 0 0 0;
     padding: 0;
     font-family: Helvetica, sans-serif; }
+    .content .listing.images {
+	line-height: 16px; }
+    .content .listing.images img {
+	margin:0;
+	padding:0; }
+    .content .listing.images img, .content .listing.images span, .content .listing.images a {
+	vertical-align: middle; }
+    .content .listing.images img + a {
+	padding-left: 5px; }
     .content .listing ul {
       margin: 0;
       padding: 0; }
@@ -189,6 +198,8 @@ a {
       border-bottom: 1px solid #eee; }
     .content .listing li span {
       float: right; }
+    .content .listing li span a {
+      color: #777; }
     .content .listing a {
       text-decoration: none; }
       .content .listing a:hover {
