@@ -1,0 +1,7 @@
+# robots.txt for http://www.mcdemarco.net/
+
+User-agent: *
+Disallow: /bio/nonfiction/
+Disallow: /node/
+Disallow: /tamination/
+

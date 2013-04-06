@@ -140,7 +140,8 @@ body#main a:active,
 body#main a:hover {text-decoration: none;
 	  	  color: #ddcc55;
 		  padding-left: 3px;
-		  padding-right: 3px;}
+		  padding-right: 3px;
+		  text-shadow: 0 0 0.6em #001933,0 0 0.6em #001933,0 0 0.6em #001933,0 0 0.6em #001933;}
 
 body#main a:active,
 body#main a:hover {color: #001133;
@@ -272,3 +273,13 @@ body#sffms #fikinav ul {list-style-type: none;
 
 body#sffms p.timestamp {color: #664;}
 
+
+/* serve a bigger background image for retina */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+    body#main {
+	background-image: url(/css/ant-bedelev-large-borders.jpg);
+	background-size: 1024px 1024px;}
+
+}
