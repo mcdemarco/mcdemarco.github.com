@@ -145,7 +145,8 @@ body#main a:hover {text-decoration: none;
 
 body#main a:active,
 body#main a:hover {color: #001133;
-	  	  background-color: #ddcc55;}
+	  	  background-color: #ddcc55;
+		  text-shadow: none;}
 
 body#main h1 {display: none;}
 
