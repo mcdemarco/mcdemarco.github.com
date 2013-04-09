@@ -4,12 +4,23 @@
  <title>m. c. de marco</title>
  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
  <link href="http://mcdemarco.net/"/>
- <updated>2013-04-06T18:19:33-04:00</updated>
+ <updated>2013-04-09T15:36:30-04:00</updated>
  <id>http://mcdemarco.net</id>
  <author>
    <name>m. c. de marco</name>
  </author>
  
+ 
+ <entry>
+   <title>Social Archiving II</title>
+   <link href="http://mcdemarco.net/blog/2013/04/09/social-archiving-ii"/>
+   <updated>2013-04-09T15:23:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2013/04/09/social-archiving-ii</id>
+   <content type="html">&lt;p&gt;Last time I linked to &lt;a href=&quot;/social/tweets/&quot;&gt;my local twitter archive&lt;/a&gt; but failed to explain how to &lt;a href=&quot;http://blog.twitter.com/2012/12/your-twitter-archive.html&quot;&gt;download your own&lt;/a&gt;&amp;mdash;so there you go.  It&amp;rsquo;s much more useful than your Springpad archive; on the other hand, Springpad now has &lt;a href=&quot;http://springpad.com/blog/2013/03/how-to-embed-your-springpad-notebooks-into-your-website-or-blog/&quot;&gt;better embedding&lt;/a&gt;.  You can see my embedded &lt;a href=&quot;/social/springs/&quot;&gt;notebooks&lt;/a&gt; and &lt;a href=&quot;/social/springs/recipes.html&quot;&gt;recipes&lt;/a&gt; in the spruced up &lt;a href=&quot;/social/&quot;&gt;social section&lt;/a&gt; of the site.&lt;/p&gt;
+
+&lt;p&gt;I also got rsync working for jekyll thanks to &lt;a href=&quot;http://nathangrigg.net/2012/04/rsyncing-jekyll/&quot;&gt;this wise advice&lt;/a&gt; from &lt;a href=&quot;http://nathangrigg.net/&quot;&gt;Nathan Grigg&lt;/a&gt;, so I&amp;rsquo;m declaring the new site officially &lt;em&gt;up&lt;/em&gt;.  However, my hosting service is not so up, so I&amp;rsquo;m waiting until it stabilizes a bit to take down the &lt;a href=&quot;http://mcdemarco.github.com/&quot;&gt;github copy of the site&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Antisocial Media</title>
@@ -174,27 +185,6 @@
    <updated>2010-10-25T00:00:00-04:00</updated>
    <id>http://mcdemarco.net/blog/2010/10/25/paramourtal-on-smashwords</id>
    <content type="html">&lt;p&gt;&lt;em&gt;Paramourtal&lt;/em&gt; is up for sale in Kindle format and many more at &lt;a href=&quot;http://www.smashwords.com/books/view/27620&quot;&gt;Smashwords&lt;/a&gt;, thanks to the ceaseless efforts of editor Kevin Hosey.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Paramourtal in e-Print</title>
-   <link href="http://mcdemarco.net/blog/2010/10/21/paramourtal-in-e-print"/>
-   <updated>2010-10-21T00:00:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2010/10/21/paramourtal-in-e-print</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://amzn.to/9fdH7D&quot;&gt;The Kindle version of &lt;em&gt;Paramourtal&lt;/em&gt;&lt;/a&gt; is now up at Amazon, along with the trade paperback:&lt;/p&gt;
-
-
-
-
-&lt;div align=center&gt;
-&lt;iframe src=&quot;http://rcm.amazon.com/e/cm?lt1=_top&amp;bc1=FFFFFF&amp;IS2=1&amp;bg1=FFFFFF&amp;fc1=000000&amp;lc1=0000FF&amp;t=mcdema-20&amp;o=1&amp;p=8&amp;l=as1&amp;m=amazon&amp;f=ifr&amp;asins=1453824383&quot; style=&quot;width:120px;height:240px;&quot; scrolling=&quot;no&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-
-
-
-&lt;p&gt;You'll also find them in my &lt;a href=&quot;http://astore.amazon.com/mcdema-20&quot;&gt;Amazon store&lt;/a&gt;, &lt;del&gt;although I think we authors get the biggest cut when you buy the paperback directly from &lt;!-- a href=&quot;https://www.createspace.com/3484341&quot; --&gt;the CreateSpace link&lt;!-- /a --&gt; in my sidebar&lt;/del&gt;.&lt;/p&gt;
-
 </content>
  </entry>
  
