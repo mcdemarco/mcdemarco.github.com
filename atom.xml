@@ -4,12 +4,27 @@
  <title>m. c. de marco</title>
  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
  <link href="http://mcdemarco.net/"/>
- <updated>2013-04-09T15:36:30-04:00</updated>
+ <updated>2013-04-11T15:41:15-04:00</updated>
  <id>http://mcdemarco.net</id>
  <author>
    <name>m. c. de marco</name>
  </author>
  
+ 
+ <entry>
+   <title>Polaroids</title>
+   <link href="http://mcdemarco.net/blog/2013/04/11/polaroids"/>
+   <updated>2013-04-11T13:52:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2013/04/11/polaroids</id>
+   <content type="html">&lt;p&gt;I&amp;rsquo;ve downloaded my Instagram photos using &lt;a href=&quot;http://instaport.me/&quot;&gt;Instaport&lt;/a&gt; and laid them out as &lt;a href=&quot;/social/instagrams/&quot;&gt;Polaroids&lt;/a&gt;.  The polaroid styling is based on &lt;a href=&quot;http://www.zurb.com/playground/css3-polaroids&quot;&gt;Polaroids with CSS3&lt;/a&gt; on Zurb and a similar post by &lt;a href=&quot;http://www.paulund.co.uk/create-polaroid-image-with-css&quot;&gt;Paulund&lt;/a&gt;.  I tweaked them a little and added the handwriting font, a Google web font called &lt;a href=&quot;http://www.google.com/fonts/specimen/Patrick+Hand+SC&quot;&gt;Patrick Hand SC&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you want to make your own, you can see and steal my CSS at the bottom of &lt;a href=&quot;/css/base.css&quot;&gt;my main style file&lt;/a&gt;.  &lt;a href=&quot;http://www.google.com/fonts/&quot;&gt;Google&lt;/a&gt; has instructions for adding individual web fonts, or you can copy the link to the font from the source of the &lt;a href=&quot;/social/instagrams/&quot;&gt;Polaroids page&lt;/a&gt;, near the top.  Some grungier details follow; feel free to stop reading now.&lt;/p&gt;
+
+&lt;p&gt;I ended up putting the link list together manually because Jekyll &lt;a href=&quot;https://github.com/mojombo/jekyll/pull/585&quot;&gt;still doesn&amp;rsquo;t include&lt;/a&gt; basic image gallery or file listing functionality and the plugins I tried didn&amp;rsquo;t work out&amp;mdash;partly because I was unwilling to wipe out my macports directory to satisfy &lt;a href=&quot;http://mxcl.github.io/homebrew/&quot;&gt;homebrew&lt;/a&gt;&amp;rsquo;s polite and clear but excessive requirements.  I made the thumbnails with ImageMagick, which I happened to have lying around the Mac.&lt;/p&gt;
+
+&lt;p&gt;The export from Instagram didn&amp;rsquo;t capture my titles, so I added them manually and titled the untitled photos.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Social Archiving II</title>
@@ -176,15 +191,6 @@
    <content type="html">&lt;p&gt;It&amp;rsquo;s that time of year again: &lt;a href=&quot;http://www.nanowrimo.org/&quot;&gt;National Novel Writing Month&lt;/a&gt;, better known to us hoary veterans as &lt;em&gt;NaNoWriMo&lt;/em&gt; or just &lt;em&gt;NaNo&lt;/em&gt;.  This will be my ninth year, and, Muse willing, my ninth victory&amp;mdash;450,000 words written in Novembers alone.  Perhaps by the time I hit 500,000 words I &lt;a href=&quot;http://powazek.com/posts/2454&quot;&gt;won&amp;rsquo;t suck&lt;/a&gt; at writing novels&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/files/pictures/nanowrimo_06_120x240-2010-participant.png&quot; alt=&quot;nano 2010 participant&quot; /&gt;  You can track my progress on &lt;a href=&quot;http://www.nanowrimo.org/eng/user/4573&quot;&gt;my NaNoWriMo profile page&lt;/a&gt;, on &lt;a href=&quot;http://twitter.com/mcdemarco&quot;&gt;twitter&lt;/a&gt;, or here, once I start procrastinating, whining about how far behind I am, and posting about all the fun things I find in the NaNo forums when I should be writing.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Paramourtal on Smashwords</title>
-   <link href="http://mcdemarco.net/blog/2010/10/25/paramourtal-on-smashwords"/>
-   <updated>2010-10-25T00:00:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2010/10/25/paramourtal-on-smashwords</id>
-   <content type="html">&lt;p&gt;&lt;em&gt;Paramourtal&lt;/em&gt; is up for sale in Kindle format and many more at &lt;a href=&quot;http://www.smashwords.com/books/view/27620&quot;&gt;Smashwords&lt;/a&gt;, thanks to the ceaseless efforts of editor Kevin Hosey.&lt;/p&gt;
 </content>
  </entry>
  
