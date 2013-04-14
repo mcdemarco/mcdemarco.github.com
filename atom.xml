@@ -4,7 +4,7 @@
  <title>m. c. de marco</title>
  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
  <link href="http://mcdemarco.net/"/>
- <updated>2013-04-11T15:41:15-04:00</updated>
+ <updated>2013-04-13T16:09:26-04:00</updated>
  <id>http://mcdemarco.net</id>
  <author>
    <name>m. c. de marco</name>
@@ -16,9 +16,9 @@
    <link href="http://mcdemarco.net/blog/2013/04/11/polaroids"/>
    <updated>2013-04-11T13:52:00-04:00</updated>
    <id>http://mcdemarco.net/blog/2013/04/11/polaroids</id>
-   <content type="html">&lt;p&gt;I&amp;rsquo;ve downloaded my Instagram photos using &lt;a href=&quot;http://instaport.me/&quot;&gt;Instaport&lt;/a&gt; and laid them out as &lt;a href=&quot;/social/instagrams/&quot;&gt;Polaroids&lt;/a&gt;.  The polaroid styling is based on &lt;a href=&quot;http://www.zurb.com/playground/css3-polaroids&quot;&gt;Polaroids with CSS3&lt;/a&gt; on Zurb and a similar post by &lt;a href=&quot;http://www.paulund.co.uk/create-polaroid-image-with-css&quot;&gt;Paulund&lt;/a&gt;.  I tweaked them a little and added the handwriting font, a Google web font called &lt;a href=&quot;http://www.google.com/fonts/specimen/Patrick+Hand+SC&quot;&gt;Patrick Hand SC&lt;/a&gt;.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I&amp;rsquo;ve downloaded my Instagram photos using &lt;a href=&quot;http://instaport.me/&quot;&gt;Instaport&lt;/a&gt; and laid them out as &lt;a href=&quot;/stream/instagrams/&quot;&gt;Polaroids&lt;/a&gt;.  The polaroid styling is based on &lt;a href=&quot;http://www.zurb.com/playground/css3-polaroids&quot;&gt;Polaroids with CSS3&lt;/a&gt; on Zurb and a similar post by &lt;a href=&quot;http://www.paulund.co.uk/create-polaroid-image-with-css&quot;&gt;Paulund&lt;/a&gt;.  I tweaked them a little and added the handwriting font, a Google web font called &lt;a href=&quot;http://www.google.com/fonts/specimen/Patrick+Hand+SC&quot;&gt;Patrick Hand SC&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;If you want to make your own, you can see and steal my CSS at the bottom of &lt;a href=&quot;/css/base.css&quot;&gt;my main style file&lt;/a&gt;.  &lt;a href=&quot;http://www.google.com/fonts/&quot;&gt;Google&lt;/a&gt; has instructions for adding individual web fonts, or you can copy the link to the font from the source of the &lt;a href=&quot;/social/instagrams/&quot;&gt;Polaroids page&lt;/a&gt;, near the top.  Some grungier details follow; feel free to stop reading now.&lt;/p&gt;
+&lt;p&gt;If you want to make your own, you can see and steal my CSS at the bottom of &lt;a href=&quot;/css/base.css&quot;&gt;my main style file&lt;/a&gt;.  &lt;a href=&quot;http://www.google.com/fonts/&quot;&gt;Google&lt;/a&gt; has instructions for adding individual web fonts, or you can copy the link to the font from the source of the &lt;a href=&quot;/stream/instagrams/&quot;&gt;Polaroids page&lt;/a&gt;, near the top.  Some grungier details follow; feel free to stop reading now.&lt;/p&gt;
 
 &lt;p&gt;I ended up putting the link list together manually because Jekyll &lt;a href=&quot;https://github.com/mojombo/jekyll/pull/585&quot;&gt;still doesn&amp;rsquo;t include&lt;/a&gt; basic image gallery or file listing functionality and the plugins I tried didn&amp;rsquo;t work out&amp;mdash;partly because I was unwilling to wipe out my macports directory to satisfy &lt;a href=&quot;http://mxcl.github.io/homebrew/&quot;&gt;homebrew&lt;/a&gt;&amp;rsquo;s polite and clear but excessive requirements.  I made the thumbnails with ImageMagick, which I happened to have lying around the Mac.&lt;/p&gt;
 
@@ -31,7 +31,7 @@
    <link href="http://mcdemarco.net/blog/2013/04/09/social-archiving-ii"/>
    <updated>2013-04-09T15:23:00-04:00</updated>
    <id>http://mcdemarco.net/blog/2013/04/09/social-archiving-ii</id>
-   <content type="html">&lt;p&gt;Last time I linked to &lt;a href=&quot;/social/tweets/&quot;&gt;my local twitter archive&lt;/a&gt; but failed to explain how to &lt;a href=&quot;http://blog.twitter.com/2012/12/your-twitter-archive.html&quot;&gt;download your own&lt;/a&gt;&amp;mdash;so there you go.  It&amp;rsquo;s much more useful than your Springpad archive; on the other hand, Springpad now has &lt;a href=&quot;http://springpad.com/blog/2013/03/how-to-embed-your-springpad-notebooks-into-your-website-or-blog/&quot;&gt;better embedding&lt;/a&gt;.  You can see my embedded &lt;a href=&quot;/social/springs/&quot;&gt;notebooks&lt;/a&gt; and &lt;a href=&quot;/social/springs/recipes.html&quot;&gt;recipes&lt;/a&gt; in the spruced up &lt;a href=&quot;/social/&quot;&gt;social section&lt;/a&gt; of the site.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Last time I linked to &lt;a href=&quot;/stream/tweets/&quot;&gt;my local twitter archive&lt;/a&gt; but failed to explain how to &lt;a href=&quot;http://blog.twitter.com/2012/12/your-twitter-archive.html&quot;&gt;download your own&lt;/a&gt;&amp;mdash;so there you go.  It&amp;rsquo;s much more useful than your Springpad archive; on the other hand, Springpad now has &lt;a href=&quot;http://springpad.com/blog/2013/03/how-to-embed-your-springpad-notebooks-into-your-website-or-blog/&quot;&gt;better embedding&lt;/a&gt;.  You can see my embedded &lt;a href=&quot;/stream/springs/&quot;&gt;notebooks&lt;/a&gt; and &lt;a href=&quot;/stream/springs/recipes.html&quot;&gt;recipes&lt;/a&gt; in the spruced up &lt;a href=&quot;/stream/&quot;&gt;social section&lt;/a&gt; of the site.&lt;/p&gt;
 
 &lt;p&gt;I also got rsync working for jekyll thanks to &lt;a href=&quot;http://nathangrigg.net/2012/04/rsyncing-jekyll/&quot;&gt;this wise advice&lt;/a&gt; from &lt;a href=&quot;http://nathangrigg.net/&quot;&gt;Nathan Grigg&lt;/a&gt;, so I&amp;rsquo;m declaring the new site officially &lt;em&gt;up&lt;/em&gt;.  However, my hosting service is not so up, so I&amp;rsquo;m waiting until it stabilizes a bit to take down the &lt;a href=&quot;http://mcdemarco.github.com/&quot;&gt;github copy of the site&lt;/a&gt;.&lt;/p&gt;
 </content>
@@ -55,7 +55,7 @@
    <link href="http://mcdemarco.net/blog/2013/04/04/social-archiving"/>
    <updated>2013-04-04T15:28:00-04:00</updated>
    <id>http://mcdemarco.net/blog/2013/04/04/social-archiving</id>
-   <content type="html">&lt;p&gt;The rest of the static website has now been converted to static website, and I tossed in one social media archive, &lt;a href=&quot;/social/tweets/&quot;&gt;twitter&lt;/a&gt;, along with a primitive proto-twitter &lt;a href=&quot;/social/notes/&quot;&gt;noteboard&lt;/a&gt; that I used back in the day.  I&amp;rsquo;m not quite ready to upload it all to my official host, so for now the new website is still hanging out at &lt;a href=&quot;http://mcdemarco.github.com&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
+   <content type="html">&lt;p&gt;The rest of the static website has now been converted to static website, and I tossed in one social media archive, &lt;a href=&quot;/stream/tweets/&quot;&gt;twitter&lt;/a&gt;, along with a primitive proto-twitter &lt;a href=&quot;/stream/notes/&quot;&gt;noteboard&lt;/a&gt; that I used back in the day.  I&amp;rsquo;m not quite ready to upload it all to my official host, so for now the new website is still hanging out at &lt;a href=&quot;http://mcdemarco.github.com&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
 </content>
  </entry>
  

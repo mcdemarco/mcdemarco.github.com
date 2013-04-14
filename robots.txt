@@ -1,7 +1,11 @@
 # robots.txt for http://www.mcdemarco.net/
+# mostly old directories being redirected
 
 User-agent: *
 Disallow: /bio/nonfiction/
+Disallow: /book/
+Disallow: /feed/
 Disallow: /node/
+Disallow: /social/
 Disallow: /tamination/
 
