@@ -4,12 +4,27 @@
  <title>m. c. de marco</title>
  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
  <link href="http://mcdemarco.net/"/>
- <updated>2013-04-13T16:09:26-04:00</updated>
+ <updated>2013-04-15T14:36:42-04:00</updated>
  <id>http://mcdemarco.net</id>
  <author>
    <name>m. c. de marco</name>
  </author>
  
+ 
+ <entry>
+   <title>Crossposting with Drafts</title>
+   <link href="http://mcdemarco.net/blog/2013/04/15/crossposting-with-drafts"/>
+   <updated>2013-04-15T10:24:16-04:00</updated>
+   <id>http://mcdemarco.net/blog/2013/04/15/crossposting-with-drafts</id>
+   <content type="html">&lt;p&gt;I&amp;rsquo;ve been wanting crossposting software for a while now.  People I&amp;rsquo;d spotted successfully crossposting either did it manually in a browser or worked for Google (solving the Google+ problem through nepotism?), and Hootsuite only handled a couple of my networks. &lt;a href=&quot;http://streamified.com/&quot;&gt;Streamified&lt;/a&gt; did more but still not all (and is temporarily without an iOS client).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://agiletortoise.com/drafts&quot;&gt;Drafts&lt;/a&gt; does more too, but also lets me do it all&amp;mdash;even save the markdown to Dropbox for later inclusion in my Jekyll blog&amp;mdash;all from my iPad.  This is my first blog post using Drafts, but I&amp;rsquo;ll also edit it later for some other &lt;a href=&quot;/stream/&quot;&gt;streams&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, isn&amp;rsquo;t crossposting evil? The short answer is it&amp;rsquo;s evil when businesses do it for their financial (as opposed to social) purposes, or when trolls do it to rile up one newsgroup with a discussion more appropriate to the source group (or to no place at all). It&amp;rsquo;s also evil when the crossposter is himself largely responsible for the fragmentation of the community (say, an excessive proliferation of mailing lists on the same topic) that he then needs to crosspost across in order to have a discussion.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not so evil when the crossposter is innocent of the fragmentation of his community&amp;mdash;say, some of them won&amp;rsquo;t use Facebook and others don&amp;rsquo;t use mailing lists (or any of them are lawyers). In the case where businesses are intentionally using your content to keep people in their own advertisement-filled &lt;a href=&quot;http://en.wikipedia.org/wiki/Information_silo&quot;&gt;silo&lt;/a&gt; (Facebook, Google, Twitter, etc.), crossposting is the pro-social option. Bonus points if you also point your siloed readers to an especially pro-social forum (&lt;a href=&quot;http://app.net&quot;&gt;App.net&lt;/a&gt;, Tent, etc.).&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Polaroids</title>
@@ -180,17 +195,6 @@
 
 
 &lt;p&gt;Just remember, the map does not count towards your word count!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>NaNoWriMo 2010</title>
-   <link href="http://mcdemarco.net/blog/2010/10/30/nanowrimo-2010"/>
-   <updated>2010-10-30T00:00:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2010/10/30/nanowrimo-2010</id>
-   <content type="html">&lt;p&gt;It&amp;rsquo;s that time of year again: &lt;a href=&quot;http://www.nanowrimo.org/&quot;&gt;National Novel Writing Month&lt;/a&gt;, better known to us hoary veterans as &lt;em&gt;NaNoWriMo&lt;/em&gt; or just &lt;em&gt;NaNo&lt;/em&gt;.  This will be my ninth year, and, Muse willing, my ninth victory&amp;mdash;450,000 words written in Novembers alone.  Perhaps by the time I hit 500,000 words I &lt;a href=&quot;http://powazek.com/posts/2454&quot;&gt;won&amp;rsquo;t suck&lt;/a&gt; at writing novels&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/files/pictures/nanowrimo_06_120x240-2010-participant.png&quot; alt=&quot;nano 2010 participant&quot; /&gt;  You can track my progress on &lt;a href=&quot;http://www.nanowrimo.org/eng/user/4573&quot;&gt;my NaNoWriMo profile page&lt;/a&gt;, on &lt;a href=&quot;http://twitter.com/mcdemarco&quot;&gt;twitter&lt;/a&gt;, or here, once I start procrastinating, whining about how far behind I am, and posting about all the fun things I find in the NaNo forums when I should be writing.&lt;/p&gt;
 </content>
  </entry>
  
