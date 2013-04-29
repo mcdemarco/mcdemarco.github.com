@@ -4,12 +4,45 @@
  <title>m. c. de marco</title>
  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
  <link href="http://mcdemarco.net/"/>
- <updated>2013-04-15T14:36:42-04:00</updated>
+ <updated>2013-04-29T13:16:42-04:00</updated>
  <id>http://mcdemarco.net</id>
  <author>
    <name>m. c. de marco</name>
  </author>
  
+ 
+ <entry>
+   <title>A Week in the Bitcoin Mines</title>
+   <link href="http://mcdemarco.net/blog/2013/04/29/a-week-in-the-bitcoin-mines"/>
+   <updated>2013-04-29T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2013/04/29/a-week-in-the-bitcoin-mines</id>
+   <content type="html">&lt;p&gt;I decided to try bitcoin mining after hearing a partial explanation that made it sound more  mathematically interesting than &lt;a href=&quot;http://www.reddit.com/r/Bitcoin/comments/17so2c/explain_bitcoins_like_im_a_mathcs_undergrad/&quot;&gt;it turned out to be&lt;/a&gt;. (The moment of existential disappointment came when I read that the number of bitcoins cannot exceed 21 million.)&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s plenty of advice out there for the &lt;a href=&quot;http://www.businessinsider.com/how-to-mine-bitcoins-2013-3?op=1&quot;&gt;rank newbie&lt;/a&gt; that explains what bitcoins are and how to mine them with just a web browser at sites like &lt;a href=&quot;http://bitcoinplus.com&quot;&gt;BitCoinPlus.com&lt;/a&gt;. My experience with web miners (during some downtime away from the &lt;em&gt;real&lt;/em&gt; mines) was that they don&amp;rsquo;t work now.  I suspect they may have worked back when Java plugins were less hoary and suspect, and bitcoins littered the intertubes like, well, bits.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s not quite as much advice for the mere amateur, but I found &lt;a href=&quot;http://startbitcoin.com/&quot;&gt;some&lt;/a&gt;. I downloaded a real &lt;a href=&quot;http://bitcoin.org/en/choose-your-wallet&quot;&gt;bitcoin wallet&lt;/a&gt; for my &lt;a href=&quot;https://en.bitcoin.it/wiki/Getting_started_installing_bitcoin-qt#For_Mac_computers&quot;&gt;Mac&lt;/a&gt; and waited a few days for it to download the &lt;a href=&quot;http://blockchain.info/charts/blocks-size&quot;&gt;full blockchain&lt;/a&gt;.  (I had to make more disk space in the middle of that and it wasn&amp;rsquo;t clear how much of the blockchain Bitcoin-Qt had saved.)&lt;/p&gt;
+
+&lt;p&gt;Since bitcoins are now too rare to mine on your own, you need to find a work crew and divide up your take. I followed the advice and joined &lt;a href=&quot;https://mining.bitcoin.cz/&quot;&gt;Slush&amp;rsquo;s pool&lt;/a&gt;.  Next, I needed a mining program. Unfortunately, my Mac is still on Snow Leopard, and the options were limited. I downloaded RPCminer, a CPU miner, and set it up to work with Slush&amp;rsquo;s pool, despite &lt;a href=&quot;http://maccoinminer.wordpress.com/2011/05/20/rpcminer-for-mac/&quot;&gt;the now outdated instructions&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Slush&amp;rsquo;s pool turned out to have just started extra fees for using the standard mining pool work-assignment protocol instead of Slush&amp;rsquo;s new protocol, so I also needed to install &lt;a href=&quot;https://github.com/slush0/stratum-mining-proxy&quot;&gt;his proxy&lt;/a&gt; to translate between my old client and the new protocol server.  I had all the requirements to build the proxy for Mac, but I still got some errors building it. Nevertheless it built and ran so I ignored the errors.&lt;/p&gt;
+
+&lt;p&gt;This setup seemed to work, but no bitcoins surfaced from the rocky soil of the intertubes. CPU miners are too slow for mining in general, and especially so on an aging laptop that tends toward heat exhaustion in the summer.  I needed a GPU miner (that is, a miner that uses the computer&amp;rsquo;s graphical chip instead of its regular processors).&lt;/p&gt;
+
+&lt;p&gt;In the bitcoin forums, there was a link to an old build of a Java-based GPU miner called DiabloMiner. From the (long and messy) thread it was clear that DiabloMiner worked in Snow Leopard, but the link was broken and the newer builds required newer OSes. I hunted high and low for the missing link, but found nothing but ghostly links to the dear departed download.&lt;/p&gt;
+
+&lt;p&gt;So I tried building the latest Diablo code on Snow Leopard. (This required maven.) It built happily enough, but when I tried to run it, it complained that Apple&amp;rsquo;s version of OpenCL (the driver to run non-graphics  software on your unsuspecting graphics card) was too old. I figured the best solution to that problem was time travel, so I checked out &lt;a href=&quot;https://github.com/Diablo-D3/DiabloMiner/tree/e3071516e9582127ffc1c69b6e321994146ee4ba&quot;&gt;a version of the code from May 1, 2011&lt;/a&gt; and built it.&lt;/p&gt;
+
+&lt;p&gt;Success at last! My miners mined away happily for an hour or two, producing an infinitesimal fraction of a bitcoin before tragedy struck in the form of a &lt;a href=&quot;https://bitcointalk.org/index.php?topic=1976.msg1856080&quot;&gt;DoS attack on Slush&amp;rsquo;s servers&lt;/a&gt;. But now that I had a rig set up I could switch to another pool, like the fickle &amp;lsquo;49er I&amp;rsquo;d become.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, in my haste I picked a pool, &lt;a href=&quot;http://bitminter.com/&quot;&gt;Bitminter&lt;/a&gt;, that didn&amp;rsquo;t pay out until you&amp;rsquo;d earned at least 0.001 bitcoins. Even with my husband&amp;rsquo;s Mac mini shanghaied into mining for me, it took about a week (and a couple of unexplained work stoppages from both miners) to reach 0.001. On the bright side, Bitminter also does simultaneous &lt;a href=&quot;http://bitminter.com/&quot;&gt;Namecoin&lt;/a&gt; mining&amp;mdash;something Slush still promises on his account setup page but which (the bitcoin forums report) hasn&amp;rsquo;t been supported there for some time.&lt;/p&gt;
+
+&lt;p&gt;But (of course there was going to be a &lt;em&gt;but&lt;/em&gt;), while namecoins can be mined with no additional effort by my lazy miners, they don&amp;rsquo;t accrue at the same rate as the bitcoins. So cashing out of bitcoins at 0.001 meant leaving about 0.00075 namecoins lingering at Bitminter until the next DoS sends my miners back there. According to the &lt;a href=&quot;https://btc-e.com/exchange/nmc_btc&quot;&gt;Bitcoin Exchange&lt;/a&gt;, my bit of namecoin is currently worth a homeopathic fraction of a bitcoin, so I&amp;rsquo;ll probably leave them lying in the intertube I found them in for quite some time.&lt;/p&gt;
+
+&lt;p&gt;Bitcoin mining is about as profitable as fiction writing in that it costs you more in electricity than you will ever earn. The best way to score virtual riches may instead be to get in on the ground floor of another virtual currency like namecoins. I tried out a promising upstart called &lt;a href=&quot;http://litecoin.org/&quot;&gt;Litecoin&lt;/a&gt; which is supposed to level the playing field between amateurs and professional miners to some extent.&lt;/p&gt;
+
+&lt;p&gt;My efforts were once again hampered by my old OS&amp;mdash;I wasn&amp;rsquo;t able to find a GPU miner for it and had to settle for one CPU miner on the Mac mini. This rig is not ideal, but it&amp;rsquo;s also not the handicap it would be with bitcoins.  I&amp;rsquo;ve already mined 0.065 litecoins (worth about a quarter on the virtual market) with one CPU in the same week or so of time it takes to mine 0.001 bitcoins (worth one thin dime). Now all I need to do is mine and wait for the coming litecoin bubble to inflate.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Crossposting with Drafts</title>
@@ -178,23 +211,6 @@
    <content type="html">&lt;p&gt;A few sites now have reviews of &lt;em&gt;Paramourtal&lt;/em&gt; up.  &lt;a href=&quot;http://www.paranormalromanceguild.com/booksonreview2010.htm#659830717&quot;&gt;The Paranormal Romance Guild&lt;/a&gt; gives my story (&amp;ldquo;Sympathy From the Devil&amp;rdquo;) 5 stars and calls it a &amp;ldquo;[f]un tale with a funny ending.&amp;rdquo;  &lt;a href=&quot;http://clarahanoux.blogspot.com/search/label/review&quot;&gt;Clara Hanoux&lt;/a&gt; summarizes it as &lt;a href=&quot;http://clarahanoux.blogspot.com/2010/11/review-sympathy-from-devil-by-m-c.html&quot;&gt;&amp;ldquo;cute&amp;rdquo;&lt;/a&gt; and says, &amp;ldquo;This might just be the best story of the anthology!&amp;rdquo;&lt;!--break--&gt;&lt;/p&gt;
 
 &lt;p&gt;Editor Kevin Hosey is collecting reviews at &lt;a href=&quot;http://www.cliffhangerbooks.com/reviews.html&quot;&gt;the Cliffhanger Books site&lt;/a&gt;, selling merchandise at &lt;a href=&quot;http://www.cafepress.com/CliffhangerBooks&quot;&gt;CafePress&lt;/a&gt;, and also planning a book signing in Dallas on January 22nd.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>The Annual Mapmaking Post</title>
-   <link href="http://mcdemarco.net/blog/2010/10/31/the-annual-mapmaking-post"/>
-   <updated>2010-10-31T00:00:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2010/10/31/the-annual-mapmaking-post</id>
-   <content type="html">&lt;p&gt;In preparation for the upcoming month of procrastination and cat-vacuuming, I skimmed through my favorite NaNoWriMo forum last night, &lt;a href=&quot;http://www.nanowrimo.org/eng/forum/188&quot;&gt;NaNo Technology&lt;/a&gt;, and found the usual topics&amp;mdash;including how to make a map for your fantasy novel on your Mac.  Eager to help young cat-vacuumers, I &lt;a href=&quot;http://www.nanowrimo.org/eng/node/3768944&quot;&gt;linked&lt;/a&gt; my &lt;a href=&quot;http://www.mcdemarco.net/node/503&quot;&gt;list from two years back&lt;/a&gt; and even dug up two new cross-platform map-making options:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.inkwellideas.com/roleplaying_tools/hexographer/free_hexographer.shtml&quot;&gt;Hexographer&lt;/a&gt;, a Java-based program online&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://evanjacover.com/grumblemapper&quot;&gt;GrumbleMapper&lt;/a&gt;, an AIR-based donationware download that lets you &lt;a href=&quot;http://code.google.com/p/grumblemapper/wiki/CreatingTiles&quot;&gt;add your own tiles&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;Just remember, the map does not count towards your word count!&lt;/p&gt;
 </content>
  </entry>
  
