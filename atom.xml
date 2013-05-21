@@ -4,12 +4,42 @@
  <title>m. c. de marco</title>
  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
  <link href="http://mcdemarco.net/"/>
- <updated>2013-04-29T13:16:42-04:00</updated>
+ <updated>2013-05-21T14:19:20-04:00</updated>
  <id>http://mcdemarco.net</id>
  <author>
    <name>m. c. de marco</name>
  </author>
  
+ 
+ <entry>
+   <title>Kingdom Board Builder</title>
+   <link href="http://mcdemarco.net/blog/2013/05/21/kingdom-board-builder"/>
+   <updated>2013-05-21T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2013/05/21/kingdom-board-builder</id>
+   <content type="html">&lt;p&gt;My husband and I were talking about designing a game like &lt;a href=&quot;http://en.wikipedia.org/wiki/Kingdom_Builder&quot;&gt;Kingdom Builder&lt;/a&gt; that would have (among other things) an even more modular hex board. That got me thinking about how I could prototype such a board.&lt;/p&gt;
+
+&lt;p&gt;I looked into the latest mapping software, and while there were some new options out there like &lt;a href=&quot;http://axiscity.hexamon.net/users/isomage/gimp/hexgimp/&quot;&gt;hexGIMP&lt;/a&gt; and &lt;a href=&quot;http://www.mapeditor.org/&quot;&gt;Tiled&lt;/a&gt; that might be able to do what I wanted, they weren&amp;rsquo;t designed to do it easily. (Tiled needed a &lt;a href=&quot;https://github.com/maq777/tiled&quot;&gt;patch&lt;/a&gt; just to do hexes at all.)&lt;/p&gt;
+
+&lt;p&gt;So I decided to write my own tool to lay out hex boards. SVG seemed to be the easiest way to hack some clean, interactive graphics out of JavaScript, with adequate code examples available online (if hidden inside svg files). I decided to make Kingdom Builder boards as a proof of concept:&lt;/p&gt;
+
+&lt;object type=&quot;image/svg+xml&quot; data=&quot;/files/svg/kbb-hexagons.svg&quot; style=&quot;width:650px;height:500px;&quot;&gt;&lt;/object&gt;
+
+
+&lt;p&gt;(Pop out &lt;a href=&quot;/files/svg/kbb-hexagons.svg&quot;&gt;the svg&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;After generating a random board, it lets you edit the board by clicking on it. Note that it has strong opinions about adjacency and the need for location tiles.  If you don&amp;rsquo;t like the editing constraints, try &lt;a href=&quot;/files/svg/kbb-hexagons-free.svg&quot;&gt;this version&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I decorated the terrain using svg filters I found online, mostly &lt;a href=&quot;http://commons.wikimedia.org/wiki/File:Inkscape_filters_ABC.svg&quot;&gt;from Inkscape&lt;/a&gt;. It would have been quicker to edit them in Inkscape, but editing them by hand was more educational. (If you don&amp;rsquo;t like the filters, try &lt;a href=&quot;/files/svg/kbb-hexagons-flat.svg&quot;&gt;this version&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;I also spent some time trying to understand &lt;a href=&quot;http://www.justinmccandless.com/blog/Making+Sense+of+SVG+viewBox%27s+Madness&quot;&gt;SVG&amp;rsquo;s viewBox madness&lt;/a&gt; in order to get a life-sized board, but gave up after I realized that life size was more than 8 &amp;frac12; inches wide. So you&amp;rsquo;re on your own for resizing; Inkscape may prove useful for that.&lt;/p&gt;
+
+&lt;p&gt;The code, should you choose to look at it, was made gnarlier by my late realization that I had reversed the board. I moved the first column to the end to fix it, which threw off the numbering and layout. Some bits were simplified by advice from &lt;a href=&quot;http://www.redblobgames.com/grids/hexagons/&quot;&gt;Amit Patel&amp;rsquo;s page about programming hex grids&lt;/a&gt; before being complicated later. (Location hex placement is particularly hacked.)&lt;/p&gt;
+
+&lt;p&gt;Browser restrictions prevent me from saving your output for you, but you can do it manually from a PC by copying the DOM: in Chrome or Safari, right click on any hex, choose Inspect Element, scroll up to the svg element in the code, right click on that, choose Copy as HTML, paste it into a text editor, and save it with the svg extension. This will leave you with an svg of your last map that you can open in a browser and edit. Any subsequent changes can be saved the same way.&lt;/p&gt;
+
+&lt;p&gt;If you need help with saving or have feature requests, let me know (preferably via &lt;a href=&quot;/stream/adn&quot;&gt;app.net&lt;/a&gt;).&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>A Week in the Bitcoin Mines</title>
@@ -200,17 +230,6 @@
 &lt;p&gt;Here&amp;rsquo;s the evidence:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/files/pictures/nano_10_winner_120x90-3.png&quot; alt=&quot;NaNoWriMo 2010 Winner&quot; /&gt;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Paramourtal Reviews</title>
-   <link href="http://mcdemarco.net/blog/2010/11/10/paramourtal-reviews"/>
-   <updated>2010-11-10T00:00:00-05:00</updated>
-   <id>http://mcdemarco.net/blog/2010/11/10/paramourtal-reviews</id>
-   <content type="html">&lt;p&gt;A few sites now have reviews of &lt;em&gt;Paramourtal&lt;/em&gt; up.  &lt;a href=&quot;http://www.paranormalromanceguild.com/booksonreview2010.htm#659830717&quot;&gt;The Paranormal Romance Guild&lt;/a&gt; gives my story (&amp;ldquo;Sympathy From the Devil&amp;rdquo;) 5 stars and calls it a &amp;ldquo;[f]un tale with a funny ending.&amp;rdquo;  &lt;a href=&quot;http://clarahanoux.blogspot.com/search/label/review&quot;&gt;Clara Hanoux&lt;/a&gt; summarizes it as &lt;a href=&quot;http://clarahanoux.blogspot.com/2010/11/review-sympathy-from-devil-by-m-c.html&quot;&gt;&amp;ldquo;cute&amp;rdquo;&lt;/a&gt; and says, &amp;ldquo;This might just be the best story of the anthology!&amp;rdquo;&lt;!--break--&gt;&lt;/p&gt;
-
-&lt;p&gt;Editor Kevin Hosey is collecting reviews at &lt;a href=&quot;http://www.cliffhangerbooks.com/reviews.html&quot;&gt;the Cliffhanger Books site&lt;/a&gt;, selling merchandise at &lt;a href=&quot;http://www.cafepress.com/CliffhangerBooks&quot;&gt;CafePress&lt;/a&gt;, and also planning a book signing in Dallas on January 22nd.&lt;/p&gt;
 </content>
  </entry>
  

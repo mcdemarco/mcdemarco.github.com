@@ -42,6 +42,40 @@
     
 
   <h2>
+    <a href="/blog/2013/05/21/kingdom-board-builder">Kingdom Board Builder</a>
+  </h2>
+
+  <section class="byline">
+    May 21, 2013
+  </section>
+
+  <p>My husband and I were talking about designing a game like <a href="http://en.wikipedia.org/wiki/Kingdom_Builder">Kingdom Builder</a> that would have (among other things) an even more modular hex board. That got me thinking about how I could prototype such a board.</p>
+
+<p>I looked into the latest mapping software, and while there were some new options out there like <a href="http://axiscity.hexamon.net/users/isomage/gimp/hexgimp/">hexGIMP</a> and <a href="http://www.mapeditor.org/">Tiled</a> that might be able to do what I wanted, they weren&rsquo;t designed to do it easily. (Tiled needed a <a href="https://github.com/maq777/tiled">patch</a> just to do hexes at all.)</p>
+
+<p>So I decided to write my own tool to lay out hex boards. SVG seemed to be the easiest way to hack some clean, interactive graphics out of JavaScript, with adequate code examples available online (if hidden inside svg files). I decided to make Kingdom Builder boards as a proof of concept:</p>
+
+<object type="image/svg+xml" data="/files/svg/kbb-hexagons.svg" style="width:650px;height:500px;"></object>
+
+
+<p>(Pop out <a href="/files/svg/kbb-hexagons.svg">the svg</a>.)</p>
+
+<p>After generating a random board, it lets you edit the board by clicking on it. Note that it has strong opinions about adjacency and the need for location tiles.  If you don&rsquo;t like the editing constraints, try <a href="/files/svg/kbb-hexagons-free.svg">this version</a>.</p>
+
+<p>I decorated the terrain using svg filters I found online, mostly <a href="http://commons.wikimedia.org/wiki/File:Inkscape_filters_ABC.svg">from Inkscape</a>. It would have been quicker to edit them in Inkscape, but editing them by hand was more educational. (If you don&rsquo;t like the filters, try <a href="/files/svg/kbb-hexagons-flat.svg">this version</a>.)</p>
+
+<p>I also spent some time trying to understand <a href="http://www.justinmccandless.com/blog/Making+Sense+of+SVG+viewBox%27s+Madness">SVG&rsquo;s viewBox madness</a> in order to get a life-sized board, but gave up after I realized that life size was more than 8 &frac12; inches wide. So you&rsquo;re on your own for resizing; Inkscape may prove useful for that.</p>
+
+<p>The code, should you choose to look at it, was made gnarlier by my late realization that I had reversed the board. I moved the first column to the end to fix it, which threw off the numbering and layout. Some bits were simplified by advice from <a href="http://www.redblobgames.com/grids/hexagons/">Amit Patel&rsquo;s page about programming hex grids</a> before being complicated later. (Location hex placement is particularly hacked.)</p>
+
+<p>Browser restrictions prevent me from saving your output for you, but you can do it manually from a PC by copying the DOM: in Chrome or Safari, right click on any hex, choose Inspect Element, scroll up to the svg element in the code, right click on that, choose Copy as HTML, paste it into a text editor, and save it with the svg extension. This will leave you with an svg of your last map that you can open in a browser and edit. Any subsequent changes can be saved the same way.</p>
+
+<p>If you need help with saving or have feature requests, let me know (preferably via <a href="/stream/adn">app.net</a>).</p>
+
+    
+  
+
+  <h2>
     <a href="/blog/2013/04/29/a-week-in-the-bitcoin-mines">A Week in the Bitcoin Mines</a>
   </h2>
 
@@ -127,23 +161,6 @@
   <p>Last time I linked to <a href="/stream/tweets/">my local twitter archive</a> but failed to explain how to <a href="http://blog.twitter.com/2012/12/your-twitter-archive.html">download your own</a>&mdash;so there you go.  It&rsquo;s much more useful than your Springpad archive; on the other hand, Springpad now has <a href="http://springpad.com/blog/2013/03/how-to-embed-your-springpad-notebooks-into-your-website-or-blog/">better embedding</a>.  You can see my embedded <a href="/stream/springs/">notebooks</a> and <a href="/stream/springs/recipes.html">recipes</a> in the spruced up <a href="/stream/">social section</a> of the site.</p>
 
 <p>I also got rsync working for jekyll thanks to <a href="http://nathangrigg.net/2012/04/rsyncing-jekyll/">this wise advice</a> from <a href="http://nathangrigg.net/">Nathan Grigg</a>, so I&rsquo;m declaring the new site officially <em>up</em>.  However, my hosting service is not so up, so I&rsquo;m waiting until it stabilizes a bit to take down the <a href="http://mcdemarco.github.com/">github copy of the site</a>.</p>
-
-    
-  
-
-  <h2>
-    <a href="/blog/2013/04/05/antisocial-media">Antisocial Media</a>
-  </h2>
-
-  <section class="byline">
-    April  5, 2013
-  </section>
-
-  <p>Somewhere on the intertubes I read an article about the demise of Google Reader and the fragmentation of social media.  It was not quite <a href="http://io9.com/magazines-have-finally-killed-blogs-but-in-a-way-you-461996928">this io9 article</a> that I read via a fellow Odyssey graduate, but it was similar in its concern about the siloization of content.  It was also not <a href="https://medium.com/future-tech-future-market/7b1a7ddb6ffe">this Medium article</a>, though they share the same pessimism about the future of the net.</p>
-
-<p>For one thing, it was geekier, in that the author shared my desire to retrieve my own contributions to the vast proliferation of social networking sites and store them somewhere both more central and more secure.  Though I&rsquo;d been thinking about these issues for a while, the mystery article helped to push me over the edge into doing <em>something</em>, however small, about my fragmented web presence.  I&rsquo;d like to give the author credit but, typically, I cannot find the article again.  I didn&rsquo;t star it on Google Reader, I didn&rsquo;t retweet it, I didn&rsquo;t repost it to Tent, I didn&rsquo;t like it on Facebook.  I may have seen it in one of those places, but they&rsquo;re not very searchable even individually, never mind en masse.</p>
-
-<p>I had high hopes for <a href="https://tent.io/">Tent</a> as a replacement for the anti-social proliferation of social silos, but I think for the moment I may have to settle for <a href="https://join.app.net/">App.net</a>.</p>
 
     
   
