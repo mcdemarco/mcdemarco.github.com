@@ -4,12 +4,47 @@
  <title>m. c. de marco</title>
  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
  <link href="http://mcdemarco.net/"/>
- <updated>2013-05-21T14:19:20-04:00</updated>
+ <updated>2013-09-13T13:50:12-04:00</updated>
  <id>http://mcdemarco.net</id>
  <author>
    <name>m. c. de marco</name>
  </author>
  
+ 
+ <entry>
+   <title>Paste</title>
+   <link href="http://mcdemarco.net/blog/2013/09/13/paste"/>
+   <updated>2013-09-13T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2013/09/13/paste</id>
+   <content type="html">&lt;p&gt;Yesterday I updated my app.net &lt;a href=&quot;http://paste-app.net/&quot;&gt;Paste&lt;/a&gt; project.  I released Paste while I was at LoneStarCon (somewhat accidentally, when &lt;a href=&quot;https://alpha.app.net/duerig&quot;&gt;@duerig&lt;/a&gt;, Paste&amp;rsquo;s brainfather, posted about it to ADN), so I didn&amp;rsquo;t take the time to blog about it then.  Somehow blogging didn&amp;rsquo;t happen when I got back from San Antonio either (maybe because I&amp;rsquo;m &lt;a href=&quot;http://www.garann.com/dev/2013/how-to-blog-about-code-and-give-zero-fucks/&quot;&gt;not a white male&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Anyway, the first post about Paste should have said: Paste is a pasteboard/pinboard running on the social networking platform &lt;a href=&quot;http://app.net/&quot;&gt;app.net&lt;/a&gt;. Each paste has a public link that can be viewed without logging in to app.net, as well as a &amp;ldquo;private&amp;rdquo; link which will display both the selected paste and a list of the logged-in user&amp;rsquo;s recent pastes. To create a new paste, you will need a (free) app.net account.&lt;/p&gt;
+
+&lt;p&gt;Paste is the brainchild of Jonathon Duerig (@duerig), and is based on his code from the first session in the Learning the app.net API 101 patter room.  As of yesterday it also uses his &lt;a href=&quot;https://github.com/duerig/appnet.js&quot;&gt;appnet.js&lt;/a&gt;. For more gory details, see Paste&amp;rsquo;s &lt;a href=&quot;https://github.com/mcdemarco/paste/blob/master/README.md&quot;&gt;README on github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The second post about Paste should say: Paste has been updated to include deletion of pastes and persistent authentication.  I also added some web app (&lt;em&gt;i.e.,&lt;/em&gt; add to home screen) stuff for iOS, but because Paste requires an internet connection to get your pastes from app.net, running Paste as a web app is not particularly useful.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m still planning to cache the javascript for the web app in order to make it load faster, since web apps don&amp;rsquo;t share the cache or local storage with the main Safari app anymore (not that I use Safari, but I assume other people do).  This may also solve the &lt;a href=&quot;http://stackoverflow.com/questions/14572825/ios-network-activity-indicator-keeps-spinning-in-web-app-added-to-home-screen&quot;&gt;annoying iOS bug&lt;/a&gt; that shows the loading spinner constantly.  Other plans for Paste include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Paging to older pastes&lt;/li&gt;
+&lt;li&gt;Optional fields for title, description, language/type, and grouping of pastes&lt;/li&gt;
+&lt;li&gt;Longer pastes (using the ADN files API)&lt;/li&gt;
+&lt;li&gt;Private pastes&lt;/li&gt;
+&lt;li&gt;Profit!!!&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>LoneStarCon</title>
+   <link href="http://mcdemarco.net/blog/2013/08/25/lonestarcon"/>
+   <updated>2013-08-25T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2013/08/25/lonestarcon</id>
+   <content type="html">&lt;p&gt;We&amp;rsquo;re headed to LoneStarCon 3 early on Tuesday because we&amp;rsquo;re on tech staff.  Before we go, though, I wanted to put up my latest project (&lt;a href=&quot;http://paste-app.net&quot;&gt;paste-app.net&lt;/a&gt;) on my husband&amp;rsquo;s hosting service, and that was a good opportunity to move the blog there, too.  If you can see this post, I&amp;rsquo;ve managed to move house.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Kingdom Board Builder</title>
@@ -204,32 +239,6 @@
 &lt;hr /&gt;
 
 &lt;p&gt;An update via &lt;a href=&quot;http://twitter.com/#!/DeanWesleySmith/status/58427999455940608&quot;&gt;Dean&lt;/a&gt;:  &lt;a href=&quot;http://tech.fortune.cnn.com/2011/04/13/why-barnes-noble-should-go-from-bookstore-to-nookstore/&quot;&gt;CNNMoney reports on the tipping point at B&amp;amp;N&lt;/a&gt;, including the words &amp;ldquo;tipping point&amp;rdquo; and the prediction that &amp;ldquo;ebooks will dominate sales within the next 24 months.&amp;rdquo;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Back on the Wagon</title>
-   <link href="http://mcdemarco.net/blog/2011/04/10/back-on-the-wagon"/>
-   <updated>2011-04-10T00:00:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2011/04/10/back-on-the-wagon</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.brandeis.edu/gps/programscourses/programs/listings/17.html&quot;&gt;School&amp;rsquo;s&lt;/a&gt; out, probably for summer, and I&amp;rsquo;ve been inspired to blog again by the recent flurry of &lt;a href=&quot;http://lmmay.com/2011/03/21/barry-eisler-turned-down-500000-deal-to-indie-publish/&quot;&gt;posts on self-publishing&lt;/a&gt;.  But when I logged in after all these months since NaNoWriMo, Drupal distracted me from my intended topic by telling me I&amp;rsquo;ve been a member of my website for over six years.  It&amp;rsquo;s been about that long since I sold &lt;a href=&quot;http://mcdemarco.net/node/76&quot;&gt;my first story&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;So I had to go dig up my &lt;a href=&quot;/node/1&quot;&gt;first post&lt;/a&gt; about Bloxsom and &lt;a href=&quot;/node/81&quot;&gt;my other first post&lt;/a&gt; about converting my blog from Bloxsom to Drupal (and from a linkblog to a real blog).  That, of course, reminded me how I really need to upgrade Drupal, and what a nightmare that always is.  I also need to update &lt;a href=&quot;/sffms/&quot;&gt;SFFMS&lt;/a&gt; and, you know, &lt;em&gt;write&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Making a list is the first step&amp;hellip;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>The Finish Line</title>
-   <link href="http://mcdemarco.net/blog/2010/11/30/the-finish-line"/>
-   <updated>2010-11-30T00:00:00-05:00</updated>
-   <id>http://mcdemarco.net/blog/2010/11/30/the-finish-line</id>
-   <content type="html">&lt;p&gt;I hesitate to call it a novel, but I have limped over the finish line with about 50,100 words.  In NaNoWriMo terms I think I blew a knee this time.  I did not hit my all-time high daily word count (8,000 or so, I think) but I did do a couple of days of 6,666 words at the last minute.  Maybe next year I&amp;rsquo;ll pace myself better.&lt;!--break--&gt;&lt;/p&gt;
-
-&lt;p&gt;Here&amp;rsquo;s the evidence:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/files/pictures/nano_10_winner_120x90-3.png&quot; alt=&quot;NaNoWriMo 2010 Winner&quot; /&gt;&lt;/p&gt;
 </content>
  </entry>
  
