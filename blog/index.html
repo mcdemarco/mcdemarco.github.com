@@ -42,134 +42,118 @@
     
 
   <h2>
-    <a href="/blog/2013/09/13/paste">Paste</a>
+    <a href="/blog/2014/01/14/family-tree-generator">A Random Family Tree Generator</a>
   </h2>
 
   <section class="byline">
-    September 13, 2013
+    January 14, 2014
   </section>
 
-  <p>Yesterday I updated my app.net <a href="http://paste-app.net/">Paste</a> project.  I released Paste while I was at LoneStarCon (somewhat accidentally, when <a href="https://alpha.app.net/duerig">@duerig</a>, Paste&rsquo;s brainfather, posted about it to ADN), so I didn&rsquo;t take the time to blog about it then.  Somehow blogging didn&rsquo;t happen when I got back from San Antonio either (maybe because I&rsquo;m <a href="http://www.garann.com/dev/2013/how-to-blog-about-code-and-give-zero-fucks/">not a white male</a>).</p>
+  <p>During NaNoWriMo 2013, I wrote a novel about dwarves, and I also wrote a <a href="/tools/family-tree-generator/lineage.html">Random Family Tree Generator</a> in order to populate several dwarf clans, fast.  I&rsquo;d found a few versions of a generator for random medieval family trees (that is, trees of the descendants of a matriarch/patriarch pair) online, but I needed a bunch of other features, like non-human lifespans and gender ratios, and auto-generation and editing of the trees.  It also helped me quite a bit to display the tree as a tree rather than as the lists the original program had used.</p>
 
-<p>Anyway, the first post about Paste should have said: Paste is a pasteboard/pinboard running on the social networking platform <a href="http://app.net/">app.net</a>. Each paste has a public link that can be viewed without logging in to app.net, as well as a &ldquo;private&rdquo; link which will display both the selected paste and a list of the logged-in user&rsquo;s recent pastes. To create a new paste, you will need a (free) app.net account.</p>
+<p>The source code has been on <a href="https://github.com/mcdemarco/family-tree-generator">github</a> all along, and recently I added <a href="https://github.com/mcdemarco/family-tree-generator/blob/master/README.md">more gory details</a> to the README, but I&rsquo;ve saved a few for the blog, too:   I had some trouble getting wide family trees to display without wrapping; at first only Safari would do it right, but eventually Safari also started wrapping them.  They still wrap sometimes despite my hack-around for the issue.  There are still some alignment issues with couples and only children in trees; these come from my tree code source, <a href="http://thecodeplayer.com/experiment/css3-family-tree/2">TheCodePlayer CSS3 Family Tree</a>, and I haven&rsquo;t had the time to try to hack them away.</p>
 
-<p>Paste is the brainchild of Jonathon Duerig (@duerig), and is based on his code from the first session in the Learning the app.net API 101 patter room.  As of yesterday it also uses his <a href="https://github.com/duerig/appnet.js">appnet.js</a>. For more gory details, see Paste&rsquo;s <a href="https://github.com/mcdemarco/paste/blob/master/README.md">README on github</a>.</p>
+<p>I added better provisions for infant mortality and death in childbirth, in my attempts to scale back some overproduction of medieval humans.  But your browser will still hang if you try to auto-generate huge human families.  (You can get a few hundred years of dwarves safely, though.)  If it hangs, just kill the process or the browser and start again with smaller ambitions.</p>
 
-<p>The second post about Paste should say: Paste has been updated to include deletion of pastes and persistent authentication.  I also added some web app (<em>i.e.,</em> add to home screen) stuff for iOS, but because Paste requires an internet connection to get your pastes from app.net, running Paste as a web app is not particularly useful.</p>
+<p>My final hacks were to my own code; they centered around allowing all dwarf women to be named Dís.  I used a different dwarf naming scheme that&rsquo;s not included in the demo here; all the demo dwarves have Tolkien-style names, and Tolkien&rsquo;s only female dwarf was named&hellip;Dís.  I also discovered that you have to mark your JavaScript as utf-8 in the script tag to get accent marks (as in Dís) to output properly from your scripts.</p>
 
-<p>I&rsquo;m still planning to cache the javascript for the web app in order to make it load faster, since web apps don&rsquo;t share the cache or local storage with the main Safari app anymore (not that I use Safari, but I assume other people do).  This may also solve the <a href="http://stackoverflow.com/questions/14572825/ios-network-activity-indicator-keeps-spinning-in-web-app-added-to-home-screen">annoying iOS bug</a> that shows the loading spinner constantly.  Other plans for Paste include:</p>
+    
+  
+
+  <h2>
+    <a href="/blog/2013/12/15/penflipping-recipes">Penflipping Recipes</a>
+  </h2>
+
+  <section class="byline">
+    December 15, 2013
+  </section>
+
+  <p>Last post I mentioned that I&rsquo;ve been using Penflip for <a href="https://www.penflip.com/mcdemarco/the-new-kitchen-cookbook">a cookbook</a>.  I&rsquo;ve run into <a href="https://alpha.app.net/mcdemarco/post/16633775">some issues</a>, mainly involving images, but I still find it more convenient for my growing collection of recipes than dealing with <a href="/stream/springs/recipes.html">SpringPad</a>&rsquo;s interface.  I am especially reassured to have my cookbook checked out of git onto my own computer, where I feel it&rsquo;s safe from random UI changes like <a href="https://twitter.com/mcdemarco/status/336947399928983552">the one that drove me off SpringPad</a>.</p>
+
+<p>This is not an endorsement of Penflip, however. I never got any response from their support email address; the project seems to have stalled after the initial flurry of PR.  I don&rsquo;t think there&rsquo;s a good open-data solution for making your own online cookbook out there, though there are some nice closed-data apps like <a href="http://basil-app.com/">Basil</a> and <a href="http://www.paprikaapp.com/">Paprika</a> for iOS, <a href="http://www.tastebook.com">TasteBook</a> for the web, and <a href="http://blurb.com/">Blurb</a> for printing an actual book.  <a href="http://lifehacker.com/the-best-apps-to-manage-your-recipe-collection-1451016805">Lifehackers</a> also recommend <a href="https://onetsp.com">One tsp.</a></p>
+
+<p>If Penflip penflops, it will be relatively easy for me to soldier on&mdash;Penflip uses <a href="http://johnmacfarlane.net/pandoc/">pandoc</a>, and I would, too.  I could even build a recipe-only version with better image integration if I had the time.  But for the moment I&rsquo;ve merely worked around Penflip&rsquo;s issues by retrieving my photos from SpringPad, shrinking them down a bit with ImageMagick, and hosting them here on my own site.  If all goes well, I&rsquo;ll be able to download the PDF from Penflip soon.  But I&rsquo;m not holding my breath by any means&hellip;</p>
+
+    
+  
+
+  <h2>
+    <a href="/blog/2013/11/30/nanowrimo-2013">NaNoWriMo 2013</a>
+  </h2>
+
+  <section class="byline">
+    November 30, 2013
+  </section>
+
+  <p>Another year, another NaNo:  this was my tenth <a href="http://www.nanowrimo.org/">National Novel Writing Month</a>, and my tenth victory.  I took a couple of years off recently, but once I got back on the wagon it actually seemed easier than I recalled it being the other nine times.</p>
+
+<p><img src="/files/pictures/nano2013-winner-square.png" alt="nano 2013 winner" /></p>
+
+<p>I found the NaNoWriMo forums much less distracting this year, perhaps because I&rsquo;ve read it all before.  Another secret to my success was muting most of the people I follow on <a href="http://app.net/">app.net</a>; I&rsquo;m looking forward to turning them all back on again tonight.  I made <a href="https://alpha.app.net/mcdemarco/post/13813635">a Patter room for NaNoWriMo</a>, but that didn&rsquo;t end up with much traffic.</p>
+
+<p>The thing that distracted me the most this year was one of my tools:  not <a href="http://www.literatureandlatte.com/scrivener.php">Scrivener</a>, which I upgraded to version 2.0 for this novel, but a fantasy family tree generation I&rsquo;ve been working on all month to populate dwarf clans for the novel.  It wasn&rsquo;t particularly necessary, but it provided hours of fun and procrastination.  The incomplete version is in my github account; once a few more bugs are shaken out I&rsquo;ll put it up here for future NaNoWriMo use.</p>
+
+<p>I tried out a few other cool tools this month, most notably <a href="https://alpha.app.net/mcdemarco/post/14757994">Penflip</a>&mdash;which I started using for <a href="https://www.penflip.com/mcdemarco/the-new-kitchen-cookbook">a cookbook</a> rather than the novel&mdash;and <a href="http://donjon.bin.sh">donjon&rsquo;s generators</a> (especially the world generators).</p>
+
+    
+  
+
+  <h2>
+    <a href="/blog/2013/10/15/lifelines">LifeLines on Mountain Lion</a>
+  </h2>
+
+  <section class="byline">
+    October 15, 2013
+  </section>
+
+  <p>My husband got his 23andMe results back the other day, and his account was chock full of possible relatives.
+My 23andMe results have not attracted much in the way of near cousins over the years, but one popped up when I went in to look at his results (and mock his unexpected <a href="http://plagueblog.blogspot.com/2008/05/lactose-intolerance-in-europe.html">lactose intolerance</a>&mdash;coincidentally, my new 2nd-to-3rd cousin is also from the same 81% lactose-intolerant region of Italy I pointed out in the link).</p>
+
+<p>While I was looking for our common milk-avoiding relatives in the family tree I&rsquo;d imported into 23andMe way back when, I started updating the tree with some marriages and deaths.  So I wanted to update the original database as well, because 23andMe is proprietary and probably dropped lots of information from the GEDCOM file when I imported it and cetera et cetera.</p>
+
+<p>You may recall my choice of genealogy software, LifeLines, from <a href="/blog/2009/10/24/on-the-perils-of-raw-databases/">&ldquo;On the Perils of Raw Databases&rdquo;</a>, my true tale of moving a LifeLines database from a dying PPC Mac to an Intel Mac.  I&rsquo;m on a new Intel Mac now with a new operating system, and when I tried firing up my local copy of LifeLines, it had new issues.</p>
+
+<p>One issue was ^@&rsquo;s over the &ldquo;UI&rdquo;.  LifeLines doesn&rsquo;t seem to be in Fink anymore, so I built it myself from the source on SourceForge.  This didn&rsquo;t improve the situation.  Fighting a forest of broken links, I found the <a href="https://listserv.nodak.edu/cgi-bin/wa.exe?A0=LINES-L">LifeLines mailing list</a> and the vital advice of <a href="https://listserv.nodak.edu/cgi-bin/wa.exe?A2=ind1302B&amp;L=LINES-L&amp;D=0&amp;P=10079">compiling LifeLines as 32-bit</a>:</p>
+
+<pre><code>  ./configure CFLAGS="-m32 -O"
+  make
+  make install
+</code></pre>
+
+<p>This solved the ^@-signs, but the resulting LifeLines binary ate all my relatives' surnames.  I joined the LifeLines mailing list seeking advice, and the unexpected answer was to set LANG=en_US before running LifeLines:</p>
+
+<pre><code>  LANG=en_US; llines
+</code></pre>
+
+<p>Next up is finding and running some of my old LaTeX LifeLines reports so I can send one to a relative who requested a new copy.</p>
+
+    
+  
+
+  <h2>
+    <a href="/blog/2013/10/03/paste-1.2.0">Paste 1.2.0</a>
+  </h2>
+
+  <section class="byline">
+    October  3, 2013
+  </section>
+
+  <p>Yesterday I updated my app.net clipboard <a href="http://paste-app.net/">Paste</a> again, to version 1.2.0.
+Paste now supports optional paste titles, types, and tags, plus paging through your old pastes.</p>
+
+<p>For the innards of Paste, I started using mustache.js (a temporary expedient), and recompiled highlight.js to highlight
+more languages.  I spruced up the buttons and fixed a button-related bug that was only bothering me.<br/>
+The to-do list at the moment is:</p>
 
 <ul>
-<li>Paging to older pastes</li>
-<li>Optional fields for title, description, language/type, and grouping of pastes</li>
-<li>Longer pastes (using the ADN files API)</li>
-<li>Private pastes</li>
-<li>Profit!!!</li>
+<li>Add an app cache.</li>
+<li>Optional message descriptions.</li>
+<li>Longer pastes (using the ADN files API).</li>
+<li>Private pastes and multiple paste channels.</li>
 </ul>
 
 
-    
-  
-
-  <h2>
-    <a href="/blog/2013/08/25/lonestarcon">LoneStarCon</a>
-  </h2>
-
-  <section class="byline">
-    August 25, 2013
-  </section>
-
-  <p>We&rsquo;re headed to LoneStarCon 3 early on Tuesday because we&rsquo;re on tech staff.  Before we go, though, I wanted to put up my latest project (<a href="http://paste-app.net">paste-app.net</a>) on my husband&rsquo;s hosting service, and that was a good opportunity to move the blog there, too.  If you can see this post, I&rsquo;ve managed to move house.</p>
-
-    
-  
-
-  <h2>
-    <a href="/blog/2013/05/21/kingdom-board-builder">Kingdom Board Builder</a>
-  </h2>
-
-  <section class="byline">
-    May 21, 2013
-  </section>
-
-  <p>My husband and I were talking about designing a game like <a href="http://en.wikipedia.org/wiki/Kingdom_Builder">Kingdom Builder</a> that would have (among other things) an even more modular hex board. That got me thinking about how I could prototype such a board.</p>
-
-<p>I looked into the latest mapping software, and while there were some new options out there like <a href="http://axiscity.hexamon.net/users/isomage/gimp/hexgimp/">hexGIMP</a> and <a href="http://www.mapeditor.org/">Tiled</a> that might be able to do what I wanted, they weren&rsquo;t designed to do it easily. (Tiled needed a <a href="https://github.com/maq777/tiled">patch</a> just to do hexes at all.)</p>
-
-<p>So I decided to write my own tool to lay out hex boards. SVG seemed to be the easiest way to hack some clean, interactive graphics out of JavaScript, with adequate code examples available online (if hidden inside svg files). I decided to make Kingdom Builder boards as a proof of concept:</p>
-
-<object type="image/svg+xml" data="/files/svg/kbb-hexagons.svg" style="width:650px;height:500px;"></object>
-
-
-<p>(Pop out <a href="/files/svg/kbb-hexagons.svg">the svg</a>.)</p>
-
-<p>After generating a random board, it lets you edit the board by clicking on it. Note that it has strong opinions about adjacency and the need for location tiles.  If you don&rsquo;t like the editing constraints, try <a href="/files/svg/kbb-hexagons-free.svg">this version</a>.</p>
-
-<p>I decorated the terrain using svg filters I found online, mostly <a href="http://commons.wikimedia.org/wiki/File:Inkscape_filters_ABC.svg">from Inkscape</a>. It would have been quicker to edit them in Inkscape, but editing them by hand was more educational. (If you don&rsquo;t like the filters, try <a href="/files/svg/kbb-hexagons-flat.svg">this version</a>.)</p>
-
-<p>I also spent some time trying to understand <a href="http://www.justinmccandless.com/blog/Making+Sense+of+SVG+viewBox%27s+Madness">SVG&rsquo;s viewBox madness</a> in order to get a life-sized board, but gave up after I realized that life size was more than 8 &frac12; inches wide. So you&rsquo;re on your own for resizing; Inkscape may prove useful for that.</p>
-
-<p>The code, should you choose to look at it, was made gnarlier by my late realization that I had reversed the board. I moved the first column to the end to fix it, which threw off the numbering and layout. Some bits were simplified by advice from <a href="http://www.redblobgames.com/grids/hexagons/">Amit Patel&rsquo;s page about programming hex grids</a> before being complicated later. (Location hex placement is particularly hacked.)</p>
-
-<p>Browser restrictions prevent me from saving your output for you, but you can do it manually from a PC by copying the DOM: in Chrome or Safari, right click on any hex, choose Inspect Element, scroll up to the svg element in the code, right click on that, choose Copy as HTML, paste it into a text editor, and save it with the svg extension. This will leave you with an svg of your last map that you can open in a browser and edit. Any subsequent changes can be saved the same way.</p>
-
-<p>If you need help with saving or have feature requests, let me know (preferably via <a href="/stream/adn">app.net</a>).</p>
-
-    
-  
-
-  <h2>
-    <a href="/blog/2013/04/29/a-week-in-the-bitcoin-mines">A Week in the Bitcoin Mines</a>
-  </h2>
-
-  <section class="byline">
-    April 29, 2013
-  </section>
-
-  <p>I decided to try bitcoin mining after hearing a partial explanation that made it sound more  mathematically interesting than <a href="http://www.reddit.com/r/Bitcoin/comments/17so2c/explain_bitcoins_like_im_a_mathcs_undergrad/">it turned out to be</a>. (The moment of existential disappointment came when I read that the number of bitcoins cannot exceed 21 million.)</p>
-
-<p>There&rsquo;s plenty of advice out there for the <a href="http://www.businessinsider.com/how-to-mine-bitcoins-2013-3?op=1">rank newbie</a> that explains what bitcoins are and how to mine them with just a web browser at sites like <a href="http://bitcoinplus.com">BitCoinPlus.com</a>. My experience with web miners (during some downtime away from the <em>real</em> mines) was that they don&rsquo;t work now.  I suspect they may have worked back when Java plugins were less hoary and suspect, and bitcoins littered the intertubes like, well, bits.</p>
-
-<p>There&rsquo;s not quite as much advice for the mere amateur, but I found <a href="http://startbitcoin.com/">some</a>. I downloaded a real <a href="http://bitcoin.org/en/choose-your-wallet">bitcoin wallet</a> for my <a href="https://en.bitcoin.it/wiki/Getting_started_installing_bitcoin-qt#For_Mac_computers">Mac</a> and waited a few days for it to download the <a href="http://blockchain.info/charts/blocks-size">full blockchain</a>.  (I had to make more disk space in the middle of that and it wasn&rsquo;t clear how much of the blockchain Bitcoin-Qt had saved.)</p>
-
-<p>Since bitcoins are now too rare to mine on your own, you need to find a work crew and divide up your take. I followed the advice and joined <a href="https://mining.bitcoin.cz/">Slush&rsquo;s pool</a>.  Next, I needed a mining program. Unfortunately, my Mac is still on Snow Leopard, and the options were limited. I downloaded RPCminer, a CPU miner, and set it up to work with Slush&rsquo;s pool, despite <a href="http://maccoinminer.wordpress.com/2011/05/20/rpcminer-for-mac/">the now outdated instructions</a>.</p>
-
-<p>Slush&rsquo;s pool turned out to have just started extra fees for using the standard mining pool work-assignment protocol instead of Slush&rsquo;s new protocol, so I also needed to install <a href="https://github.com/slush0/stratum-mining-proxy">his proxy</a> to translate between my old client and the new protocol server.  I had all the requirements to build the proxy for Mac, but I still got some errors building it. Nevertheless it built and ran so I ignored the errors.</p>
-
-<p>This setup seemed to work, but no bitcoins surfaced from the rocky soil of the intertubes. CPU miners are too slow for mining in general, and especially so on an aging laptop that tends toward heat exhaustion in the summer.  I needed a GPU miner (that is, a miner that uses the computer&rsquo;s graphical chip instead of its regular processors).</p>
-
-<p>In the bitcoin forums, there was a link to an old build of a Java-based GPU miner called DiabloMiner. From the (long and messy) thread it was clear that DiabloMiner worked in Snow Leopard, but the link was broken and the newer builds required newer OSes. I hunted high and low for the missing link, but found nothing but ghostly links to the dear departed download.</p>
-
-<p>So I tried building the latest Diablo code on Snow Leopard. (This required maven.) It built happily enough, but when I tried to run it, it complained that Apple&rsquo;s version of OpenCL (the driver to run non-graphics  software on your unsuspecting graphics card) was too old. I figured the best solution to that problem was time travel, so I checked out <a href="https://github.com/Diablo-D3/DiabloMiner/tree/e3071516e9582127ffc1c69b6e321994146ee4ba">a version of the code from May 1, 2011</a> and built it.</p>
-
-<p>Success at last! My miners mined away happily for an hour or two, producing an infinitesimal fraction of a bitcoin before tragedy struck in the form of a <a href="https://bitcointalk.org/index.php?topic=1976.msg1856080">DoS attack on Slush&rsquo;s servers</a>. But now that I had a rig set up I could switch to another pool, like the fickle &lsquo;49er I&rsquo;d become.</p>
-
-<p>Unfortunately, in my haste I picked a pool, <a href="http://bitminter.com/">Bitminter</a>, that didn&rsquo;t pay out until you&rsquo;d earned at least 0.001 bitcoins. Even with my husband&rsquo;s Mac mini shanghaied into mining for me, it took about a week (and a couple of unexplained work stoppages from both miners) to reach 0.001. On the bright side, Bitminter also does simultaneous <a href="http://bitminter.com/">Namecoin</a> mining&mdash;something Slush still promises on his account setup page but which (the bitcoin forums report) hasn&rsquo;t been supported there for some time.</p>
-
-<p>But (of course there was going to be a <em>but</em>), while namecoins can be mined with no additional effort by my lazy miners, they don&rsquo;t accrue at the same rate as the bitcoins. So cashing out of bitcoins at 0.001 meant leaving about 0.00075 namecoins lingering at Bitminter until the next DoS sends my miners back there. According to the <a href="https://btc-e.com/exchange/nmc_btc">Bitcoin Exchange</a>, my bit of namecoin is currently worth a homeopathic fraction of a bitcoin, so I&rsquo;ll probably leave them lying in the intertube I found them in for quite some time.</p>
-
-<p>Bitcoin mining is about as profitable as fiction writing in that it costs you more in electricity than you will ever earn. The best way to score virtual riches may instead be to get in on the ground floor of another virtual currency like namecoins. I tried out a promising upstart called <a href="http://litecoin.org/">Litecoin</a> which is supposed to level the playing field between amateurs and professional miners to some extent.</p>
-
-<p>My efforts were once again hampered by my old OS&mdash;I wasn&rsquo;t able to find a GPU miner for it and had to settle for one CPU miner on the Mac mini. This rig is not ideal, but it&rsquo;s also not the handicap it would be with bitcoins.  I&rsquo;ve already mined 0.065 litecoins (worth about a quarter on the virtual market) with one CPU in the same week or so of time it takes to mine 0.001 bitcoins (worth one thin dime). Now all I need to do is mine and wait for the coming litecoin bubble to inflate.</p>
-
-    
-  
-
-  <h2>
-    <a href="/blog/2013/04/15/crossposting-with-drafts">Crossposting with Drafts</a>
-  </h2>
-
-  <section class="byline">
-    April 15, 2013
-  </section>
-
-  <p>I&rsquo;ve been wanting crossposting software for a while now.  People I&rsquo;d spotted successfully crossposting either did it manually in a browser or worked for Google (solving the Google+ problem through nepotism?), and Hootsuite only handled a couple of my networks. <a href="http://streamified.com/">Streamified</a> did more but still not all (and is temporarily without an iOS client).</p>
-
-<p><a href="http://agiletortoise.com/drafts">Drafts</a> does more too, but also lets me do it all&mdash;even save the markdown to Dropbox for later inclusion in my Jekyll blog&mdash;all from my iPad.  This is my first blog post using Drafts, but I&rsquo;ll also edit it later for some other <a href="/stream/">streams</a>.</p>
-
-<p>So, isn&rsquo;t crossposting evil? The short answer is it&rsquo;s evil when businesses do it for their financial (as opposed to social) purposes, or when trolls do it to rile up one newsgroup with a discussion more appropriate to the source group (or to no place at all). It&rsquo;s also evil when the crossposter is himself largely responsible for the fragmentation of the community (say, an excessive proliferation of mailing lists on the same topic) that he then needs to crosspost across in order to have a discussion.</p>
-
-<p>It&rsquo;s not so evil when the crossposter is innocent of the fragmentation of his community&mdash;say, some of them won&rsquo;t use Facebook and others don&rsquo;t use mailing lists (or any of them are lawyers). In the case where businesses are intentionally using your content to keep people in their own advertisement-filled <a href="http://en.wikipedia.org/wiki/Information_silo">silo</a> (Facebook, Google, Twitter, etc.), crossposting is the pro-social option. Bonus points if you also point your siloed readers to an especially pro-social forum (<a href="http://app.net">App.net</a>, Tent, etc.).</p>
+<p>(Due to the sad state of the app economy, <em>profit!!!</em> has been removed from the to-do list.)</p>
 
     
   
@@ -212,10 +196,11 @@
 	<li><a href="/gkc/" title="G. K. Chesterton">gkc</a>
 	
 	</li>
-	<li><a href="/sffms/">sffms</a>
+	<li><a href="/stream/" title="Social media">stream</a>
 	
 	</li>
-	<li><a href="/stream/" title="Social media">stream</a>
+	<li><a href="/tools/" title="Writing tools">tools</a>
+	
 	
 	</li>
       </ul>
