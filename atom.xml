@@ -4,12 +4,120 @@
  <title>m. c. de marco</title>
  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
  <link href="http://mcdemarco.net/"/>
- <updated>2013-09-13T13:50:12-04:00</updated>
+ <updated>2014-05-28T21:31:36-04:00</updated>
  <id>http://mcdemarco.net</id>
  <author>
    <name>m. c. de marco</name>
  </author>
  
+ 
+ <entry>
+   <title>Squirrels for Balticon</title>
+   <link href="http://mcdemarco.net/blog/2014/05/28/squirrels-for-balticon"/>
+   <updated>2014-05-28T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2014/05/28/squirrels-for-balticon</id>
+   <content type="html">&lt;p&gt;We drove down to &lt;a href=&quot;http://www.balticon.org&quot;&gt;Balticon 48&lt;/a&gt; this past weekend, where we spotted one (1) meteor during the meteor &amp;ldquo;shower&amp;rdquo; and the long-awaited anthology &lt;em&gt;&lt;a href=&quot;http://www.amazon.com/gp/product/1617209457/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=1617209457&amp;amp;linkCode=as2&amp;amp;tag=mcdema-20&amp;amp;linkId=FYYXFORPYCV46TGT&quot;&gt;Trafficking in Magic, Magicking in Traffic&lt;/a&gt;&lt;/em&gt; in the dealers' room.  I got to meet the editors and a few fellow contributors in person for the first time, attend the release party, and sign a pile of books.  (So I know my story, &amp;ldquo;Squirrels for Kali&amp;rdquo;, starts on page 201.)&lt;/p&gt;
+
+&lt;p&gt;Don&amp;rsquo;t worry, there are a few more copies available for you to buy at the affiliate link above, and I&amp;rsquo;ve also updated &lt;a href=&quot;http://astore.amazon.com/mcdema-20&quot;&gt;my Amazon store&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>A Random Family Tree Generator</title>
+   <link href="http://mcdemarco.net/blog/2014/01/14/family-tree-generator"/>
+   <updated>2014-01-14T00:00:00-05:00</updated>
+   <id>http://mcdemarco.net/blog/2014/01/14/family-tree-generator</id>
+   <content type="html">&lt;p&gt;During NaNoWriMo 2013, I wrote a novel about dwarves, and I also wrote a &lt;a href=&quot;/tools/family-tree-generator/lineage.html&quot;&gt;Random Family Tree Generator&lt;/a&gt; in order to populate several dwarf clans, fast.  I&amp;rsquo;d found a few versions of a generator for random medieval family trees (that is, trees of the descendants of a matriarch/patriarch pair) online, but I needed a bunch of other features, like non-human lifespans and gender ratios, and auto-generation and editing of the trees.  It also helped me quite a bit to display the tree as a tree rather than as the lists the original program had used.&lt;/p&gt;
+
+&lt;p&gt;The source code has been on &lt;a href=&quot;https://github.com/mcdemarco/family-tree-generator&quot;&gt;github&lt;/a&gt; all along, and recently I added &lt;a href=&quot;https://github.com/mcdemarco/family-tree-generator/blob/master/README.md&quot;&gt;more gory details&lt;/a&gt; to the README, but I&amp;rsquo;ve saved a few for the blog, too:   I had some trouble getting wide family trees to display without wrapping; at first only Safari would do it right, but eventually Safari also started wrapping them.  They still wrap sometimes despite my hack-around for the issue.  There are still some alignment issues with couples and only children in trees; these come from my tree code source, &lt;a href=&quot;http://thecodeplayer.com/experiment/css3-family-tree/2&quot;&gt;TheCodePlayer CSS3 Family Tree&lt;/a&gt;, and I haven&amp;rsquo;t had the time to try to hack them away.&lt;/p&gt;
+
+&lt;p&gt;I added better provisions for infant mortality and death in childbirth, in my attempts to scale back some overproduction of medieval humans.  But your browser will still hang if you try to auto-generate huge human families.  (You can get a few hundred years of dwarves safely, though.)  If it hangs, just kill the process or the browser and start again with smaller ambitions.&lt;/p&gt;
+
+&lt;p&gt;My final hacks were to my own code; they centered around allowing all dwarf women to be named Dís.  I used a different dwarf naming scheme that&amp;rsquo;s not included in the demo here; all the demo dwarves have Tolkien-style names, and Tolkien&amp;rsquo;s only female dwarf was named&amp;hellip;Dís.  I also discovered that you have to mark your JavaScript as utf-8 in the script tag to get accent marks (as in Dís) to output properly from your scripts.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Penflipping Recipes</title>
+   <link href="http://mcdemarco.net/blog/2013/12/15/penflipping-recipes"/>
+   <updated>2013-12-15T00:00:00-05:00</updated>
+   <id>http://mcdemarco.net/blog/2013/12/15/penflipping-recipes</id>
+   <content type="html">&lt;p&gt;Last post I mentioned that I&amp;rsquo;ve been using Penflip for &lt;a href=&quot;https://www.penflip.com/mcdemarco/the-new-kitchen-cookbook&quot;&gt;a cookbook&lt;/a&gt;.  I&amp;rsquo;ve run into &lt;a href=&quot;https://alpha.app.net/mcdemarco/post/16633775&quot;&gt;some issues&lt;/a&gt;, mainly involving images, but I still find it more convenient for my growing collection of recipes than dealing with &lt;a href=&quot;/stream/springs/recipes.html&quot;&gt;SpringPad&lt;/a&gt;&amp;rsquo;s interface.  I am especially reassured to have my cookbook checked out of git onto my own computer, where I feel it&amp;rsquo;s safe from random UI changes like &lt;a href=&quot;https://twitter.com/mcdemarco/status/336947399928983552&quot;&gt;the one that drove me off SpringPad&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is not an endorsement of Penflip, however. I never got any response from their support email address; the project seems to have stalled after the initial flurry of PR.  I don&amp;rsquo;t think there&amp;rsquo;s a good open-data solution for making your own online cookbook out there, though there are some nice closed-data apps like &lt;a href=&quot;http://basil-app.com/&quot;&gt;Basil&lt;/a&gt; and &lt;a href=&quot;http://www.paprikaapp.com/&quot;&gt;Paprika&lt;/a&gt; for iOS, &lt;a href=&quot;http://www.tastebook.com&quot;&gt;TasteBook&lt;/a&gt; for the web, and &lt;a href=&quot;http://blurb.com/&quot;&gt;Blurb&lt;/a&gt; for printing an actual book.  &lt;a href=&quot;http://lifehacker.com/the-best-apps-to-manage-your-recipe-collection-1451016805&quot;&gt;Lifehackers&lt;/a&gt; also recommend &lt;a href=&quot;https://onetsp.com&quot;&gt;One tsp.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If Penflip penflops, it will be relatively easy for me to soldier on&amp;mdash;Penflip uses &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;pandoc&lt;/a&gt;, and I would, too.  I could even build a recipe-only version with better image integration if I had the time.  But for the moment I&amp;rsquo;ve merely worked around Penflip&amp;rsquo;s issues by retrieving my photos from SpringPad, shrinking them down a bit with ImageMagick, and hosting them here on my own site.  If all goes well, I&amp;rsquo;ll be able to download the PDF from Penflip soon.  But I&amp;rsquo;m not holding my breath by any means&amp;hellip;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>NaNoWriMo 2013</title>
+   <link href="http://mcdemarco.net/blog/2013/11/30/nanowrimo-2013"/>
+   <updated>2013-11-30T00:00:00-05:00</updated>
+   <id>http://mcdemarco.net/blog/2013/11/30/nanowrimo-2013</id>
+   <content type="html">&lt;p&gt;Another year, another NaNo:  this was my tenth &lt;a href=&quot;http://www.nanowrimo.org/&quot;&gt;National Novel Writing Month&lt;/a&gt;, and my tenth victory.  I took a couple of years off recently, but once I got back on the wagon it actually seemed easier than I recalled it being the other nine times.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/pictures/nano2013-winner-square.png&quot; alt=&quot;nano 2013 winner&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I found the NaNoWriMo forums much less distracting this year, perhaps because I&amp;rsquo;ve read it all before.  Another secret to my success was muting most of the people I follow on &lt;a href=&quot;http://app.net/&quot;&gt;app.net&lt;/a&gt;; I&amp;rsquo;m looking forward to turning them all back on again tonight.  I made &lt;a href=&quot;https://alpha.app.net/mcdemarco/post/13813635&quot;&gt;a Patter room for NaNoWriMo&lt;/a&gt;, but that didn&amp;rsquo;t end up with much traffic.&lt;/p&gt;
+
+&lt;p&gt;The thing that distracted me the most this year was one of my tools:  not &lt;a href=&quot;http://www.literatureandlatte.com/scrivener.php&quot;&gt;Scrivener&lt;/a&gt;, which I upgraded to version 2.0 for this novel, but a fantasy family tree generation I&amp;rsquo;ve been working on all month to populate dwarf clans for the novel.  It wasn&amp;rsquo;t particularly necessary, but it provided hours of fun and procrastination.  The incomplete version is in my github account; once a few more bugs are shaken out I&amp;rsquo;ll put it up here for future NaNoWriMo use.&lt;/p&gt;
+
+&lt;p&gt;I tried out a few other cool tools this month, most notably &lt;a href=&quot;https://alpha.app.net/mcdemarco/post/14757994&quot;&gt;Penflip&lt;/a&gt;&amp;mdash;which I started using for &lt;a href=&quot;https://www.penflip.com/mcdemarco/the-new-kitchen-cookbook&quot;&gt;a cookbook&lt;/a&gt; rather than the novel&amp;mdash;and &lt;a href=&quot;http://donjon.bin.sh&quot;&gt;donjon&amp;rsquo;s generators&lt;/a&gt; (especially the world generators).&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>LifeLines on Mountain Lion</title>
+   <link href="http://mcdemarco.net/blog/2013/10/15/lifelines"/>
+   <updated>2013-10-15T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2013/10/15/lifelines</id>
+   <content type="html">&lt;p&gt;My husband got his 23andMe results back the other day, and his account was chock full of possible relatives.
+My 23andMe results have not attracted much in the way of near cousins over the years, but one popped up when I went in to look at his results (and mock his unexpected &lt;a href=&quot;http://plagueblog.blogspot.com/2008/05/lactose-intolerance-in-europe.html&quot;&gt;lactose intolerance&lt;/a&gt;&amp;mdash;coincidentally, my new 2nd-to-3rd cousin is also from the same 81% lactose-intolerant region of Italy I pointed out in the link).&lt;/p&gt;
+
+&lt;p&gt;While I was looking for our common milk-avoiding relatives in the family tree I&amp;rsquo;d imported into 23andMe way back when, I started updating the tree with some marriages and deaths.  So I wanted to update the original database as well, because 23andMe is proprietary and probably dropped lots of information from the GEDCOM file when I imported it and cetera et cetera.&lt;/p&gt;
+
+&lt;p&gt;You may recall my choice of genealogy software, LifeLines, from &lt;a href=&quot;/blog/2009/10/24/on-the-perils-of-raw-databases/&quot;&gt;&amp;ldquo;On the Perils of Raw Databases&amp;rdquo;&lt;/a&gt;, my true tale of moving a LifeLines database from a dying PPC Mac to an Intel Mac.  I&amp;rsquo;m on a new Intel Mac now with a new operating system, and when I tried firing up my local copy of LifeLines, it had new issues.&lt;/p&gt;
+
+&lt;p&gt;One issue was ^@&amp;rsquo;s over the &amp;ldquo;UI&amp;rdquo;.  LifeLines doesn&amp;rsquo;t seem to be in Fink anymore, so I built it myself from the source on SourceForge.  This didn&amp;rsquo;t improve the situation.  Fighting a forest of broken links, I found the &lt;a href=&quot;https://listserv.nodak.edu/cgi-bin/wa.exe?A0=LINES-L&quot;&gt;LifeLines mailing list&lt;/a&gt; and the vital advice of &lt;a href=&quot;https://listserv.nodak.edu/cgi-bin/wa.exe?A2=ind1302B&amp;amp;L=LINES-L&amp;amp;D=0&amp;amp;P=10079&quot;&gt;compiling LifeLines as 32-bit&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  ./configure CFLAGS=&quot;-m32 -O&quot;
+  make
+  make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This solved the ^@-signs, but the resulting LifeLines binary ate all my relatives' surnames.  I joined the LifeLines mailing list seeking advice, and the unexpected answer was to set LANG=en_US before running LifeLines:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  LANG=en_US; llines
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next up is finding and running some of my old LaTeX LifeLines reports so I can send one to a relative who requested a new copy.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Paste 1.2.0</title>
+   <link href="http://mcdemarco.net/blog/2013/10/03/paste-1.2.0"/>
+   <updated>2013-10-03T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2013/10/03/paste-1.2.0</id>
+   <content type="html">&lt;p&gt;Yesterday I updated my app.net clipboard &lt;a href=&quot;http://paste-app.net/&quot;&gt;Paste&lt;/a&gt; again, to version 1.2.0.
+Paste now supports optional paste titles, types, and tags, plus paging through your old pastes.&lt;/p&gt;
+
+&lt;p&gt;For the innards of Paste, I started using mustache.js (a temporary expedient), and recompiled highlight.js to highlight
+more languages.  I spruced up the buttons and fixed a button-related bug that was only bothering me.&lt;br/&gt;
+The to-do list at the moment is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Add an app cache.&lt;/li&gt;
+&lt;li&gt;Optional message descriptions.&lt;/li&gt;
+&lt;li&gt;Longer pastes (using the ADN files API).&lt;/li&gt;
+&lt;li&gt;Private pastes and multiple paste channels.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;(Due to the sad state of the app economy, &lt;em&gt;profit!!!&lt;/em&gt; has been removed from the to-do list.)&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Paste</title>
@@ -169,76 +277,6 @@
    <updated>2013-04-04T15:28:00-04:00</updated>
    <id>http://mcdemarco.net/blog/2013/04/04/social-archiving</id>
    <content type="html">&lt;p&gt;The rest of the static website has now been converted to static website, and I tossed in one social media archive, &lt;a href=&quot;/stream/tweets/&quot;&gt;twitter&lt;/a&gt;, along with a primitive proto-twitter &lt;a href=&quot;/stream/notes/&quot;&gt;noteboard&lt;/a&gt; that I used back in the day.  I&amp;rsquo;m not quite ready to upload it all to my official host, so for now the new website is still hanging out at &lt;a href=&quot;http://mcdemarco.github.com&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Jekyll and Left</title>
-   <link href="http://mcdemarco.net/blog/2013/04/03/jekyll-and-left"/>
-   <updated>2013-04-03T13:28:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2013/04/03/jekyll-and-left</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://octopress.org/&quot;&gt;Octopress&lt;/a&gt; was repressing me, so I switched to a pure &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;jekyll&lt;/a&gt; responsive theme called &lt;a href=&quot;http://zachholman.com/posts/left/&quot;&gt;Left&lt;/a&gt;.  I&amp;rsquo;ve hacked it up a bit with navigation submenus, header rearrangements, and a simpler mobile stylesheet.  The source code is in my &lt;a href=&quot;https://github.com/mcdemarco/left&quot;&gt;github fork&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I also managed to import my Drupal database, with some technical difficulties involving base64 and Drupal books that required semi-manual repair.  Most of the static website has also been converted to &amp;hellip; static website.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Octopressing</title>
-   <link href="http://mcdemarco.net/blog/2013/03/31/octopressing"/>
-   <updated>2013-03-31T17:10:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2013/03/31/octopressing</id>
-   <content type="html">&lt;p&gt;After several years of neglecting Drupal, I’m trying out something simpler that doesn’t require the database (which also happens to be down). Octopress is a front-end for jekyll, a ruby-based flat-file CMS. I have backups of my missing Drupal installation which I hope to import eventually.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Twee Two</title>
-   <link href="http://mcdemarco.net/blog/2012/03/16/twee-two"/>
-   <updated>2012-03-16T12:45:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2012/03/16/twee-two</id>
-   <content type="html">&lt;p&gt;I seem to have volunteered for the &lt;a href=&quot;http://gimcrackd.com/etc/src/&quot;&gt;Twine/Twee&lt;/a&gt; revival. (See the &lt;a href=&quot;http://groups.google.com/group/tweecode&quot;&gt;tweecode Google group&lt;/a&gt; for more details.) This means I may have some interactive fiction of my own up soon, so watch this space&amp;hellip;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Interview with the Writer</title>
-   <link href="http://mcdemarco.net/blog/2011/08/25/interview-with-the-writer"/>
-   <updated>2011-08-25T00:00:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2011/08/25/interview-with-the-writer</id>
-   <content type="html">&lt;p&gt;I was interviewed virtually by Lila Munro &lt;a href=&quot;http://lilamunro.weebly.com/1/post/2011/08/welcome-mc-demarco.html&quot;&gt;at Realmantic Moments yesterday&lt;/a&gt;.  I apologize for the late notice; I thought the interview was coming out today.  It includes an excerpt from my &lt;em&gt;Paramourtal&lt;/em&gt; story, &amp;ldquo;Sympathy From the Devil.&amp;rdquo;  Three or four other interviews with authors from the anthology are available under &lt;a href=&quot;http://lilamunro.weebly.com/lilas-musings.html&quot;&gt;Lila&amp;rsquo;s Musings&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;My characters were interviewed meta-virtually by Sherry Gloag &lt;a href=&quot;http://sherrygloagtheheartofromance.blogspot.com/2011/08/mc-demarco-author-of-sympathy-from.html&quot;&gt;at The Heart of Romance blog last week&lt;/a&gt; while I was busy packing.  I apologize for the even later notice; I thought the interviews were coming out next month, but that turns out to be when the reviews will appear.&lt;!--break--&gt;  You can read more interviews of characters and their authors from the  anthology by clicking on &lt;a href=&quot;http://sherrygloagtheheartofromance.blogspot.com/search/label/Paramourtal&quot;&gt;Sherry&amp;rsquo;s &lt;em&gt;Paramourtal&lt;/em&gt; label&lt;/a&gt;.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>The First Million Words are the Hardest</title>
-   <link href="http://mcdemarco.net/blog/2011/07/03/the-first-million-words-are-the-hardest"/>
-   <updated>2011-07-03T00:00:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2011/07/03/the-first-million-words-are-the-hardest</id>
-   <content type="html">&lt;p&gt;As part of being back on the wagon, I wrote a new story this week and submitted it to &lt;a href=&quot;http://www.writersofthefuture.com/&quot;&gt;Writers of the Future&lt;/a&gt;&amp;mdash;-at 11:50pm Thursday night, thanks to their new online submissions policy.  Today I finally got around to logging it and my NaNoWriMo novel in my giant writing spreadsheet, and I noticed that I&amp;rsquo;d gone over the million word mark back on November 30th.  Since I started writing in the summer of 2001, I also managed to do the whole thing in just under 10 years.  (For the significance of these numbers, see my post on &lt;a href=&quot;/node/259&quot;&gt;10 Years or 1,000,000 Words&lt;/a&gt;.)&lt;/p&gt;
-
-&lt;p&gt;I wouldn&amp;rsquo;t say that this week&amp;rsquo;s story was my best work or that it subtly displayed every one of my million words of practice, but I did bang it out surprisingly quickly; it only took one evening (Wednesday) out of my active social schedule.  It&amp;rsquo;s also my third story in that particular universe, so I think once it&amp;rsquo;s been rejected a few times I might package it up with the other two for sale.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>The Self-Publishing Tipping Point</title>
-   <link href="http://mcdemarco.net/blog/2011/04/13/the-self-publishing-tipping-point"/>
-   <updated>2011-04-13T00:00:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2011/04/13/the-self-publishing-tipping-point</id>
-   <content type="html">&lt;p&gt;I found my way from &lt;a href=&quot;http://twitter.com/#!/DeanWesleySmith&quot;&gt;Dean Wesley Smith&amp;rsquo;s twitter feed&lt;/a&gt; to L. M. May&amp;rsquo;s posts on &lt;a href=&quot;http://lmmay.com/2011/04/03/fiction-writers-and-learned-helplessness/&quot;&gt;learned helplessness&lt;/a&gt; and &lt;a href=&quot;http://lmmay.com/2011/03/21/barry-eisler-turned-down-500000-deal-to-indie-publish/&quot;&gt;Barry Eisler going indie&lt;/a&gt;.  I read Barry Eisler&amp;rsquo;s long &lt;a href=&quot;http://barryeisler.blogspot.com/2011/03/ebooks-and-self-publishing-conversation.html&quot;&gt;two&lt;/a&gt; &lt;a href=&quot;http://barryeisler.blogspot.com/2011/04/ebooks-and-self-publishing-part-2.html&quot;&gt;part&lt;/a&gt; dialogue with Joe Konrath about self-publishing.  Dean has since posted some more self-publishing advice.&lt;/p&gt;
-
-&lt;p&gt;By chance I also found &lt;a href=&quot;http://daviddfriedman.blogspot.com/2011/03/how-to-eliminate-publishing-industry.html&quot;&gt;a very short post by David Friedman&lt;/a&gt; about how little need for the publishing industry remains after the advent of ebooks&amp;mdash;-a reprise of a three-year-old post whose time has now come.  Also by chance, I just got my first royalty payment for &lt;em&gt;Paramourtal&lt;/em&gt; last week, and my mother(!) got a Kindle at the same time.&lt;/p&gt;
-
-&lt;p&gt;It all added up for me to a tipping point for self-publishing.  It&amp;rsquo;s no longer the crazy aunt of publishing options; now it&amp;rsquo;s the best practice (to pick a painful phrase from the wealth of jargon I&amp;rsquo;ve been hearing at the &lt;a href=&quot;http://www.bio-itworldexpo.com/Bio-It_Expo_Content.aspx?id=102622&quot;&gt;BioIT World conference&lt;/a&gt; in Boston this week).  I no longer picture myself submitting short stories and (future) novels to sink in the slush swamps of traditional publishers on the side while I keep my day job; instead I see myself publishing my own books and (possibly) making decent money at it.  I find my new vision of the future much more inspiring&amp;mdash;-thus my resolve to get back on the wagon.&lt;/p&gt;
-
-&lt;p&gt;That&amp;rsquo;s a lot to read into one PayPal payment and a few blog posts, but it&amp;rsquo;s more a matter of intuition than of deduction.  Where else can the industry go at this point?&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;An update via &lt;a href=&quot;http://twitter.com/#!/DeanWesleySmith/status/58427999455940608&quot;&gt;Dean&lt;/a&gt;:  &lt;a href=&quot;http://tech.fortune.cnn.com/2011/04/13/why-barnes-noble-should-go-from-bookstore-to-nookstore/&quot;&gt;CNNMoney reports on the tipping point at B&amp;amp;N&lt;/a&gt;, including the words &amp;ldquo;tipping point&amp;rdquo; and the prediction that &amp;ldquo;ebooks will dominate sales within the next 24 months.&amp;rdquo;&lt;/p&gt;
 </content>
  </entry>
  

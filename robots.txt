@@ -5,6 +5,7 @@ User-agent: *
 Disallow: /bio/nonfiction/
 Disallow: /book/
 Disallow: /feed/
+Disallow: /files/recipes/
 Disallow: /node/
 Disallow: /social/
 Disallow: /tamination/

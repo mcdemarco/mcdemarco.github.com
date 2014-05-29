@@ -3,6 +3,8 @@
    This script takes an uploaded file and returns a text file.  
    It requires an html form to upload the file and an .htaccess file 
    to serve the results as the correct file type.                       */
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 $newname="output";
 $oldnames=explode(".", $_FILES['userfile']['name']);
 if ($oldnames[0] && $oldnames[0] != "") $newname = $oldnames[0];
@@ -76,7 +78,7 @@ $theline = "";
 $thehead = "";
 $breaking = false;
 $end = false;
-$tempdir="/home/mcd/sitesupport/temp/"; 
+$tempdir="/home/mcdemarco/temp/"; 
   /* initialize variables that may be omitted from the header */
 $title = "YOUR TITLE";
 $author = "You Yourself";
