@@ -4,7 +4,7 @@
  <title>m. c. de marco</title>
  <link href="http://mcdemarco.net/atom.xml" rel="self"/>
  <link href="http://mcdemarco.net/"/>
- <updated>2014-05-28T21:31:36-04:00</updated>
+ <updated>2014-07-21T12:56:45-04:00</updated>
  <id>http://mcdemarco.net</id>
  <author>
    <name>m. c. de marco</name>
@@ -12,11 +12,24 @@
  
  
  <entry>
+   <title>Crick Tickers, Cooters, and Games</title>
+   <link href="http://mcdemarco.net/blog/2014/07/21/crick-ticker"/>
+   <updated>2014-07-21T00:00:00-04:00</updated>
+   <id>http://mcdemarco.net/blog/2014/07/21/crick-ticker</id>
+   <content type="html">&lt;p&gt;I released &lt;a href=&quot;http://crick-ticker.mcdemarco.net/&quot;&gt;Crick Ticker&lt;/a&gt;, a web-based stream marker manager for App.net, before leaving for Pinewoods a week and a half ago.  There are a few vacation photos up at &lt;a href=&quot;http://favd.net/user/mcdemarco&quot;&gt;Favd&lt;/a&gt;, starting with the &lt;a href=&quot;http://favd.net/pic/34966279&quot;&gt;red-bellied cooter&lt;/a&gt;, and we also played a lot of board games, which inspired me to update &lt;a href=&quot;http://boardgamegeek.com/collection/user/fiddly_bits?own=1&amp;amp;subtype=boardgame&amp;amp;ff=1&quot;&gt;my collection&lt;/a&gt; on BoardGameGeek.&lt;/p&gt;
+
+&lt;p&gt;I got back very behind on my &lt;a href=&quot;http://alpha.app.net/&quot;&gt;Alpha&lt;/a&gt; stream.  Of course all my app.net iOS apps had misplaced my stream marker, and were still terrible at loading more posts without losing my place.  So I got to use Crick Ticker to put my stream marker back where it belonged&amp;ndash;several times&amp;ndash;and found myself wanting a bit more functionality.&lt;/p&gt;
+
+&lt;p&gt;Today I updated Crick Ticker just a bit to show post IDs on hover and to allow you to reset an existing marker to itself (mainly in order to also set the last read marker or to set another stream&amp;rsquo;s marker to match).  The code is up at &lt;a href=&quot;https://github.com/mcdemarco/crick-ticker/releases&quot;&gt;github&lt;/a&gt;, if anyone is interested.  It bears a genetic resemblance to my code for &lt;a href=&quot;http://paste-app.net/&quot;&gt;Paste&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Squirrels for Balticon</title>
    <link href="http://mcdemarco.net/blog/2014/05/28/squirrels-for-balticon"/>
    <updated>2014-05-28T00:00:00-04:00</updated>
    <id>http://mcdemarco.net/blog/2014/05/28/squirrels-for-balticon</id>
-   <content type="html">&lt;p&gt;We drove down to &lt;a href=&quot;http://www.balticon.org&quot;&gt;Balticon 48&lt;/a&gt; this past weekend, where we spotted one (1) meteor during the meteor &amp;ldquo;shower&amp;rdquo; and the long-awaited anthology &lt;em&gt;&lt;a href=&quot;http://www.amazon.com/gp/product/1617209457/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=1617209457&amp;amp;linkCode=as2&amp;amp;tag=mcdema-20&amp;amp;linkId=FYYXFORPYCV46TGT&quot;&gt;Trafficking in Magic, Magicking in Traffic&lt;/a&gt;&lt;/em&gt; in the dealers' room.  I got to meet the editors and a few fellow contributors in person for the first time, attend the release party, and sign a pile of books.  (So I know my story, &amp;ldquo;Squirrels for Kali&amp;rdquo;, starts on page 201.)&lt;/p&gt;
+   <content type="html">&lt;p&gt;We drove down to &lt;a href=&quot;http://www.balticon.org&quot;&gt;Balticon 48&lt;/a&gt; this past weekend, where we spotted one (1) meteor during the meteor &amp;ldquo;shower&amp;rdquo; and the long-awaited anthology &lt;em&gt;&lt;a href=&quot;http://www.amazon.com/gp/product/1617209457/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=1617209457&amp;amp;linkCode=as2&amp;amp;tag=mcdema-20&amp;amp;linkId=FYYXFORPYCV46TGT&quot;&gt;Trafficking in Magic, Magicking in Traffic&lt;/a&gt;&lt;/em&gt; in the dealers&#39; room.  I got to meet the editors and a few fellow contributors in person for the first time, attend the release party, and sign a pile of books.  (So I know my story, &amp;ldquo;Squirrels for Kali&amp;rdquo;, starts on page 201.)&lt;/p&gt;
 
 &lt;p&gt;Don&amp;rsquo;t worry, there are a few more copies available for you to buy at the affiliate link above, and I&amp;rsquo;ve also updated &lt;a href=&quot;http://astore.amazon.com/mcdema-20&quot;&gt;my Amazon store&lt;/a&gt;.&lt;/p&gt;
 </content>
@@ -46,7 +59,7 @@
 
 &lt;p&gt;This is not an endorsement of Penflip, however. I never got any response from their support email address; the project seems to have stalled after the initial flurry of PR.  I don&amp;rsquo;t think there&amp;rsquo;s a good open-data solution for making your own online cookbook out there, though there are some nice closed-data apps like &lt;a href=&quot;http://basil-app.com/&quot;&gt;Basil&lt;/a&gt; and &lt;a href=&quot;http://www.paprikaapp.com/&quot;&gt;Paprika&lt;/a&gt; for iOS, &lt;a href=&quot;http://www.tastebook.com&quot;&gt;TasteBook&lt;/a&gt; for the web, and &lt;a href=&quot;http://blurb.com/&quot;&gt;Blurb&lt;/a&gt; for printing an actual book.  &lt;a href=&quot;http://lifehacker.com/the-best-apps-to-manage-your-recipe-collection-1451016805&quot;&gt;Lifehackers&lt;/a&gt; also recommend &lt;a href=&quot;https://onetsp.com&quot;&gt;One tsp.&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;If Penflip penflops, it will be relatively easy for me to soldier on&amp;mdash;Penflip uses &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;pandoc&lt;/a&gt;, and I would, too.  I could even build a recipe-only version with better image integration if I had the time.  But for the moment I&amp;rsquo;ve merely worked around Penflip&amp;rsquo;s issues by retrieving my photos from SpringPad, shrinking them down a bit with ImageMagick, and hosting them here on my own site.  If all goes well, I&amp;rsquo;ll be able to download the PDF from Penflip soon.  But I&amp;rsquo;m not holding my breath by any means&amp;hellip;&lt;/p&gt;
+&lt;p&gt;If Penflip penflops, it will be relatively easy for me to soldier on&amp;ndash;Penflip uses &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;pandoc&lt;/a&gt;, and I would, too.  I could even build a recipe-only version with better image integration if I had the time.  But for the moment I&amp;rsquo;ve merely worked around Penflip&amp;rsquo;s issues by retrieving my photos from SpringPad, shrinking them down a bit with ImageMagick, and hosting them here on my own site.  If all goes well, I&amp;rsquo;ll be able to download the PDF from Penflip soon.  But I&amp;rsquo;m not holding my breath by any means&amp;hellip;&lt;/p&gt;
 </content>
  </entry>
  
@@ -63,7 +76,7 @@
 
 &lt;p&gt;The thing that distracted me the most this year was one of my tools:  not &lt;a href=&quot;http://www.literatureandlatte.com/scrivener.php&quot;&gt;Scrivener&lt;/a&gt;, which I upgraded to version 2.0 for this novel, but a fantasy family tree generation I&amp;rsquo;ve been working on all month to populate dwarf clans for the novel.  It wasn&amp;rsquo;t particularly necessary, but it provided hours of fun and procrastination.  The incomplete version is in my github account; once a few more bugs are shaken out I&amp;rsquo;ll put it up here for future NaNoWriMo use.&lt;/p&gt;
 
-&lt;p&gt;I tried out a few other cool tools this month, most notably &lt;a href=&quot;https://alpha.app.net/mcdemarco/post/14757994&quot;&gt;Penflip&lt;/a&gt;&amp;mdash;which I started using for &lt;a href=&quot;https://www.penflip.com/mcdemarco/the-new-kitchen-cookbook&quot;&gt;a cookbook&lt;/a&gt; rather than the novel&amp;mdash;and &lt;a href=&quot;http://donjon.bin.sh&quot;&gt;donjon&amp;rsquo;s generators&lt;/a&gt; (especially the world generators).&lt;/p&gt;
+&lt;p&gt;I tried out a few other cool tools this month, most notably &lt;a href=&quot;https://alpha.app.net/mcdemarco/post/14757994&quot;&gt;Penflip&lt;/a&gt;&amp;ndash;which I started using for &lt;a href=&quot;https://www.penflip.com/mcdemarco/the-new-kitchen-cookbook&quot;&gt;a cookbook&lt;/a&gt; rather than the novel&amp;ndash;and &lt;a href=&quot;http://donjon.bin.sh&quot;&gt;donjon&amp;rsquo;s generators&lt;/a&gt; (especially the world generators).&lt;/p&gt;
 </content>
  </entry>
  
@@ -73,7 +86,7 @@
    <updated>2013-10-15T00:00:00-04:00</updated>
    <id>http://mcdemarco.net/blog/2013/10/15/lifelines</id>
    <content type="html">&lt;p&gt;My husband got his 23andMe results back the other day, and his account was chock full of possible relatives.
-My 23andMe results have not attracted much in the way of near cousins over the years, but one popped up when I went in to look at his results (and mock his unexpected &lt;a href=&quot;http://plagueblog.blogspot.com/2008/05/lactose-intolerance-in-europe.html&quot;&gt;lactose intolerance&lt;/a&gt;&amp;mdash;coincidentally, my new 2nd-to-3rd cousin is also from the same 81% lactose-intolerant region of Italy I pointed out in the link).&lt;/p&gt;
+My 23andMe results have not attracted much in the way of near cousins over the years, but one popped up when I went in to look at his results (and mock his unexpected &lt;a href=&quot;http://plagueblog.blogspot.com/2008/05/lactose-intolerance-in-europe.html&quot;&gt;lactose intolerance&lt;/a&gt;&amp;ndash;coincidentally, my new 2nd-to-3rd cousin is also from the same 81% lactose-intolerant region of Italy I pointed out in the link).&lt;/p&gt;
 
 &lt;p&gt;While I was looking for our common milk-avoiding relatives in the family tree I&amp;rsquo;d imported into 23andMe way back when, I started updating the tree with some marriages and deaths.  So I wanted to update the original database as well, because 23andMe is proprietary and probably dropped lots of information from the GEDCOM file when I imported it and cetera et cetera.&lt;/p&gt;
 
@@ -86,7 +99,7 @@ My 23andMe results have not attracted much in the way of near cousins over the y
   make install
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This solved the ^@-signs, but the resulting LifeLines binary ate all my relatives' surnames.  I joined the LifeLines mailing list seeking advice, and the unexpected answer was to set LANG=en_US before running LifeLines:&lt;/p&gt;
+&lt;p&gt;This solved the ^@-signs, but the resulting LifeLines binary ate all my relatives&#39; surnames.  I joined the LifeLines mailing list seeking advice, and the unexpected answer was to set LANG=en_US before running LifeLines:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;  LANG=en_US; llines
 &lt;/code&gt;&lt;/pre&gt;
@@ -207,13 +220,13 @@ The to-do list at the moment is:&lt;/p&gt;
 
 &lt;p&gt;Success at last! My miners mined away happily for an hour or two, producing an infinitesimal fraction of a bitcoin before tragedy struck in the form of a &lt;a href=&quot;https://bitcointalk.org/index.php?topic=1976.msg1856080&quot;&gt;DoS attack on Slush&amp;rsquo;s servers&lt;/a&gt;. But now that I had a rig set up I could switch to another pool, like the fickle &amp;lsquo;49er I&amp;rsquo;d become.&lt;/p&gt;
 
-&lt;p&gt;Unfortunately, in my haste I picked a pool, &lt;a href=&quot;http://bitminter.com/&quot;&gt;Bitminter&lt;/a&gt;, that didn&amp;rsquo;t pay out until you&amp;rsquo;d earned at least 0.001 bitcoins. Even with my husband&amp;rsquo;s Mac mini shanghaied into mining for me, it took about a week (and a couple of unexplained work stoppages from both miners) to reach 0.001. On the bright side, Bitminter also does simultaneous &lt;a href=&quot;http://bitminter.com/&quot;&gt;Namecoin&lt;/a&gt; mining&amp;mdash;something Slush still promises on his account setup page but which (the bitcoin forums report) hasn&amp;rsquo;t been supported there for some time.&lt;/p&gt;
+&lt;p&gt;Unfortunately, in my haste I picked a pool, &lt;a href=&quot;http://bitminter.com/&quot;&gt;Bitminter&lt;/a&gt;, that didn&amp;rsquo;t pay out until you&amp;rsquo;d earned at least 0.001 bitcoins. Even with my husband&amp;rsquo;s Mac mini shanghaied into mining for me, it took about a week (and a couple of unexplained work stoppages from both miners) to reach 0.001. On the bright side, Bitminter also does simultaneous &lt;a href=&quot;http://bitminter.com/&quot;&gt;Namecoin&lt;/a&gt; mining&amp;ndash;something Slush still promises on his account setup page but which (the bitcoin forums report) hasn&amp;rsquo;t been supported there for some time.&lt;/p&gt;
 
 &lt;p&gt;But (of course there was going to be a &lt;em&gt;but&lt;/em&gt;), while namecoins can be mined with no additional effort by my lazy miners, they don&amp;rsquo;t accrue at the same rate as the bitcoins. So cashing out of bitcoins at 0.001 meant leaving about 0.00075 namecoins lingering at Bitminter until the next DoS sends my miners back there. According to the &lt;a href=&quot;https://btc-e.com/exchange/nmc_btc&quot;&gt;Bitcoin Exchange&lt;/a&gt;, my bit of namecoin is currently worth a homeopathic fraction of a bitcoin, so I&amp;rsquo;ll probably leave them lying in the intertube I found them in for quite some time.&lt;/p&gt;
 
 &lt;p&gt;Bitcoin mining is about as profitable as fiction writing in that it costs you more in electricity than you will ever earn. The best way to score virtual riches may instead be to get in on the ground floor of another virtual currency like namecoins. I tried out a promising upstart called &lt;a href=&quot;http://litecoin.org/&quot;&gt;Litecoin&lt;/a&gt; which is supposed to level the playing field between amateurs and professional miners to some extent.&lt;/p&gt;
 
-&lt;p&gt;My efforts were once again hampered by my old OS&amp;mdash;I wasn&amp;rsquo;t able to find a GPU miner for it and had to settle for one CPU miner on the Mac mini. This rig is not ideal, but it&amp;rsquo;s also not the handicap it would be with bitcoins.  I&amp;rsquo;ve already mined 0.065 litecoins (worth about a quarter on the virtual market) with one CPU in the same week or so of time it takes to mine 0.001 bitcoins (worth one thin dime). Now all I need to do is mine and wait for the coming litecoin bubble to inflate.&lt;/p&gt;
+&lt;p&gt;My efforts were once again hampered by my old OS&amp;ndash;I wasn&amp;rsquo;t able to find a GPU miner for it and had to settle for one CPU miner on the Mac mini. This rig is not ideal, but it&amp;rsquo;s also not the handicap it would be with bitcoins.  I&amp;rsquo;ve already mined 0.065 litecoins (worth about a quarter on the virtual market) with one CPU in the same week or so of time it takes to mine 0.001 bitcoins (worth one thin dime). Now all I need to do is mine and wait for the coming litecoin bubble to inflate.&lt;/p&gt;
 </content>
  </entry>
  
@@ -224,11 +237,11 @@ The to-do list at the moment is:&lt;/p&gt;
    <id>http://mcdemarco.net/blog/2013/04/15/crossposting-with-drafts</id>
    <content type="html">&lt;p&gt;I&amp;rsquo;ve been wanting crossposting software for a while now.  People I&amp;rsquo;d spotted successfully crossposting either did it manually in a browser or worked for Google (solving the Google+ problem through nepotism?), and Hootsuite only handled a couple of my networks. &lt;a href=&quot;http://streamified.com/&quot;&gt;Streamified&lt;/a&gt; did more but still not all (and is temporarily without an iOS client).&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://agiletortoise.com/drafts&quot;&gt;Drafts&lt;/a&gt; does more too, but also lets me do it all&amp;mdash;even save the markdown to Dropbox for later inclusion in my Jekyll blog&amp;mdash;all from my iPad.  This is my first blog post using Drafts, but I&amp;rsquo;ll also edit it later for some other &lt;a href=&quot;/stream/&quot;&gt;streams&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://agiletortoise.com/drafts&quot;&gt;Drafts&lt;/a&gt; does more too, but also lets me do it all&amp;ndash;even save the markdown to Dropbox for later inclusion in my Jekyll blog&amp;ndash;all from my iPad.  This is my first blog post using Drafts, but I&amp;rsquo;ll also edit it later for some other &lt;a href=&quot;/stream/&quot;&gt;streams&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;So, isn&amp;rsquo;t crossposting evil? The short answer is it&amp;rsquo;s evil when businesses do it for their financial (as opposed to social) purposes, or when trolls do it to rile up one newsgroup with a discussion more appropriate to the source group (or to no place at all). It&amp;rsquo;s also evil when the crossposter is himself largely responsible for the fragmentation of the community (say, an excessive proliferation of mailing lists on the same topic) that he then needs to crosspost across in order to have a discussion.&lt;/p&gt;
 
-&lt;p&gt;It&amp;rsquo;s not so evil when the crossposter is innocent of the fragmentation of his community&amp;mdash;say, some of them won&amp;rsquo;t use Facebook and others don&amp;rsquo;t use mailing lists (or any of them are lawyers). In the case where businesses are intentionally using your content to keep people in their own advertisement-filled &lt;a href=&quot;http://en.wikipedia.org/wiki/Information_silo&quot;&gt;silo&lt;/a&gt; (Facebook, Google, Twitter, etc.), crossposting is the pro-social option. Bonus points if you also point your siloed readers to an especially pro-social forum (&lt;a href=&quot;http://app.net&quot;&gt;App.net&lt;/a&gt;, Tent, etc.).&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s not so evil when the crossposter is innocent of the fragmentation of his community&amp;ndash;say, some of them won&amp;rsquo;t use Facebook and others don&amp;rsquo;t use mailing lists (or any of them are lawyers). In the case where businesses are intentionally using your content to keep people in their own advertisement-filled &lt;a href=&quot;http://en.wikipedia.org/wiki/Information_silo&quot;&gt;silo&lt;/a&gt; (Facebook, Google, Twitter, etc.), crossposting is the pro-social option. Bonus points if you also point your siloed readers to an especially pro-social forum (&lt;a href=&quot;http://app.net&quot;&gt;App.net&lt;/a&gt;, Tent, etc.).&lt;/p&gt;
 </content>
  </entry>
  
@@ -241,7 +254,7 @@ The to-do list at the moment is:&lt;/p&gt;
 
 &lt;p&gt;If you want to make your own, you can see and steal my CSS at the bottom of &lt;a href=&quot;/css/base.css&quot;&gt;my main style file&lt;/a&gt;.  &lt;a href=&quot;http://www.google.com/fonts/&quot;&gt;Google&lt;/a&gt; has instructions for adding individual web fonts, or you can copy the link to the font from the source of the &lt;a href=&quot;/stream/instagrams/&quot;&gt;Polaroids page&lt;/a&gt;, near the top.  Some grungier details follow; feel free to stop reading now.&lt;/p&gt;
 
-&lt;p&gt;I ended up putting the link list together manually because Jekyll &lt;a href=&quot;https://github.com/mojombo/jekyll/pull/585&quot;&gt;still doesn&amp;rsquo;t include&lt;/a&gt; basic image gallery or file listing functionality and the plugins I tried didn&amp;rsquo;t work out&amp;mdash;partly because I was unwilling to wipe out my macports directory to satisfy &lt;a href=&quot;http://mxcl.github.io/homebrew/&quot;&gt;homebrew&lt;/a&gt;&amp;rsquo;s polite and clear but excessive requirements.  I made the thumbnails with ImageMagick, which I happened to have lying around the Mac.&lt;/p&gt;
+&lt;p&gt;I ended up putting the link list together manually because Jekyll &lt;a href=&quot;https://github.com/mojombo/jekyll/pull/585&quot;&gt;still doesn&amp;rsquo;t include&lt;/a&gt; basic image gallery or file listing functionality and the plugins I tried didn&amp;rsquo;t work out&amp;ndash;partly because I was unwilling to wipe out my macports directory to satisfy &lt;a href=&quot;http://mxcl.github.io/homebrew/&quot;&gt;homebrew&lt;/a&gt;&amp;rsquo;s polite and clear but excessive requirements.  I made the thumbnails with ImageMagick, which I happened to have lying around the Mac.&lt;/p&gt;
 
 &lt;p&gt;The export from Instagram didn&amp;rsquo;t capture my titles, so I added them manually and titled the untitled photos.&lt;/p&gt;
 </content>
@@ -252,7 +265,7 @@ The to-do list at the moment is:&lt;/p&gt;
    <link href="http://mcdemarco.net/blog/2013/04/09/social-archiving-ii"/>
    <updated>2013-04-09T15:23:00-04:00</updated>
    <id>http://mcdemarco.net/blog/2013/04/09/social-archiving-ii</id>
-   <content type="html">&lt;p&gt;Last time I linked to &lt;a href=&quot;/stream/tweets/&quot;&gt;my local twitter archive&lt;/a&gt; but failed to explain how to &lt;a href=&quot;http://blog.twitter.com/2012/12/your-twitter-archive.html&quot;&gt;download your own&lt;/a&gt;&amp;mdash;so there you go.  It&amp;rsquo;s much more useful than your Springpad archive; on the other hand, Springpad now has &lt;a href=&quot;http://springpad.com/blog/2013/03/how-to-embed-your-springpad-notebooks-into-your-website-or-blog/&quot;&gt;better embedding&lt;/a&gt;.  You can see my embedded &lt;a href=&quot;/stream/springs/&quot;&gt;notebooks&lt;/a&gt; and &lt;a href=&quot;/stream/springs/recipes.html&quot;&gt;recipes&lt;/a&gt; in the spruced up &lt;a href=&quot;/stream/&quot;&gt;social section&lt;/a&gt; of the site.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Last time I linked to &lt;a href=&quot;/stream/tweets/&quot;&gt;my local twitter archive&lt;/a&gt; but failed to explain how to &lt;a href=&quot;http://blog.twitter.com/2012/12/your-twitter-archive.html&quot;&gt;download your own&lt;/a&gt;&amp;ndash;so there you go.  It&amp;rsquo;s much more useful than your Springpad archive; on the other hand, Springpad now has &lt;a href=&quot;http://springpad.com/blog/2013/03/how-to-embed-your-springpad-notebooks-into-your-website-or-blog/&quot;&gt;better embedding&lt;/a&gt;.  You can see my embedded &lt;a href=&quot;/stream/springs/&quot;&gt;notebooks&lt;/a&gt; and &lt;a href=&quot;/stream/springs/recipes.html&quot;&gt;recipes&lt;/a&gt; in the spruced up &lt;a href=&quot;/stream/&quot;&gt;social section&lt;/a&gt; of the site.&lt;/p&gt;
 
 &lt;p&gt;I also got rsync working for jekyll thanks to &lt;a href=&quot;http://nathangrigg.net/2012/04/rsyncing-jekyll/&quot;&gt;this wise advice&lt;/a&gt; from &lt;a href=&quot;http://nathangrigg.net/&quot;&gt;Nathan Grigg&lt;/a&gt;, so I&amp;rsquo;m declaring the new site officially &lt;em&gt;up&lt;/em&gt;.  However, my hosting service is not so up, so I&amp;rsquo;m waiting until it stabilizes a bit to take down the &lt;a href=&quot;http://mcdemarco.github.com/&quot;&gt;github copy of the site&lt;/a&gt;.&lt;/p&gt;
 </content>
@@ -268,15 +281,6 @@ The to-do list at the moment is:&lt;/p&gt;
 &lt;p&gt;For one thing, it was geekier, in that the author shared my desire to retrieve my own contributions to the vast proliferation of social networking sites and store them somewhere both more central and more secure.  Though I&amp;rsquo;d been thinking about these issues for a while, the mystery article helped to push me over the edge into doing &lt;em&gt;something&lt;/em&gt;, however small, about my fragmented web presence.  I&amp;rsquo;d like to give the author credit but, typically, I cannot find the article again.  I didn&amp;rsquo;t star it on Google Reader, I didn&amp;rsquo;t retweet it, I didn&amp;rsquo;t repost it to Tent, I didn&amp;rsquo;t like it on Facebook.  I may have seen it in one of those places, but they&amp;rsquo;re not very searchable even individually, never mind en masse.&lt;/p&gt;
 
 &lt;p&gt;I had high hopes for &lt;a href=&quot;https://tent.io/&quot;&gt;Tent&lt;/a&gt; as a replacement for the anti-social proliferation of social silos, but I think for the moment I may have to settle for &lt;a href=&quot;https://join.app.net/&quot;&gt;App.net&lt;/a&gt;.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Social Archiving</title>
-   <link href="http://mcdemarco.net/blog/2013/04/04/social-archiving"/>
-   <updated>2013-04-04T15:28:00-04:00</updated>
-   <id>http://mcdemarco.net/blog/2013/04/04/social-archiving</id>
-   <content type="html">&lt;p&gt;The rest of the static website has now been converted to static website, and I tossed in one social media archive, &lt;a href=&quot;/stream/tweets/&quot;&gt;twitter&lt;/a&gt;, along with a primitive proto-twitter &lt;a href=&quot;/stream/notes/&quot;&gt;noteboard&lt;/a&gt; that I used back in the day.  I&amp;rsquo;m not quite ready to upload it all to my official host, so for now the new website is still hanging out at &lt;a href=&quot;http://mcdemarco.github.com&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
 </content>
  </entry>
  
