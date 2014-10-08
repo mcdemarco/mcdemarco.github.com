@@ -274,7 +274,6 @@ body#sffms #fikinav ul {list-style-type: none;
 
 body#sffms p.timestamp {color: #664;}
 
-
 /* serve a bigger background image for retina */
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {

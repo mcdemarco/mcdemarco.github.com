@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+      A Terragen Planet Tutorial &ndash;
+    
+    m. c. de marco
+  </title>
+
+  <meta name="author" content="m. c. de marco" />
+  <meta name="description" content="To invent new life and new civilizations..." />
+  <meta name="viewport" content="width=device-width" />
+
+  
+
+  
+
+  
+  <meta http-equiv="date" content="Sunday, 11 September 2005 14:00:00 GMT" />
+  
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link id="mobileStyle" media="only screen and (max-device-width: 480px)" href="/css/iphone.css" type="text/css" rel="stylesheet" />
+  <!--link media="only screen and (device-width: 768px)" href="/css/iphone.css" type="text/css" rel="stylesheet" /-->
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+</head>
+
+<body>
+
+<section class="content">
+  <h1>m. c. de marco:
+      
+      <span class="description">To invent new life and new civilizations...</span>
+      
+  </h1>
+      
+    <h2>
+    <a href="/blog/2005/09/11/a-terragen-planet-tutorial">A Terragen Planet Tutorial</a>
+  </h2>
+
+  <section class="byline">
+    September 11, 2005
+    
+    | <a href="/blog/tags/mapping">mapping</a>
+    
+    | <a href="/blog/tags/terragen">terragen</a>
+    
+
+  </section>
+
+  <p>This tutorial is based on what I learned from the <a href="http://www.terradreams.de/All/Tutorials/SpaceTut/TutPlanet1ENGL.htm">TERRA-Dreams Planet Tutorial #1</a>.  (Note the correction at <a href="http://www.ashundar.com/forums.php?m=posts&amp;p=14325#14325">Ashundar</a> if you plan to follow that tutorial.)</p>
+
+
+
+
+<p><strong>Update:</strong>  Jayhawker has added an <a href="http://www.ashundar.com/page.php?id=284">extended tutorial</a> with lovely illustrations to the <a href="http://www.ashundar.com/list.php?c=tutorials">Ashundar tutorials page</a>.</p>
+
+
+
+
+<hr>
+
+
+
+
+<p>First of all, the pretty picture:</p>
+
+
+
+
+<p><img src="/files/terragen/planet2-4-2_200.jpg" alt="planet example" title=""></p>
+
+
+
+
+<p>You can see <a href="http://www.ashundar.com/CPG/displayimage.php?pos=-1689">a bigger version</a> in <a href="http://www.ashundar.com/CPG/index.php?cat=12123">my Ashundar gallery</a>.  Except for a little sharpening, this is pure Terragen output.</p>
+
+
+
+
+<p>This image is not just a standard Terragen terrain viewed from above, however.  It was created by means of some fakery:  the landscape had to be squashed down and the sky altered to get the island-planet effect.  The surface map had to be scaled down to match the squashed terrain.  The sun and waves were removed.  I did learn a bit about surface maps in the process, but otherwise making planets is not the ideal educational experience for a Terragen beginner.  </p>
+
+
+
+
+<p>Since there’s not a lot of principle behind this approach, I’m just going to give a list of settings with brief comments on what they do.  All settings refer to Terragen v.0.9 for OSX, in order of window, but users of other versions should be able to find the corresponding values without much difficulty.</p>
+
+
+
+
+<ol>
+<li><p>Rendering control:  Camera</p>
+
+<ul><li>Under <em>Camera Position</em>, the <em>Fixed height above terrain</em> should be 1500m.</li>
+<li>Under <em>Target Position</em>, the <em>z (alt)</em> value should be 3500m.</li>
+<li>Under <em>Camera Orientation</em>, set a <em>bank</em> value to view the planet at an angle.  I used 11.</li>
+<li>In the <em>Camera Settings…</em> popup, set <em>Zoom / Magnification</em> to 1.</li>
+<li>On the map here or in the View and Sculpt window, move the camera (green dot) to the lower left corner of the map and the target (red dot) to the middle.  Be careful not to let the two guide lines touch the left or bottom sides of the map; they should be parallel with the sides.  You can move the camera around a bit for a better view, but keep the lines parallel.</li></ul></li>
+<li><p>Landscape</p>
+
+<ul><li>In the <em>Generate Terrain…</em> popup, generate a terrain.  The method, settings, and size of features may vary; I used Ridged Multi-Perlin and the size setting 3 notches from the right.</li>
+<li>In the <em>Size / Radius…</em> popup, check the Render Curved Terrain checkbox.  I changed the planet radius to Mars, though changing the radius between Earth, Mars and Moon did not have much effect.  (For a visible curve, reduce the radius to about 100km.  You’ll need to edit the surface map later to compensate.)  I set the terrain size to 513x513.  Point spacing should be 80 meters or so.</li>
+<li>In the <em>Modify Terrain…</em> popup, I glaciated the terrain once and then squashed it down to a height range of about -30 to 60 meters.  You can do this with one Scale Vertical set to the appropriate value (5% or so, depending on your starting terrain), or you can set the dropdown to Squash and keep hitting Scale Vertical until you get down to 50m.</li>
+<li>Under Surface Map, you’ll need a map that’s scaled down to your squashed terrain.  The simplest thing to do is set your base layer to your beach color and then scatter some grass.  <a href="/files/terragen/planetbeach2.srf">The surface map I used</a> was more complex and not necessarily more successful.</li></ul></li>
+<li><p>Water</p>
+
+<ul><li>Set the <em>Water Level</em> to 0.0m.</li>
+<li>Under the <em>Waves</em> tab, set the <em>Roughness</em> and <em>Wave Size</em> to zero for a glassy ocean.</li>
+<li>Under the <em>Reflections</em> tab, increase <em>Max Reflectivity</em> to 150% or so, and the reflectivity curve to 50.  Set the <em>Reflection Spread</em> to 35.</li>
+<li>Under the <em>Sub-surface</em> tab, choose <em>Deep</em> from the drop-down list.</li>
+<li>Under the <em>Shore</em> tab, set the <em>Density</em> to 0, for no foam.</li></ul></li>
+<li><p>Cloudscape</p>
+
+<ul><li>Set the <em>Cover Size</em> to at least 10,000.  This increases the sky size to handle the entire scene.  If you get chunks of black in your render, increase this value to 20,000.</li>
+<li>Set the <em>Altitude</em> to at least 2,000.  This puts the camera under the sky, so that we can see the glowing band of atmosphere at the horizon.</li>
+<li>Remove all clouds by setting <em>Density Contrast</em> to 0 and <em>Density Shift</em> to -100 (the far left for both sliders).  This allows us to see the black sky overhead.</li></ul></li>
+<li><p>Atmosphere</p>
+
+<ul><li>Under <em>Simple Haze</em> set the Density to 10% and the Half Height to 300.  Haze needs to be relatively low because we want a clear view from inside the sky.</li>
+<li>Under <em>Atmospheric Blue</em> set the Density to 10% and the Half Height to 850.  Feel free to change the color.</li>
+<li>Under <em>Light Decay / Red</em> set the Density to 7% and the Half Height to 600.</li></ul></li>
+<li><p>Lighting Conditions</p>
+
+<ul><li>Set the <em>Sun Heading</em> to -27.  This puts the sun’s reflection on the left side of the image.</li>
+<li>Set the <em>Sun Altitude</em> to 2.</li>
+<li>Under the <em>Direct Sunlight</em> tab, set the <em>Sunlight Strength</em> to 350 and the <em>Effect of Atmosphere</em> to 100%.</li>
+<li>Under the <em>Background Light</em> tab, you can switch to <em>Multi-Directional</em> and tone down the shadow lighting, but this isn’t strictly necessary.</li>
+<li>Under the <em>Sun’s Appearance</em> tab, set the <em>Disc Diameter</em> and <em>Corona Size</em> to 0 to remove the sun itself from the image.</li></ul></li>
+</ol>
+
+
+
+
+<p>Your planet is now ready to render.  You’ll probably want to go back and redo the terrain and surface map until you get something you like.  Take a look at other planet renders or <a href="http://www.vladi-private-islands.de/home_e.html">some real islands</a> for ideas.</p>
+
+
+
+
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <section class="copy">
+      <a href="/">
+        <img src="/images/avatar-color-cropped.png" height="50" width="50" />
+      </a>
+
+      <p>
+	<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="mcdemarco">Tweet</a>
+        <a href="http://twitter.com/mcdemarco" class="twitter-follow-button" data-show-count="false">Follow @mcdemarco</a>&nbsp;
+      <a href='https://alpha.app.net/mcdemarco' class='adn-button' target='_blank' data-type='follow' data-width='295' data-height='20' data-user-id='@mcdemarco' data-show-username='1' rel='me'>Follow me on App.net</a>
+      </p>
+
+      <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+      <script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </section>
+  </section>
+
+
+</section>
+
+  <section class="sidebar">
+    <a href="/">
+      <img src="/images/avatar.jpg" height="75" width="75" class="avatar" />
+    </a>
+
+    <section class="name">
+      <a href="/">
+        <span id="lname">m.c.d.</span>
+      </a>
+    </section>
+
+    <section class="sections">
+      <ul>
+	<li><a href="/bio/">bio</a>
+	
+	</li>
+	<li><a href="/blog/">blog</a>
+	
+	<ul>
+	  <li><a href="/blog/archive.html">archives</a></li>
+	  <li><a href="/blog/tags/index.html">tags</a></li>
+	</ul>
+	
+	</li>
+	<li><a href="/conlang/" title="The Accidental Conlanger">conlang</a>
+	
+	</li>
+	<li><a href="/gkc/" title="G. K. Chesterton">gkc</a>
+	
+	</li>
+	<li><a href="/stream/" title="Social media">stream</a>
+	
+	</li>
+	<li><a href="/tools/" title="Writing tools">tools</a>
+	
+	
+	</li>
+      </ul>
+    </section>
+
+    <section class="meta">
+    </section>     
+    <section class="meta">
+      <a href="https://github.com/mcdemarco" title="GitHub"><img src="/images/github.png" /></a>
+      <a href="http://pinterest.com/mcdemarco/" title="Pinterest"><img src="/images/pinterest.png" /></a>
+    </section>
+    <section class="meta">
+      <a href="https://alpha.app.net/mcdemarco/" title="app.net"><img src="/images/appnet.png" /></a>
+      <a href="https://twitter.com/mcdemarco" title="Twitter"><img src="/images/twitter.png" /></a>
+    </section>
+    <section class="meta">
+      <a href="http://boardgamegeek.com/user/fiddly_bits" title="BoardGameGeek"><img src="/images/meeple.png" /></a>
+      <a href="/atom.xml" title="RSS"><img src="/images/rss.png" /></a>
+    </section>
+
+    <section class="switch">
+      <a onclick="document.getElementById('iPhoneStyle').disabled = true;">View full site</a>
+    </section>     
+
+
+  </section>
+
+</body>
+
+</html>
