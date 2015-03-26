@@ -11,3 +11,6 @@ Here, instead, are my bigger GitHub projects:
 * [The New Kitchen Cookbook](/the-new-kitchen-cookbook/), my cookbook, in markdown
 
 The code for [Market Bucket](http://market-bucket.mcdemarco.net/), my shopping list app for App.net, is in a private repository, but no one's stopping you from viewing the source (which is much cleaner than any of the JavaScript code above).
+
+[SCMS](https://bitbucket.org/mcdemarco/scms/) is hosted at BitBucket, because I prefer Mercurial to git.  It's a simple CMS based on [my github fork of Singularity CMS](/singularity-cms/).
+
