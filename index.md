@@ -1,3 +1,6 @@
+---
+title: "mcdemarco @ github"
+---
 # It's all Google's fault...
 
 I used to mirror my website to GitHub Pages, but Google really, really doesn't like that.  My website can still be found at <a href="http://mcdemarco.net">my website</a> or in jekyll form in [my fork of Left](https://github.com/mcdemarco/left/tree/website).  Here, instead, are some of my programming and other projects.
