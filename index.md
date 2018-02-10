@@ -5,16 +5,18 @@ I used to mirror my website to GitHub Pages, but Google really, really doesn't l
 
 ## Games
 
-* [CardPen](http://cardpen.mcdemarco.net/), a CodePen-like card generator for board game creators (code hosted at [BitBucket](https://bitbucket.org/mcdemarco/codepen) because I like Mercurial)
-* The [504 Almanac](http://mcdemarco.net/504almanac/), a board game [experiment](http://mcdemarco.net/tools/504/) using React, also at [BitBucket](https://bitbucket.org/mcdemarco/504almanac)
-* [Myrmex](/myrmex/), a JavaScript solitaire game for the Decktet
-* [Cascades](https://bitbucket.org/mcdemarco/cascades), another JavaScript solitaire game for the Decktet, also at BitBucket
-* [Adaman](/adaman/), my improvements on an existing JavaScript solitaire game for the Decktet
-* [Kingdom Builder Randomizer](/kingdom-builder-randomizer/), random setup for a board game
+* [CardPen](http://cardpen.mcdemarco.net/), a CodePen-like card generator for board game creators in (im)pure JavaScript (code hosted at [BitBucket](https://bitbucket.org/mcdemarco/cardpen) because I like Mercurial)
+* The [504 Almanac](http://mcdemarco.net/504almanac/), a board game [experiment](http://mcdemarco.net/tools/504/) using React, at [BitBucket](https://bitbucket.org/mcdemarco/504almanac)
+* [Magnate Roller](http://mcdemarco.net/games/decktet/magnate/), a virtual set of dice and interactive rules for Magnate using Vue.js, also at [BitBucket](https://bitbucket.org/mcdemarco/magnate)
+* [Myrmex](/myrmex/), a pure JavaScript solitaire game for the Decktet
+* [Cascades](http://mcdemarco.net/games/decktet/cascades), a solitaire game for the Decktet using Mithril.js, at [BitBucket](https://bitbucket.org/mcdemarco/cascades)
+* [Adaman](/adaman/), my improvements on an existing pure JavaScript solitaire game for the Decktet
+* [Kingdom Builder Randomizer](/kingdom-builder-randomizer/), an adopted random setup tool for the board game
+* [BGG Sorters](http://mcdemarco.net/games/bgg/) use client-side XSLT to interact with the BoardGameGeek XML API to sort games (no archive; view the source).
 
 ## Writing Tools
 
-* [DotGraph](http://mcdemarco.net/tools/scree/dotgraph/), a gamebook grapher I wrote to help me use [Scree](http://mcdemarco.net/tools/scree/), my Scrivener template for writing gamebooks
+* [DotGraph](http://mcdemarco.net/tools/scree/dotgraph/), a gamebook grapher I wrote to go with [Scree](http://mcdemarco.net/tools/scree/), my Scrivener template for writing gamebooks
 * [Paloma](http://mcdemarco.net/tools/scree/paloma/), a Twine 2 gamebook story format I wrote to replace the late, lamented Jonah Twine 1 story format 
 * [Family Tree Generator](/family-tree-generator/), fantasy family population
 * [SFFMS](http://mcdemarco.net/sffms/), my old LaTeX manuscript class for writing science fiction
